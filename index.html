@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Olga Prokhorova — Performance Artist</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f4f1;
+      color: #173b3b;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 28px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .name {
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      margin-left: 28px;
+      color: #173b3b;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 5vw 80px;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 1150px;
+      height: 72vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 100px 5vw;
+    }
+
+    .intro h1 {
+      font-size: clamp(42px, 7vw, 90px);
+      font-weight: normal;
+      line-height: 1;
+      margin: 0 0 35px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      font-size: 22px;
+      margin: 0;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 5vw;
+    }
+
+    section h2 {
+      font-size: 34px;
+      font-weight: normal;
+      margin-bottom: 45px;
+    }
+
+    .work {
+      border-top: 1px solid #b9b9b2;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .work-title {
+      font-size: 20px;
+    }
+
+    .work-info {
+      text-align: right;
+      font-size: 15px;
+      color: #657070;
+    }
+
+    .about {
+      max-width: 750px;
+      font-size: 20px;
+    }
+
+    footer {
+      padding: 70px 5vw;
+      border-top: 1px solid #b9b9b2;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #173b3b;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin-left: 12px;
+        font-size: 13px;
+      }
+
+      .hero-image {
+        height: 65vh;
+      }
+
+      .work {
+        display: block;
+      }
+
+      .work-info {
+        text-align: left;
+        margin-top: 5px;
+      }
+
+      footer {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="name">Olga Prokhorova</div>
+
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- FRONT IMAGE -->
+    <div class="hero">
+      <img
+        class="hero-image"
+        src="images/front.jpg"
+        alt="Olga Prokhorova, performance art"
+      >
+    </div>
+
+
+    <!-- INTRODUCTION -->
+    <section class="intro">
+      <h1>Performance<br>artist</h1>
+
+      <p>
+        Olga Prokhorova works with performance, movement,
+        visual communication and participatory situations.
+        Her practice moves between body, place, memory and
+        social experience.
+      </p>
+    </section>
+
+
+    <!-- SELECTED WORK -->
+    <section id="work">
+      <h2>Selected work</h2>
+
+      <div class="work">
+        <div class="work-title">Counting Days: 155</div>
+        <div class="work-info">2022 · Oulu, Finland</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Stress or Mistress</div>
+        <div class="work-info">2022 · Oulu, Finland</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Visible</div>
+        <div class="work-info">2021 · Joensuu, Finland</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">When My Life Was a Burden</div>
+        <div class="work-info">2021 · Joensuu, Finland</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Abundance</div>
+        <div class="work-info">2021 · Joensuu, Finland</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Neverlost in Kuhasalo</div>
+        <div class="work-info">2021 · Joensuu, Finland</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">The Hour</div>
+        <div class="work-info">2020 · Bergen, Norway</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Hostages</div>
+        <div class="work-info">2018 · Espoo, Finland</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Monster: A Hybrid of Cultures</div>
+        <div class="work-info">2013 · Rovaniemi, Finland</div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+
+      <div class="about">
+        <p>
+          Olga Prokhorova is a performance artist whose practice
+          has developed across Finland, Sweden, Russia, Norway
+          and Mexico.
+        </p>
+
+        <p>
+          Her work combines performance art, movement, visual
+          communication and social interaction. She has presented
+          performances in festivals, galleries, public spaces and
+          collaborative projects since 2009.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- CV -->
+    <section id="cv">
+      <h2>CV</h2>
+
+      <div class="work">
+        <div class="work-title">Visual Media</div>
+        <div class="work-info">2021 · Oulu University of Applied Sciences</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Performance Art Studies</div>
+        <div class="work-info">2019 · PAS#62 · Tallinn</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Dance and Somatics</div>
+        <div class="work-info">2018–19 · Joensuu</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Performance Art</div>
+        <div class="work-info">2007–09 · Haparanda, Sweden</div>
+      </div>
+
+      <div class="work">
+        <div class="work-title">Journalism</div>
+        <div class="work-info">1999–04 · Udmurtia, Russia</div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer id="contact">
+    <div>Olga Prokhorova</div>
+
+    <div>
+      <a href="mailto:your@email.com">your@email.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
