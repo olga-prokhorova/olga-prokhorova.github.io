@@ -7,123 +7,217 @@
 <title>Olga Prokhorova</title>
 
 <style>
+
     * {
         box-sizing: border-box;
     }
 
-    html {
-        scroll-behavior: smooth;
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
     }
 
     body {
-        margin: 0;
-        background: #292929;
-        color: #f5f4f1;
-        font-family: Georgia, "Times New Roman", serif;
+        background: #515151;
+        color: #efefef;
+        font-family: "Europa-Light", Arial, Helvetica, sans-serif;
     }
 
-    /* HOMEPAGE */
+    /* =========================
+       HOMEPAGE
+       ========================= */
+
     .home {
         position: relative;
         width: 100%;
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 600px;
         overflow: hidden;
+        background: #515151;
     }
 
-    /* MAIN IMAGE */
+    /* =========================
+       PHOTOGRAPH
+       ========================= */
+
     .hero-image {
         position: absolute;
-        left: 0;
         top: 0;
-        width: calc(100% - 390px);
-        height: 100vh;
+        left: 0;
+
+        width: calc(100% - 380px);
+        height: 100%;
+
         object-fit: cover;
         object-position: center center;
+
+        display: block;
     }
 
-    /* NAME */
+    /* =========================
+       ARTIST NAME
+       ========================= */
+
     .name {
         position: absolute;
-        top: 70px;
-        left: 75px;
-        z-index: 2;
+
+        top: 105px;
+        left: 80px;
+
         margin: 0;
-        font-size: clamp(34px, 4vw, 62px);
-        font-weight: normal;
-        letter-spacing: 1px;
-        color: #f5f4f1;
+
+        z-index: 5;
+
+        color: #efefef;
+
+        font-family: "Europa-Light", Arial, Helvetica, sans-serif;
+        font-size: 65px;
+        font-weight: 300;
+        line-height: 1;
+
+        letter-spacing: 0;
+        white-space: nowrap;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       RIGHT NAVIGATION PANEL
+       ========================= */
+
     .navigation {
         position: absolute;
-        top: 50%;
+
+        top: 0;
         right: 0;
-        width: 390px;
-        transform: translateY(-50%);
+
+        width: 380px;
+        height: 100%;
+
+        background: #515151;
+
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 43px;
+
+        justify-content: center;
+        align-items: flex-start;
+
+        padding-left: 72px;
+
+        gap: 39px;
+
+        z-index: 4;
     }
 
     .navigation a {
-        color: #f5f4f1;
+        color: #efefef;
+
         text-decoration: none;
+
+        font-family: "Europa-Light", Arial, Helvetica, sans-serif;
         font-size: 22px;
-        transition: opacity 0.2s ease;
+        font-weight: 300;
+
+        line-height: 1;
+
+        transition: opacity 0.25s ease;
     }
 
     .navigation a:hover {
         opacity: 0.55;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+       ========================= */
+
     @media (max-width: 800px) {
 
         .home {
+            height: auto;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            overflow: visible;
         }
 
         .hero-image {
             position: relative;
+
             width: 100%;
             height: auto;
-            min-height: 65vh;
+            min-height: 68vh;
+
             object-fit: cover;
             object-position: center center;
         }
 
         .name {
-            top: 25px;
+            top: 30px;
             left: 25px;
-            font-size: 30px;
+
+            font-size: 38px;
         }
 
         .navigation {
             position: relative;
-            top: auto;
-            right: auto;
-            transform: none;
+
             width: 100%;
-            min-height: 35vh;
-            padding: 35px 20px;
-            gap: 24px;
-            justify-content: center;
+            height: auto;
+            min-height: 32vh;
+
+            padding: 38px 25px;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            justify-content: flex-start;
+            align-content: center;
+
+            gap: 25px 32px;
         }
 
         .navigation a {
             font-size: 20px;
         }
     }
+
+    /* =========================
+       SMALL PHONES
+       ========================= */
+
+    @media (max-width: 480px) {
+
+        .hero-image {
+            min-height: 62vh;
+        }
+
+        .name {
+            top: 24px;
+            left: 20px;
+            font-size: 31px;
+        }
+
+        .navigation {
+            min-height: 38vh;
+            padding: 32px 20px;
+            gap: 22px 28px;
+        }
+
+        .navigation a {
+            font-size: 19px;
+        }
+    }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="home">
+
+    <!-- MAIN PHOTOGRAPH -->
 
     <img
         class="hero-image"
@@ -131,14 +225,28 @@
         alt="Performance by Olga Prokhorova"
     >
 
-    <h1 class="name">OLGA PROKHOROVA</h1>
+
+    <!-- ARTIST NAME -->
+
+    <h1 class="name">
+        OLGA PROKHOROVA
+    </h1>
+
+
+    <!-- NAVIGATION -->
 
     <nav class="navigation">
+
         <a href="work.html">works</a>
+
         <a href="about.html">about</a>
+
         <a href="cv.html">CV</a>
+
         <a href="bio.html">bio</a>
+
         <a href="contact.html">contact</a>
+
     </nav>
 
 </div>
