@@ -1,219 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Olga Prokhorova</title>
+  <title>Olga Prokhorova</title>
 
-<style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-* {
-    box-sizing: border-box;
-}
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
+    body {
+      background: #efefef;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
+    }
 
-body {
-    background: #515151;
-    font-family: "Europa-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-
-/* =========================
-   HOME / FULL SCREEN IMAGE
-   ========================= */
-
-.home {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.hero-image {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center center;
-
-    display: block;
-}
-
-
-/* =========================
-   NAME
-   ========================= */
-
-.name {
-    position: absolute;
-
-    top: 105px;
-    left: 80px;
-
-    z-index: 10;
-
-    margin: 0;
-
-    color: #efefef;
-
-    font-family: "Europa-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 55px;
-    font-weight: 200;
-    letter-spacing: 0;
-    line-height: 1;
-
-    white-space: nowrap;
-}
-
-
-/* =========================
-   NAVIGATION
-   ========================= */
-
-.navigation {
-    position: absolute;
-
-    top: calc(50% + 50px);
-    left: calc(79% - 100px);
-
-    transform: translate(-50%, -50%);
-
-    z-index: 10;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 38px;
-}
-
-.navigation a {
-    color: #efefef;
-
-    text-decoration: none;
-
-    font-family: "Europa-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 22px;
-    font-weight: 300;
-
-    line-height: 1;
-
-    transition: opacity 0.25s ease;
-}
-
-.navigation a:hover {
-    opacity: 0.55;
-}
-
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 800px) {
-
-    .home {
-        height: 100svh;
+    /* MAIN IMAGE */
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
     }
 
     .hero-image {
-        object-fit: cover;
-        object-position: center center;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
     }
 
+    /* NAME */
     .name {
-        top: 30px;
-        left: 25px;
-        font-size: 38px;
+      position: absolute;
+      top: 11%;
+      left: 5.5%;
+      z-index: 2;
+
+      margin: 0;
+
+      color: #efefef;
+      font-family: "Europa Light", "Helvetica Neue", Arial, sans-serif;
+      font-size: 65px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -2px;
+      white-space: nowrap;
     }
 
+    /* NAVIGATION */
     .navigation {
+      position: absolute;
+      z-index: 3;
+
+      top: calc(50% + 80px);
+      left: calc(79% - 50px);
+
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    .navigation a {
+      color: #efefef;
+      text-decoration: none;
+
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 23px;
+      font-weight: 300;
+      line-height: 1;
+
+      transition: opacity 0.25s ease;
+    }
+
+    .navigation a:hover {
+      opacity: 0.55;
+    }
+
+
+    /* -----------------------------------
+       TABLET
+       ----------------------------------- */
+
+    @media (max-width: 1100px) {
+
+      .name {
+        top: 10%;
+        left: 5%;
+        font-size: 52px;
+      }
+
+      .navigation {
+        top: calc(50% + 70px);
+        left: calc(79% - 35px);
+        gap: 30px;
+      }
+
+      .navigation a {
+        font-size: 21px;
+      }
+    }
+
+
+    /* -----------------------------------
+       MOBILE
+       ----------------------------------- */
+
+    @media (max-width: 700px) {
+
+      body {
+        overflow: auto;
+      }
+
+      .hero {
+        height: 100svh;
+        min-height: 600px;
+      }
+
+      .hero-image {
+        object-position: 48% center;
+      }
+
+      .name {
+        top: 6%;
+        left: 6%;
+        font-size: 32px;
+        letter-spacing: -1px;
+      }
+
+      .navigation {
         top: auto;
-        bottom: 35px;
         left: auto;
-        right: 25px;
+        right: 7%;
+        bottom: 9%;
 
         transform: none;
 
         gap: 22px;
-    }
+      }
 
-    .navigation a {
+      .navigation a {
         font-size: 19px;
-    }
-}
-
-
-/* =========================
-   SMALL PHONES
-   ========================= */
-
-@media (max-width: 480px) {
-
-    .name {
-        top: 22px;
-        left: 20px;
-        font-size: 30px;
+      }
     }
 
-    .navigation {
-        right: 20px;
-        bottom: 25px;
+
+    /* -----------------------------------
+       SMALL MOBILE
+       ----------------------------------- */
+
+    @media (max-width: 430px) {
+
+      .hero-image {
+        object-position: 45% center;
+      }
+
+      .name {
+        top: 6%;
+        left: 6%;
+        font-size: 26px;
+      }
+
+      .navigation {
+        right: 7%;
+        bottom: 7%;
         gap: 18px;
+      }
+
+      .navigation a {
+        font-size: 17px;
+      }
     }
 
-    .navigation a {
-        font-size: 18px;
-    }
-}
-
-</style>
-
+  </style>
 </head>
 
 
 <body>
 
-<div class="home">
+  <main class="hero">
 
+    <!-- Main photograph -->
     <img
-        class="hero-image"
-        src="RESIZED_banner_web_juoppo.png"
-        alt="Performance by Olga Prokhorova"
+      class="hero-image"
+      src="RESIZED_banner_web_juoppo.png"
+      alt="Performance by Olga Prokhorova"
     >
 
+    <!-- Artist name -->
     <h1 class="name">
-        OLGA PROKHOROVA
+      OLGA PROKHOROVA
     </h1>
 
+    <!-- Main navigation -->
     <nav class="navigation">
 
-        <a href="work.html">works</a>
+      <a href="work.html">works</a>
 
-        <a href="about.html">about</a>
+      <a href="about.html">about</a>
 
-        <a href="cv.html">CV</a>
+      <a href="CV.html">CV</a>
 
-        <a href="bio.html">bio</a>
+      <a href="bio.html">bio</a>
 
-        <a href="contact.html">contact</a>
+      <a href="contact.html">contact</a>
 
     </nav>
 
-</div>
+  </main>
 
 </body>
-
 </html>
