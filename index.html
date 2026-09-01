@@ -47,11 +47,13 @@
 
       object-fit: cover;
       object-position: center center;
+
+      display: block;
     }
 
 
     /* =================================
-       ARTIST NAME — DESKTOP
+       ARTIST NAME
        ================================= */
 
     .name {
@@ -76,14 +78,14 @@
       font-weight: 200;
 
       line-height: 1;
-      letter-spacing: 3px;
+      letter-spacing: 5px;
 
       white-space: nowrap;
     }
 
 
     /* =================================
-       NAVIGATION — DESKTOP
+       NAVIGATION
        ================================= */
 
     .navigation {
@@ -98,11 +100,44 @@
 
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
 
       gap: 34px;
     }
 
-    .navigation a {
+
+    /* INSTAGRAM ICON */
+
+    .instagram {
+      display: block;
+
+      width: 22px;
+      height: 22px;
+
+      margin-bottom: 8px;
+
+      opacity: 0.95;
+
+      transition: opacity 0.25s ease;
+    }
+
+    .instagram img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .instagram:hover {
+      opacity: 0.55;
+    }
+
+
+    /* NAVIGATION LINKS */
+
+    .navigation a:not(.instagram) {
       color: #efefef;
 
       text-decoration: none;
@@ -121,7 +156,7 @@
       transition: opacity 0.25s ease;
     }
 
-    .navigation a:hover {
+    .navigation a:not(.instagram):hover {
       opacity: 0.55;
     }
 
@@ -149,8 +184,14 @@
         gap: 30px;
       }
 
-      .navigation a {
+      .navigation a:not(.instagram) {
         font-size: 21px;
+      }
+
+      .instagram {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
       }
     }
 
@@ -169,7 +210,6 @@
         width: 100vw;
         height: 100svh;
         min-height: 600px;
-        overflow: hidden;
       }
 
       .hero-image {
@@ -177,24 +217,17 @@
         height: 100%;
 
         object-fit: cover;
-
         object-position: 48% center;
       }
 
-
-      /* MOBILE NAME */
-
       .name {
-        top: 13%;
+        top: 6%;
         left: 6%;
-
-        color: #efefef;
 
         font-size: 30px;
         font-weight: 200;
 
-        line-height: 1;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
       }
 
 
@@ -212,9 +245,16 @@
         gap: 22px;
       }
 
-      .navigation a {
+      .navigation a:not(.instagram) {
         font-size: 19px;
         font-weight: 300;
+      }
+
+      .instagram {
+        width: 20px;
+        height: 20px;
+
+        margin-bottom: 0;
       }
     }
 
@@ -229,19 +269,15 @@
         object-position: 45% center;
       }
 
-
       .name {
-        top: 13%;
+        top: 6%;
         left: 6%;
-
-        color: #efefef;
 
         font-size: 25px;
         font-weight: 200;
 
         letter-spacing: 3px;
       }
-
 
       .navigation {
         right: 7%;
@@ -250,8 +286,13 @@
         gap: 18px;
       }
 
-      .navigation a {
+      .navigation a:not(.instagram) {
         font-size: 17px;
+      }
+
+      .instagram {
+        width: 18px;
+        height: 18px;
       }
     }
 
@@ -282,6 +323,22 @@
     <!-- Navigation -->
 
     <nav class="navigation">
+
+      <!-- Instagram -->
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/performateria/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <img
+          src="instagram_icon.png"
+          alt="Instagram"
+        >
+      </a>
+
 
       <a href="work.html">works</a>
 
