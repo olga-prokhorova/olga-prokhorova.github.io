@@ -7,6 +7,7 @@
   <title>About — Olga Prokhrova</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -27,9 +28,9 @@
     }
 
 
-    /* =========================
+    /* =========================================
        DESKTOP
-       ========================= */
+       ========================================= */
 
     .about-page {
       position: relative;
@@ -46,39 +47,63 @@
       object-position: center center;
     }
 
-    .about-content {
-      position: absolute;
-      left: 4.5%;
-      bottom: 12%;
-      width: 520px;
-      color: #555555;
-    }
+
+    /* NAME — DESKTOP */
 
     .about-name {
-      margin: 0 0 24px 0;
+      position: absolute;
+      left: 4.5%;
+      bottom: 23%;
+      
+      margin: 0;
+
       font-size: 42px;
       line-height: 1.05;
       font-weight: 300;
       letter-spacing: 4px;
+
       color: #efefef;
+
+      z-index: 10;
+    }
+
+
+    /* TEXT BLOCK — DESKTOP */
+
+    .about-content {
+      position: absolute;
+      left: 4.5%;
+      bottom: 12%;
+
+      width: 520px;
+
+      color: #555555;
+
+      z-index: 10;
     }
 
     .about-text {
       margin: 0;
       max-width: 500px;
+
       font-size: 16px;
       line-height: 1.45;
       font-weight: 300;
+
       color: #444444;
     }
 
     .about-link {
       display: inline-block;
+
       margin-top: 36px;
+
       font-size: 16px;
       line-height: 1.2;
       font-weight: 300;
+
       color: #444444;
+
       text-decoration: underline;
       text-underline-offset: 3px;
     }
@@ -88,9 +113,9 @@
     }
 
 
-    /* =========================
+    /* =========================================
        MOBILE
-       ========================= */
+       ========================================= */
 
     @media (max-width: 700px) {
 
@@ -103,39 +128,45 @@
         position: relative;
         width: 100%;
         min-height: 100vh;
+
         overflow: visible;
+
         background: #c2c9d3;
       }
 
 
-      /* MOBILE IMAGE */
+      /* -----------------------------------------
+         MOBILE IMAGE
+         DO NOT CHANGE
+         ----------------------------------------- */
 
       .about-image {
         display: block;
+
         width: 100%;
         height: auto;
 
         object-fit: contain;
         object-position: center center;
 
-        /* KEEP THE GOOD CROP */
         transform: translateY(-50px);
         margin-bottom: -50px;
       }
 
 
-      /* =========================
+      /* -----------------------------------------
          MOBILE NAME
-         ========================= */
+         20px HIGHER
+         ----------------------------------------- */
 
       .about-name {
         position: absolute;
 
-        /* NAME IN THE UPPER PART OF THE IMAGE */
-        top: 75px;
+        top: 55px;
         left: 0;
 
         width: 100%;
+
         margin: 0;
         padding: 0 20px;
 
@@ -144,9 +175,7 @@
         font-size: 32px;
         line-height: 1.1;
 
-        /* THIN STYLE */
         font-weight: 300;
-
         letter-spacing: 2px;
 
         color: #efefef;
@@ -155,12 +184,14 @@
       }
 
 
-      /* =========================
-         MOBILE TEXT AREA
-         ========================= */
+      /* -----------------------------------------
+         MOBILE TEXT + LINK
+         20px LOWER
+         ----------------------------------------- */
 
       .about-content {
         position: relative;
+
         left: auto;
         bottom: auto;
 
@@ -170,15 +201,7 @@
 
         color: #333333;
 
-        /*
-          Previously: -300px
-
-          Now: -240px
-
-          This moves the body text and link
-          60px DOWN from the previous position.
-        */
-        transform: translateY(-240px);
+        transform: translateY(-220px);
       }
 
 
@@ -186,6 +209,7 @@
 
       .about-text {
         max-width: none;
+
         margin: 0;
 
         font-size: 14px;
@@ -200,6 +224,7 @@
 
       .about-link {
         display: block;
+
         width: fit-content;
 
         margin: 36px auto 0 auto;
@@ -220,14 +245,15 @@
     }
 
 
-    /* =========================
+    /* =========================================
        SMALL PHONES
-       ========================= */
+       ========================================= */
 
     @media (max-width: 390px) {
 
       .about-name {
-        top: 65px;
+        top: 45px;
+
         font-size: 29px;
         letter-spacing: 2px;
       }
@@ -235,10 +261,10 @@
       .about-content {
         padding-left: 9%;
         padding-right: 9%;
+
         padding-bottom: 40px;
 
-        /* SAME 60px DOWNWARD ADJUSTMENT */
-        transform: translateY(-240px);
+        transform: translateY(-220px);
       }
 
       .about-text {
@@ -248,6 +274,7 @@
 
       .about-link {
         margin-top: 32px;
+
         font-size: 12px;
       }
     }
@@ -262,12 +289,12 @@
 
     <picture>
 
-      <!-- MOBILE IMAGE -->
+      <!-- MOBILE -->
       <source
         media="(max-width: 700px)"
         srcset="about_banner_2.png">
 
-      <!-- DESKTOP IMAGE -->
+      <!-- DESKTOP -->
       <img
         class="about-image"
         src="banner_web_about.png"
@@ -277,12 +304,14 @@
 
 
     <!-- NAME -->
+
     <h1 class="about-name">
       OLGA PROKHOROVA
     </h1>
 
 
-    <!-- TEXT + LINK -->
+    <!-- BODY TEXT + LINK -->
+
     <section class="about-content">
 
       <p class="about-text">
