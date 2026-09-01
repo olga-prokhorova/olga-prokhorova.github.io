@@ -8,206 +8,174 @@
 
 <style>
 
-    * {
-        box-sizing: border-box;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-    }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
 
-    body {
-        background: #515151;
-        color: #efefef;
-        font-family: "Europa-Light", Arial, Helvetica, sans-serif;
-    }
+body {
+    background: #515151;
+    font-family: "Europa-Light", Arial, sans-serif;
+}
 
-    /* =========================
-       HOMEPAGE
-       ========================= */
+
+/* =========================
+   FULL SCREEN PHOTOGRAPH
+   ========================= */
+
+.home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    display: block;
+}
+
+
+/* =========================
+   NAME
+   ========================= */
+
+.name {
+    position: absolute;
+
+    top: 105px;
+    left: 80px;
+
+    margin: 0;
+
+    z-index: 10;
+
+    color: #efefef;
+
+    font-family: "Europa-Light", Arial, sans-serif;
+    font-size: 65px;
+    font-weight: 300;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.navigation {
+    position: absolute;
+
+    top: 50%;
+    right: 70px;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 38px;
+}
+
+.navigation a {
+    color: #efefef;
+
+    text-decoration: none;
+
+    font-family: "Europa-Light", Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    transition: opacity 0.25s ease;
+}
+
+.navigation a:hover {
+    opacity: 0.55;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 800px) {
 
     .home {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        min-height: 600px;
-        overflow: hidden;
-        background: #515151;
+        height: 100svh;
     }
-
-    /* =========================
-       PHOTOGRAPH
-       ========================= */
 
     .hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        width: calc(100% - 380px);
-        height: 100%;
-
         object-fit: cover;
         object-position: center center;
-
-        display: block;
     }
-
-    /* =========================
-       ARTIST NAME
-       ========================= */
 
     .name {
-        position: absolute;
-
-        top: 105px;
-        left: 80px;
-
-        margin: 0;
-
-        z-index: 5;
-
-        color: #efefef;
-
-        font-family: "Europa-Light", Arial, Helvetica, sans-serif;
-        font-size: 65px;
-        font-weight: 300;
-        line-height: 1;
-
-        letter-spacing: 0;
-        white-space: nowrap;
+        top: 30px;
+        left: 25px;
+        font-size: 38px;
     }
 
-    /* =========================
-       RIGHT NAVIGATION PANEL
-       ========================= */
-
     .navigation {
-        position: absolute;
+        top: auto;
+        bottom: 35px;
+        right: 25px;
 
-        top: 0;
-        right: 0;
+        transform: none;
 
-        width: 380px;
-        height: 100%;
-
-        background: #515151;
-
-        display: flex;
-        flex-direction: column;
-
-        justify-content: center;
-        align-items: flex-start;
-
-        padding-left: 72px;
-
-        gap: 39px;
-
-        z-index: 4;
+        gap: 22px;
     }
 
     .navigation a {
-        color: #efefef;
+        font-size: 19px;
+    }
+}
 
-        text-decoration: none;
 
-        font-family: "Europa-Light", Arial, Helvetica, sans-serif;
-        font-size: 22px;
-        font-weight: 300;
+/* =========================
+   SMALL PHONES
+   ========================= */
 
-        line-height: 1;
+@media (max-width: 480px) {
 
-        transition: opacity 0.25s ease;
+    .name {
+        top: 22px;
+        left: 20px;
+        font-size: 30px;
     }
 
-    .navigation a:hover {
-        opacity: 0.55;
+    .navigation {
+        right: 20px;
+        bottom: 25px;
+        gap: 18px;
     }
 
-    /* =========================
-       MOBILE
-       ========================= */
-
-    @media (max-width: 800px) {
-
-        .home {
-            height: auto;
-            min-height: 100vh;
-            overflow: visible;
-        }
-
-        .hero-image {
-            position: relative;
-
-            width: 100%;
-            height: auto;
-            min-height: 68vh;
-
-            object-fit: cover;
-            object-position: center center;
-        }
-
-        .name {
-            top: 30px;
-            left: 25px;
-
-            font-size: 38px;
-        }
-
-        .navigation {
-            position: relative;
-
-            width: 100%;
-            height: auto;
-            min-height: 32vh;
-
-            padding: 38px 25px;
-
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-
-            justify-content: flex-start;
-            align-content: center;
-
-            gap: 25px 32px;
-        }
-
-        .navigation a {
-            font-size: 20px;
-        }
+    .navigation a {
+        font-size: 18px;
     }
-
-    /* =========================
-       SMALL PHONES
-       ========================= */
-
-    @media (max-width: 480px) {
-
-        .hero-image {
-            min-height: 62vh;
-        }
-
-        .name {
-            top: 24px;
-            left: 20px;
-            font-size: 31px;
-        }
-
-        .navigation {
-            min-height: 38vh;
-            padding: 32px 20px;
-            gap: 22px 28px;
-        }
-
-        .navigation a {
-            font-size: 19px;
-        }
-    }
+}
 
 </style>
 </head>
@@ -217,23 +185,15 @@
 
 <div class="home">
 
-    <!-- MAIN PHOTOGRAPH -->
-
     <img
         class="hero-image"
         src="RESIZED_banner_web_juoppo.png"
         alt="Performance by Olga Prokhorova"
     >
 
-
-    <!-- ARTIST NAME -->
-
     <h1 class="name">
         OLGA PROKHOROVA
     </h1>
-
-
-    <!-- NAVIGATION -->
 
     <nav class="navigation">
 
