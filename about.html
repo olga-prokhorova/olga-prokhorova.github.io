@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About — Olga Prokhorova</title>
+  <title>About — Olga Prokhrova</title>
 
   <style>
     * {
@@ -107,16 +107,31 @@
         background: #c2c9d3;
       }
 
+      /*
+        MOBILE IMAGE
+
+        The image is moved 50px upward.
+        We keep its scale and crop exactly as it is.
+      */
+
       .about-image {
         display: block;
         width: 100%;
         height: auto;
         object-fit: contain;
         object-position: center center;
+
+        transform: translateY(-50px);
+        margin-bottom: -50px;
       }
+
 
       /*
         TEXT AREA
+
+        IMPORTANT:
+        This stays at the position we already liked.
+        Do not change this transform.
       */
 
       .about-content {
@@ -129,32 +144,24 @@
 
         color: #333333;
 
-        /*
-          Move the whole text section
-          300px upward.
-        */
         transform: translateY(-300px);
       }
 
+
       /*
         NAME
+
+        Positioned independently so it is not affected
+        by the text section movement.
       */
 
       .about-name {
         position: absolute;
 
-        /*
-          Previous position:
-          top: -680px
-
-          New position:
-          200px higher
-        */
         top: -880px;
-
         left: 0;
-        width: 100%;
 
+        width: 100%;
         margin: 0;
         padding: 0 20px;
 
@@ -166,7 +173,10 @@
         letter-spacing: 2px;
 
         color: #efefef;
+
+        z-index: 10;
       }
+
 
       /*
         BODY TEXT
@@ -182,6 +192,7 @@
 
         color: #333333;
       }
+
 
       /*
         LINK
@@ -225,6 +236,9 @@
         padding-right: 9%;
         padding-bottom: 40px;
 
+        /*
+          KEEPING BODY TEXT WHERE IT IS
+        */
         transform: translateY(-300px);
       }
 
@@ -258,7 +272,7 @@
       <img
         class="about-image"
         src="banner_web_about.png"
-        alt="Olga Prokhrova performance">
+        alt="Olga Prokhorova performance">
 
     </picture>
 
