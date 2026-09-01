@@ -29,21 +29,30 @@
 
 
     /* =================================
-       BIO PAGE — DESKTOP
+       BIO PAGE
        ================================= */
 
     .bio-page {
       position: relative;
-
-      width: 100vw;
+      width: 100%;
       min-height: 100vh;
+    }
 
-      background-image: url("bio_desktop_RESIZED.png");
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
 
-      overflow: visible;
+    /* =================================
+       BACKGROUND IMAGE
+       ================================= */
+
+    .bio-background {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      margin: 0;
+      padding: 0;
+
+      object-fit: contain;
     }
 
 
@@ -171,20 +180,27 @@
 
       .bio-page {
         position: relative;
-
         width: 100%;
         min-height: 100vh;
-
-        background-image: url("bio_mobile_RESIZED.png");
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-
-        overflow: visible;
       }
 
 
-      /* ---------- NAME ---------- */
+      /* ---------- MOBILE IMAGE ---------- */
+
+      .bio-background {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        margin: 0;
+        padding: 0;
+
+        object-fit: contain;
+      }
+
+
+      /* ---------- MOBILE NAME ---------- */
 
       .bio-name {
         position: absolute;
@@ -214,7 +230,7 @@
       }
 
 
-      /* ---------- TEXT ---------- */
+      /* ---------- MOBILE TEXT ---------- */
 
       .bio-text {
         position: absolute;
@@ -244,7 +260,7 @@
       }
 
 
-      /* ---------- MOBILE NAV ---------- */
+      /* ---------- MOBILE NAVIGATION ---------- */
 
       .bio-nav {
         position: absolute;
@@ -291,14 +307,37 @@
   <main class="bio-page">
 
 
-    <!-- NAME -->
+    <!-- =================================
+         BACKGROUND IMAGE
+         ================================= -->
+
+    <picture>
+
+      <source
+        media="(max-width: 700px)"
+        srcset="bio_mobile_RESIZED.png">
+
+      <img
+        class="bio-background"
+        src="bio_desktop_RESIZED.png"
+        alt=""
+      >
+
+    </picture>
+
+
+    <!-- =================================
+         NAME
+         ================================= -->
 
     <h1 class="bio-name">
       OLGA PROKHOROVA
     </h1>
 
 
-    <!-- BIO TEXT -->
+    <!-- =================================
+         BIO TEXT
+         ================================= -->
 
     <section class="bio-text">
 
@@ -329,7 +368,9 @@
     </section>
 
 
-    <!-- NAVIGATION -->
+    <!-- =================================
+         NAVIGATION
+         ================================= -->
 
     <nav class="bio-nav">
 
