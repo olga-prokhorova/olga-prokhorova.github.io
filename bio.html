@@ -7,6 +7,7 @@
   <title>Bio — Olga Prokhorova</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -20,10 +21,10 @@
     }
 
     body {
+      background: #000;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 300;
       overflow-x: hidden;
-      background: #000;
     }
 
 
@@ -34,24 +35,18 @@
     .bio-page {
       position: relative;
 
-      width: 100vw;
+      width: calc(100vw + 10px);
+      left: -5px;
 
-      /*
-        The page can now become taller than
-        the viewport when the text needs it.
-      */
       min-height: 100vh;
 
+      background-color: #000;
       background-image: url("bio_desktop.png");
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
 
-      /*
-        Extend the background through the
-        whole scrollable page.
-      */
-      background-attachment: scroll;
+      overflow: hidden;
     }
 
 
@@ -86,22 +81,13 @@
        ================================= */
 
     .bio-text {
-      position: relative;
+      position: absolute;
 
-      top: auto;
-      left: auto;
+      top: 23%;
+      left: 6.7%;
 
       width: 32%;
       max-width: 520px;
-
-      /*
-        This creates the same visual position
-        as before, but now the text contributes
-        to the page height naturally.
-      */
-      margin-left: 6.7%;
-      padding-top: 23vh;
-      padding-bottom: 12vh;
 
       color: #d8d8d8;
 
@@ -127,13 +113,13 @@
 
 
     /* =================================
-       NAVIGATION
+       NAVIGATION — DESKTOP
        ================================= */
 
     .bio-nav {
       position: absolute;
 
-      top: 68%;
+      top: 48%;
       right: 16%;
 
       display: flex;
@@ -142,7 +128,7 @@
 
       gap: 32px;
 
-      z-index: 6;
+      z-index: 10;
     }
 
     .bio-nav a {
@@ -186,22 +172,23 @@
 
     @media (max-width: 700px) {
 
-      body {
-        background: #000;
-      }
-
       .bio-page {
-        width: 100%;
+        width: calc(100% + 10px);
+        left: -5px;
+
         min-height: 100vh;
 
+        background-color: #000;
         background-image: url("bio_mobile.png");
         background-size: cover;
         background-position: center top;
         background-repeat: no-repeat;
+
+        overflow: hidden;
       }
 
 
-      /* NAME */
+      /* ---------- NAME ---------- */
 
       .bio-name {
         top: 31%;
@@ -225,16 +212,16 @@
       }
 
 
-      /* TEXT */
+      /* ---------- TEXT ---------- */
 
       .bio-text {
+        position: absolute;
+
+        top: 37%;
+        left: 11%;
+
         width: 78%;
         max-width: none;
-
-        margin-left: 11%;
-
-        padding-top: 37vh;
-        padding-bottom: 10vh;
 
         color: #d8d8d8;
 
@@ -249,7 +236,7 @@
       }
 
 
-      /* MOBILE NAVIGATION */
+      /* ---------- MOBILE NAV ---------- */
 
       .bio-nav {
         position: absolute;
@@ -262,6 +249,8 @@
         align-items: flex-start;
 
         gap: 25px;
+
+        z-index: 10;
       }
 
       .bio-nav a {
@@ -275,10 +264,14 @@
         text-decoration: none;
       }
 
+
+      /* ---------- MOBILE INSTAGRAM ---------- */
+
       .instagram-icon {
         width: 18px;
         height: 18px;
       }
+
     }
 
   </style>
