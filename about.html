@@ -107,58 +107,32 @@
         background: #c2c9d3;
       }
 
-      /*
-        MOBILE IMAGE
 
-        The image is moved 50px upward.
-        We keep its scale and crop exactly as it is.
-      */
+      /* MOBILE IMAGE */
 
       .about-image {
         display: block;
         width: 100%;
         height: auto;
+
         object-fit: contain;
         object-position: center center;
 
+        /* KEEP THE GOOD CROP */
         transform: translateY(-50px);
         margin-bottom: -50px;
       }
 
 
-      /*
-        TEXT AREA
-
-        IMPORTANT:
-        This stays at the position we already liked.
-        Do not change this transform.
-      */
-
-      .about-content {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        width: 100%;
-
-        padding: 0 9.5% 45px 9.5%;
-
-        color: #333333;
-
-        transform: translateY(-300px);
-      }
-
-
-      /*
-        NAME
-
-        Positioned independently so it is not affected
-        by the text section movement.
-      */
+      /* =========================
+         MOBILE NAME
+         ========================= */
 
       .about-name {
         position: absolute;
 
-        top: -880px;
+        /* NAME IN THE UPPER PART OF THE IMAGE */
+        top: 75px;
         left: 0;
 
         width: 100%;
@@ -169,18 +143,46 @@
 
         font-size: 32px;
         line-height: 1.1;
+
+        /* THIN STYLE */
         font-weight: 300;
+
         letter-spacing: 2px;
 
         color: #efefef;
 
-        z-index: 10;
+        z-index: 20;
       }
 
 
-      /*
-        BODY TEXT
-      */
+      /* =========================
+         MOBILE TEXT AREA
+         ========================= */
+
+      .about-content {
+        position: relative;
+        left: auto;
+        bottom: auto;
+
+        width: 100%;
+
+        padding: 0 9.5% 45px 9.5%;
+
+        color: #333333;
+
+        /*
+          Previously: -300px
+
+          Now: -240px
+
+          This moves the body text and link
+          60px DOWN from the previous position.
+        */
+        transform: translateY(-240px);
+      }
+
+
+      /* BODY TEXT */
 
       .about-text {
         max-width: none;
@@ -194,9 +196,7 @@
       }
 
 
-      /*
-        LINK
-      */
+      /* LINK */
 
       .about-link {
         display: block;
@@ -209,6 +209,7 @@
         font-weight: 300;
 
         color: #444444;
+
         text-decoration: underline;
         text-underline-offset: 3px;
       }
@@ -226,7 +227,7 @@
     @media (max-width: 390px) {
 
       .about-name {
-        top: -770px;
+        top: 65px;
         font-size: 29px;
         letter-spacing: 2px;
       }
@@ -236,10 +237,8 @@
         padding-right: 9%;
         padding-bottom: 40px;
 
-        /*
-          KEEPING BODY TEXT WHERE IT IS
-        */
-        transform: translateY(-300px);
+        /* SAME 60px DOWNWARD ADJUSTMENT */
+        transform: translateY(-240px);
       }
 
       .about-text {
@@ -272,16 +271,19 @@
       <img
         class="about-image"
         src="banner_web_about.png"
-        alt="Olga Prokhorova performance">
+        alt="Olga Prokhrova performance">
 
     </picture>
 
 
-    <section class="about-content">
+    <!-- NAME -->
+    <h1 class="about-name">
+      OLGA PROKHOROVA
+    </h1>
 
-      <h1 class="about-name">
-        OLGA PROKHOROVA
-      </h1>
+
+    <!-- TEXT + LINK -->
+    <section class="about-content">
 
       <p class="about-text">
         I make poetic interventions in familiar situations through
