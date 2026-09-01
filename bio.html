@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Bio — Olga Prokhorova</title>
 
   <style>
@@ -16,28 +17,33 @@
       padding: 0;
       width: 100%;
       min-height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 300;
       background: #000;
     }
 
     body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
       overflow-x: hidden;
     }
 
     /* =========================
-       DESKTOP
+       BIO PAGE
        ========================= */
 
     .bio-page {
       position: relative;
       width: 100vw;
       min-height: 100vh;
+
       background-image: url("bio_desktop.png");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
     }
+
+    /* =========================
+       NAME
+       ========================= */
 
     .bio-name {
       position: absolute;
@@ -47,21 +53,31 @@
       margin: 0;
 
       color: #efefef;
+
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: clamp(32px, 3.2vw, 52px);
       font-weight: 300;
       line-height: 1.1;
       letter-spacing: 0;
+
       white-space: nowrap;
     }
+
+    /* =========================
+       BIO TEXT
+       ========================= */
 
     .bio-text {
       position: absolute;
       top: 23%;
       left: 6.7%;
+
       width: 32%;
       max-width: 520px;
 
       color: #d8d8d8;
+
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 14px;
       font-weight: 300;
       line-height: 1.55;
@@ -79,6 +95,10 @@
       font-style: italic;
     }
 
+    /* =========================
+       NAVIGATION
+       ========================= */
+
     .bio-nav {
       position: absolute;
       top: 53%;
@@ -86,19 +106,39 @@
 
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       gap: 32px;
     }
 
     .bio-nav a {
       color: #efefef;
-      text-decoration: none;
+
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 20px;
       font-weight: 300;
       line-height: 1;
+
+      text-decoration: none;
     }
 
     .bio-nav a:hover {
       text-decoration: underline;
+    }
+
+    /* =========================
+       INSTAGRAM ICON
+       ========================= */
+
+    .instagram-link {
+      display: block;
+      line-height: 0;
+    }
+
+    .instagram-icon {
+      display: block;
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
     }
 
 
@@ -110,68 +150,113 @@
 
       .bio-page {
         min-height: 100vh;
+
         background-image: url("bio_mobile.png");
         background-size: cover;
         background-position: center center;
+        background-repeat: no-repeat;
       }
+
+      /* ---------- NAME ---------- */
 
       .bio-name {
         top: 31%;
         left: 50%;
-        transform: translateX(-50%);
 
         width: 90%;
+
+        transform: translateX(-50%);
+
         text-align: center;
 
+        color: #efefef;
+
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 31px;
         font-weight: 300;
         line-height: 1.1;
-        color: #efefef;
+        letter-spacing: 0;
+
         white-space: nowrap;
       }
 
+      /* ---------- TEXT ---------- */
+
       .bio-text {
         position: absolute;
+
         top: 37%;
         left: 11%;
+
         width: 78%;
         max-width: none;
 
-        font-size: 12px;
-        line-height: 1.55;
         color: #d8d8d8;
+
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.55;
       }
 
       .bio-text p {
         margin: 0 0 20px 0;
       }
 
+      /* ---------- MOBILE NAV ---------- */
+
       .bio-nav {
         position: absolute;
+
         top: 7%;
         right: 11%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
         gap: 25px;
       }
 
       .bio-nav a {
-        font-size: 12px;
         color: #efefef;
+
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1;
+
+        text-decoration: none;
+      }
+
+      /* ---------- INSTAGRAM ---------- */
+
+      .instagram-icon {
+        width: 18px;
+        height: 18px;
       }
     }
   </style>
 </head>
 
+
 <body>
 
   <main class="bio-page">
 
-    <h1 class="bio-name">OLGA PROKHOROVA</h1>
+    <!-- NAME -->
+
+    <h1 class="bio-name">
+      OLGA PROKHOROVA
+    </h1>
+
+
+    <!-- BIO -->
 
     <section class="bio-text">
 
       <p>
-        <strong style="font-weight: 300;">Olga Prokhorova</strong> (b. 1981, Udmurtia, Russian Federation) is a performance artist based in Oulu, Northern Finland, working internationally since 2007. Having lived nearly half of her life as an immigrant and being a mother of two sons, her experiences of belonging, displacement, family and gender roles affect her artistic perspective.
+        Olga Prokhorova (b. 1981, Udmurtia, Russian Federation) is a performance artist based in Oulu, Northern Finland, working internationally since 2007. Having lived nearly half of her life as an immigrant and being a mother of two sons, her experiences of belonging, displacement, family and gender roles affect her artistic perspective.
       </p>
 
       <p>
@@ -196,12 +281,31 @@
 
     </section>
 
+
+    <!-- NAVIGATION -->
+
     <nav class="bio-nav">
+
+      <a
+        class="instagram-link"
+        href="https://www.instagram.com/performateria/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <img
+          class="instagram-icon"
+          src="instagram_icon.png"
+          alt="Instagram"
+        >
+      </a>
+
       <a href="index.html">works</a>
-      <a href="about.html">about</a>
+
       <a href="cv.html">cv</a>
-      <a href="bio.html">bio</a>
+
       <a href="contact.html">contact</a>
+
     </nav>
 
   </main>
