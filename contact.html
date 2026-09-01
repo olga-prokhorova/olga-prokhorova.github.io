@@ -47,12 +47,12 @@
       display: block;
 
       width: 100%;
-      height: auto;
+      height: 100vh;
 
       margin: 0;
       padding: 0;
 
-      object-fit: contain;
+      object-fit: cover;
     }
 
 
@@ -114,8 +114,10 @@
        ================================= */
 
     .instagram-link {
-  top: calc(53% - 10px);
-  left: 29%;
+      position: absolute;
+
+      top: calc(53% - 10px);
+      left: 29%;
 
       display: block;
 
@@ -255,11 +257,11 @@
       /* ---------- MOBILE NAVIGATION ---------- */
 
       .contact-nav {
-  top: calc(31% + 40px);
-  right: 24%;
+        top: calc(31% + 40px);
+        right: 24%;
 
-  gap: 28px;
-}
+        gap: 28px;
+      }
 
       .contact-nav a {
         font-size: 12px;
