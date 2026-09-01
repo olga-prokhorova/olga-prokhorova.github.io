@@ -54,8 +54,8 @@
       position: absolute;
       left: 4.5%;
 
-      /* moved 50px UP */
-      bottom: calc(23% + 50px);
+      /* 40px further UP */
+      bottom: calc(23% + 90px);
 
       margin: 0;
 
@@ -156,13 +156,13 @@
 
       /* =====================================
          MOBILE NAME
-         20px HIGHER
+         10px DOWN
          ===================================== */
 
       .about-name {
         position: absolute;
 
-        top: 35px;
+        top: 45px;
         left: 0;
 
         width: 100%;
@@ -186,7 +186,6 @@
 
       /* =====================================
          MOBILE TEXT + LINK
-         20px LOWER
          ===================================== */
 
       .about-content {
@@ -201,7 +200,6 @@
 
         color: #333333;
 
-        /* was -220px, now 20px lower */
         transform: translateY(-200px);
       }
 
@@ -253,8 +251,8 @@
     @media (max-width: 390px) {
 
       .about-name {
-        /* also 20px higher */
-        top: 25px;
+        /* 10px DOWN from previous */
+        top: 35px;
 
         font-size: 29px;
         letter-spacing: 2px;
@@ -266,7 +264,6 @@
 
         padding-bottom: 40px;
 
-        /* 20px lower */
         transform: translateY(-200px);
       }
 
