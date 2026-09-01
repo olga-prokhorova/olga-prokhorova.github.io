@@ -26,6 +26,7 @@
       overflow-x: hidden;
     }
 
+
     /* =========================
        BIO PAGE
        ========================= */
@@ -40,6 +41,7 @@
       background-position: center center;
       background-repeat: no-repeat;
     }
+
 
     /* =========================
        NAME
@@ -62,6 +64,7 @@
 
       white-space: nowrap;
     }
+
 
     /* =========================
        BIO TEXT
@@ -95,18 +98,22 @@
       font-style: italic;
     }
 
+
     /* =========================
-       NAVIGATION
+       NAVIGATION — DESKTOP
+       Same visual zone as HOME
        ========================= */
 
     .bio-nav {
-  position: absolute;
-  top: 53%;
-  right: 11%;
+      position: absolute;
+
+      top: 68%;
+      right: 16%;
 
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+
       gap: 32px;
     }
 
@@ -125,8 +132,9 @@
       text-decoration: underline;
     }
 
+
     /* =========================
-       INSTAGRAM ICON
+       INSTAGRAM
        ========================= */
 
     .instagram-link {
@@ -136,8 +144,10 @@
 
     .instagram-icon {
       display: block;
+
       width: 22px;
       height: 22px;
+
       object-fit: contain;
     }
 
@@ -156,6 +166,7 @@
         background-position: center center;
         background-repeat: no-repeat;
       }
+
 
       /* ---------- NAME ---------- */
 
@@ -180,6 +191,7 @@
         white-space: nowrap;
       }
 
+
       /* ---------- TEXT ---------- */
 
       .bio-text {
@@ -202,6 +214,7 @@
       .bio-text p {
         margin: 0 0 20px 0;
       }
+
 
       /* ---------- MOBILE NAV ---------- */
 
@@ -229,13 +242,15 @@
         text-decoration: none;
       }
 
-      /* ---------- INSTAGRAM ---------- */
+
+      /* ---------- MOBILE INSTAGRAM ---------- */
 
       .instagram-icon {
         width: 18px;
         height: 18px;
       }
     }
+
   </style>
 </head>
 
@@ -244,6 +259,7 @@
 
   <main class="bio-page">
 
+
     <!-- NAME -->
 
     <h1 class="bio-name">
@@ -251,7 +267,7 @@
     </h1>
 
 
-    <!-- BIO -->
+    <!-- BIO TEXT -->
 
     <section class="bio-text">
 
