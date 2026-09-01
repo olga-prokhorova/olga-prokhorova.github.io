@@ -107,22 +107,20 @@
 
         @media (max-width: 768px) {
 
-            html,
-            body {
-                background: #c2c9d3;
-            }
+    .about-page::before {
+        content: "";
+        display: block;
 
-            .about-page {
-                position: relative;
+        width: 100%;
+        height: 580px;
 
-                width: 100%;
-                height: auto;
-                min-height: 100vh;
+        background-image: url("banner_web_about.png");
+        background-size: 115%;
+        background-position: calc(50% - 100px) center;
+        background-repeat: no-repeat;
+    }
 
-                overflow: visible;
-
-                background: #c2c9d3;
-            }
+}
 
             /*
              * Photograph
