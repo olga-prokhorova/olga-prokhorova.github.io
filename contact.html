@@ -1,1 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Contact — Olga Prokhorova</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      background: #000;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+
+    /* =================================
+       CONTACT PAGE
+       ================================= */
+
+    .contact-page {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+
+    /* =================================
+       BACKGROUND IMAGE
+       ================================= */
+
+    .contact-background {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      margin: 0;
+      padding: 0;
+
+      object-fit: contain;
+    }
+
+
+    /* =================================
+       CONTACT NAME
+       ================================= */
+
+    .contact-name {
+      position: absolute;
+
+      top: 68%;
+      left: 6.5%;
+
+      margin: 0;
+
+      color: #efefef;
+
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: clamp(32px, 3.2vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: 0;
+
+      white-space: nowrap;
+
+      z-index: 5;
+    }
+
+
+    /* =================================
+       EMAIL
+       ================================= */
+
+    .contact-email {
+      position: absolute;
+
+      top: 76%;
+      left: 6.5%;
+
+      color: #efefef;
+
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: clamp(22px, 2.4vw, 38px);
+      font-weight: 300;
+      line-height: 1.1;
+
+      text-decoration: none;
+
+      z-index: 5;
+    }
+
+    .contact-email:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =================================
+       INSTAGRAM
+       ================================= */
+
+    .instagram-link {
+      position: absolute;
+
+      top: 53%;
+      left: 29%;
+
+      display: block;
+
+      line-height: 0;
+
+      z-index: 10;
+    }
+
+    .instagram-icon {
+      display: block;
+
+      width: 82px;
+      height: 82px;
+
+      object-fit: contain;
+    }
+
+
+    /* =================================
+       NAVIGATION — DESKTOP
+       ================================= */
+
+    .contact-nav {
+      position: absolute;
+
+      top: 55%;
+      right: 15%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      gap: 42px;
+
+      z-index: 10;
+    }
+
+    .contact-nav a {
+      color: #efefef;
+
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1;
+
+      text-decoration: none;
+    }
+
+    .contact-nav a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =================================
+       MOBILE
+       ================================= */
+
+    @media (max-width: 700px) {
+
+      .contact-page {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+
+      /* ---------- MOBILE IMAGE ---------- */
+
+      .contact-background {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        margin: 0;
+        padding: 0;
+
+        object-fit: contain;
+      }
+
+
+      /* ---------- MOBILE INSTAGRAM ---------- */
+
+      .instagram-link {
+        top: 14%;
+        left: 50%;
+
+        transform: translateX(-50%);
+      }
+
+      .instagram-icon {
+        width: 44px;
+        height: 44px;
+      }
+
+
+      /* ---------- MOBILE NAME ---------- */
+
+      .contact-name {
+        top: 22%;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 90%;
+
+        text-align: center;
+
+        font-size: 25px;
+        font-weight: 300;
+        line-height: 1.1;
+
+        white-space: nowrap;
+      }
+
+
+      /* ---------- MOBILE EMAIL ---------- */
+
+      .contact-email {
+        top: 27%;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 90%;
+
+        text-align: center;
+
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.1;
+
+        white-space: nowrap;
+      }
+
+
+      /* ---------- MOBILE NAVIGATION ---------- */
+
+      .contact-nav {
+        top: 31%;
+        right: 24%;
+
+        gap: 28px;
+      }
+
+      .contact-nav a {
+        font-size: 12px;
+        font-weight: 300;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="contact-page">
+
+
+    <!-- =================================
+         IMAGE
+         ================================= -->
+
+    <picture>
+
+      <source
+        media="(max-width: 700px)"
+        srcset="contact_mobile_dark.png">
+
+      <img
+        class="contact-background"
+        src="contact_desktop_dark.png"
+        alt=""
+      >
+
+    </picture>
+
+
+    <!-- =================================
+         INSTAGRAM
+         ================================= -->
+
+    <a
+      class="instagram-link"
+      href="https://www.instagram.com/performateria/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+      <img
+        class="instagram-icon"
+        src="instagram_icon.png"
+        alt="Instagram"
+      >
+    </a>
+
+
+    <!-- =================================
+         NAME
+         ================================= -->
+
+    <h1 class="contact-name">
+      OLGA PROKHOROVA
+    </h1>
+
+
+    <!-- =================================
+         EMAIL
+         ================================= -->
+
+    <a
+      class="contact-email"
+      href="mailto:oooprohkorova@gmail.com"
+    >
+      oooprohkorova@gmail.com
+    </a>
+
+
+    <!-- =================================
+         NAVIGATION
+         ================================= -->
+
+    <nav class="contact-nav">
+
+      <a href="index.html">works</a>
+
+      <a href="about.html">about</a>
+
+      <a href="cv.html">cv</a>
+
+      <a href="bio.html">bio</a>
+
+    </nav>
+
+  </main>
+
+</body>
+</html>
