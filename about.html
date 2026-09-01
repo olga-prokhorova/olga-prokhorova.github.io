@@ -1,338 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About — Olga Prokhorova</title>
+  <title>About — Olga Prokhorova</title>
 
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 300;
-        }
-
-        body {
-            overflow-x: hidden;
-            background: #c2c9d3;
-        }
-
-
-        /* =========================================
-           DESKTOP
-           ========================================= */
-
-        .about-page {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            min-height: 700px;
-
-            overflow: hidden;
-
-            background-image: url("banner_web_about.png");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
-
-        .about-content {
-            position: absolute;
-
-            left: 4.5%;
-            bottom: 13%;
-
-            width: 500px;
-        }
-
-        .name {
-            margin: 0 0 24px 0;
-
-            font-size: 42px;
-            line-height: 1.1;
-            font-weight: 300;
-
-            letter-spacing: 4px;
-
-            color: #efefef;
-        }
-
-        .description {
-            margin: 0;
-
-            max-width: 500px;
-
-            font-size: 17px;
-            line-height: 1.5;
-            font-weight: 300;
-
-            color: #555555;
-        }
-
-        .about-link {
-            display: inline-block;
-
-            margin-top: 38px;
-
-            font-size: 17px;
-            line-height: 1.2;
-            font-weight: 300;
-
-            color: #555555;
-
-            text-decoration: underline;
-            text-underline-offset: 3px;
-
-            transition: opacity 0.2s ease;
-        }
-
-        .about-link:hover {
-            opacity: 0.6;
-        }
-
-
-        /* =========================================
-           MOBILE
-           ========================================= */
-
-        @media (max-width: 768px) {
-
-    .about-page::before {
-        content: "";
-        display: block;
-
-        width: 100%;
-        height: 580px;
-
-        background-image: url("banner_web_about.png");
-        background-size: 115%;
-        background-position: calc(50% - 100px) center;
-        background-repeat: no-repeat;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-}
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+    }
 
-            /*
-             * Photograph
-             *
-             * The image is deliberately moved
-             * 200px towards the RIGHT.
-             */
+    body {
+      background: #c2c9d3;
+      color: #333333;
+    }
 
-            .about-page::before {
-                content: "";
+    /* =========================
+       DESKTOP
+       ========================= */
 
-                display: block;
+    .about-page {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+    }
 
-                width: 100%;
-                height: 580px;
+    .about-image {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center center;
+    }
 
-                background-image: url("banner_web_about.png");
+    .about-content {
+      position: absolute;
+      left: 4.5%;
+      bottom: 12%;
+      width: 520px;
+      color: #555555;
+    }
 
-                background-size: cover;
+    .about-name {
+      margin: 0 0 24px 0;
+      font-size: 42px;
+      line-height: 1.05;
+      font-weight: 300;
+      letter-spacing: 4px;
+      color: #efefef;
+    }
 
-                background-position:
-                    calc(50% + 200px)
-                    center;
+    .about-text {
+      margin: 0;
+      max-width: 500px;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 300;
+      color: #444444;
+    }
 
-                background-repeat: no-repeat;
-            }
+    .about-link {
+      display: inline-block;
+      margin-top: 36px;
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 300;
+      color: #444444;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
-
-            /*
-             * Content block
-             */
-
-            .about-content {
-                position: relative;
-
-                left: auto;
-                bottom: auto;
-
-                width: 100%;
-
-                padding: 0;
-
-                display: flex;
-                flex-direction: column;
-
-                background: #c2c9d3;
-            }
-
-
-            /*
-             * Name
-             */
-
-            .name {
-                order: 1;
-
-                width: 100%;
-
-                margin: 0;
-
-                padding:
-                    28px
-                    20px
-                    18px
-                    20px;
-
-                text-align: center;
-
-                font-size: 34px;
-                line-height: 1.1;
-                font-weight: 300;
-
-                letter-spacing: 3px;
-
-                color: #efefef;
-
-                background: #c2c9d3;
-            }
+    .about-link:hover {
+      opacity: 0.65;
+    }
 
 
-            /*
-             * Description
-             */
+    /* =========================
+       MOBILE
+       ========================= */
 
-            .description {
-                order: 2;
+    @media (max-width: 700px) {
 
-                width: 100%;
+      html,
+      body {
+        background: #c2c9d3;
+      }
 
-                margin: 0;
+      .about-page {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        overflow: visible;
+        background: #c2c9d3;
+      }
 
-                padding:
-                    28px
-                    48px
-                    0
-                    48px;
+      /*
+        The mobile image is already specially cropped.
+        We therefore DO NOT use object-position or zooming.
+      */
 
-                max-width: none;
+      .about-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center center;
+      }
 
-                font-size: 16px;
-                line-height: 1.35;
-                font-weight: 300;
+      /*
+        Name sits over the top part of the mobile photograph.
+      */
 
-                color: #333333;
+      .about-content {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        padding: 0 9.5% 45px 9.5%;
+        color: #333333;
+      }
 
-                background: #c2c9d3;
-            }
+      .about-name {
+        position: absolute;
+        top: -680px;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0 20px;
+
+        text-align: center;
+
+        font-size: 32px;
+        line-height: 1.1;
+        font-weight: 300;
+        letter-spacing: 2px;
+
+        color: #efefef;
+      }
+
+      .about-text {
+        max-width: none;
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.45;
+        font-weight: 300;
+        color: #333333;
+      }
+
+      .about-link {
+        display: block;
+        width: fit-content;
+        margin: 36px auto 0 auto;
+
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 300;
+
+        color: #444444;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .about-link:hover {
+        opacity: 0.65;
+      }
+    }
 
 
-            /*
-             * Works and bio
-             */
+    /* =========================
+       SMALL PHONES
+       ========================= */
 
-            .about-link {
-                order: 3;
+    @media (max-width: 390px) {
 
-                align-self: center;
+      .about-name {
+        top: -570px;
+        font-size: 29px;
+        letter-spacing: 2px;
+      }
 
-                margin-top: 28px;
-                margin-bottom: 30px;
+      .about-content {
+        padding-left: 9%;
+        padding-right: 9%;
+        padding-bottom: 40px;
+      }
 
-                font-size: 11px;
-                line-height: 1.2;
-                font-weight: 300;
+      .about-text {
+        font-size: 14px;
+        line-height: 1.45;
+      }
 
-                color: #555555;
+      .about-link {
+        margin-top: 32px;
+        font-size: 12px;
+      }
+    }
 
-                text-decoration: underline;
-                text-underline-offset: 2px;
-            }
-        }
-
-
-        /* =========================================
-           SMALL PHONES
-           ========================================= */
-
-        @media (max-width: 480px) {
-
-            .about-page::before {
-                height: 580px;
-
-                /*
-                 * THIS IS THE IMPORTANT LINE.
-                 *
-                 * +200px = photograph shifted right
-                 * by approximately 200px.
-                 */
-
-                background-position:
-                    calc(50% + 200px)
-                    center;
-            }
-
-            .name {
-                padding:
-                    28px
-                    15px
-                    18px
-                    15px;
-
-                font-size: 30px;
-                letter-spacing: 3px;
-            }
-
-            .description {
-                padding:
-                    28px
-                    48px
-                    0
-                    48px;
-
-                font-size: 16px;
-                line-height: 1.35;
-            }
-
-            .about-link {
-                margin-top: 28px;
-                margin-bottom: 30px;
-
-                font-size: 11px;
-            }
-        }
-
-    </style>
+  </style>
 </head>
-
 
 <body>
 
-    <main class="about-page">
+  <main class="about-page">
 
-        <section class="about-content">
+    <!--
+      Desktop:
+      banner_web_about.png
 
-            <h1 class="name">
-                OLGA PROKHOROVA
-            </h1>
+      Mobile:
+      about_banner_2.png
+    -->
 
-            <p class="description">
-                I make poetic interventions in familiar situations through
-                performance, rearranging behaviours and relationships.<br>
-                I explore how these encounters can transform our understanding
-                of dignity and human experience.
-            </p>
+    <picture>
+      <source
+        media="(max-width: 700px)"
+        srcset="about_banner_2.png">
 
-            <a class="about-link" href="index.html">
-                works and bio
-            </a>
+      <img
+        class="about-image"
+        src="banner_web_about.png"
+        alt="Olga Prokhorova performance"
+      >
+    </picture>
 
-        </section>
 
-    </main>
+    <section class="about-content">
+
+      <h1 class="about-name">
+        OLGA PROKHOROVA
+      </h1>
+
+      <p class="about-text">
+        I make poetic interventions in familiar situations through
+        performance, rearranging behaviours and relationships.<br>
+        I explore how these encounters can transform our
+        understanding of dignity and human experience.
+      </p>
+
+      <a class="about-link" href="index.html">
+        works and bio
+      </a>
+
+    </section>
+
+  </main>
 
 </body>
 </html>
