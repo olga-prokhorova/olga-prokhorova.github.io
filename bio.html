@@ -35,18 +35,15 @@
     .bio-page {
       position: relative;
 
-      width: calc(100vw + 10px);
-      left: -5px;
-
+      width: 100vw;
       min-height: 100vh;
 
-      background-color: #000;
       background-image: url("bio_desktop.png");
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
 
-      overflow: hidden;
+      overflow: visible;
     }
 
 
@@ -77,7 +74,7 @@
 
 
     /* =================================
-       BIO TEXT
+       BIO TEXT — DESKTOP
        ================================= */
 
     .bio-text {
@@ -119,7 +116,12 @@
     .bio-nav {
       position: absolute;
 
-      top: 48%;
+      /*
+        Original position was 48%.
+        Lifted approximately 200px.
+      */
+      top: calc(48% - 200px);
+
       right: 16%;
 
       display: flex;
@@ -173,30 +175,36 @@
     @media (max-width: 700px) {
 
       .bio-page {
-        width: calc(100% + 10px);
-        left: -5px;
+        position: relative;
 
+        width: 100%;
         min-height: 100vh;
 
-        background-color: #000;
         background-image: url("bio_mobile.png");
         background-size: cover;
         background-position: center top;
         background-repeat: no-repeat;
 
-        overflow: hidden;
+        overflow: visible;
       }
 
 
-      /* ---------- NAME ---------- */
+      /* ---------------------------------
+         MOBILE NAME
+         20px HIGHER
+         --------------------------------- */
 
       .bio-name {
-        top: 31%;
+        position: absolute;
+
+        top: calc(31% - 20px);
         left: 50%;
 
         width: 90%;
 
         transform: translateX(-50%);
+
+        margin: 0;
 
         text-align: center;
 
@@ -209,10 +217,14 @@
         letter-spacing: 0;
 
         white-space: nowrap;
+
+        z-index: 20;
       }
 
 
-      /* ---------- TEXT ---------- */
+      /* ---------------------------------
+         MOBILE TEXT
+         --------------------------------- */
 
       .bio-text {
         position: absolute;
@@ -229,14 +241,22 @@
         font-size: 12px;
         font-weight: 300;
         line-height: 1.55;
+
+        z-index: 10;
       }
 
       .bio-text p {
         margin: 0 0 20px 0;
       }
 
+      .bio-text p:last-child {
+        margin-bottom: 0;
+      }
 
-      /* ---------- MOBILE NAV ---------- */
+
+      /* ---------------------------------
+         MOBILE NAVIGATION
+         --------------------------------- */
 
       .bio-nav {
         position: absolute;
@@ -250,7 +270,7 @@
 
         gap: 25px;
 
-        z-index: 10;
+        z-index: 20;
       }
 
       .bio-nav a {
@@ -265,7 +285,9 @@
       }
 
 
-      /* ---------- MOBILE INSTAGRAM ---------- */
+      /* ---------------------------------
+         MOBILE INSTAGRAM
+         --------------------------------- */
 
       .instagram-icon {
         width: 18px;
@@ -282,7 +304,8 @@
 
   <main class="bio-page">
 
-    <!-- NAME -->
+
+    <!-- NAME — ONLY ONCE -->
 
     <h1 class="bio-name">
       OLGA PROKHOROVA
