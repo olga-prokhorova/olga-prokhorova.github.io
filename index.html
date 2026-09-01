@@ -1,190 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Olga Prokhorova</title>
+<title>Olga Prokhorova</title>
 
-  <style>
+<style>
     * {
-      box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      background: #f7f6f3;
-      color: #173b3b;
-      font-family: Georgia, "Times New Roman", serif;
+        margin: 0;
+        background: #f5f4f1;
+        color: #173d3d;
+        font-family: Georgia, "Times New Roman", serif;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 25px 45px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(247, 246, 243, 0.95);
-      z-index: 10;
+    /* TOP BAR */
+    header {
+        height: 105px;
+        background: #292929;
+        color: #f5f4f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 45px;
     }
 
-    .name {
-      font-size: 20px;
-      letter-spacing: 1px;
-      text-decoration: none;
-      color: #173b3b;
+    header h1 {
+        margin: 0;
+        font-size: 38px;
+        letter-spacing: 2px;
+        font-weight: normal;
+    }
+
+    /* MAIN LAYOUT */
+    .page {
+        display: grid;
+        grid-template-columns: 31% 69%;
+        min-height: calc(100vh - 105px);
+    }
+
+    /* LEFT MENU */
+    .sidebar {
+        padding: 42px 45px;
+        position: relative;
+        min-height: calc(100vh - 105px);
+        overflow: hidden;
     }
 
     .menu {
-      display: flex;
-      gap: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        position: relative;
+        z-index: 2;
     }
 
     .menu a {
-      color: #173b3b;
-      text-decoration: none;
-      font-size: 16px;
+        color: #173d3d;
+        text-decoration: none;
+        font-size: 27px;
     }
 
     .menu a:hover {
-      color: #a51e2a;
+        opacity: 0.55;
     }
 
-    main {
-      min-height: 100vh;
-      padding: 120px 7vw 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    /* PINK FIGURE */
+    .pink-figure {
+        position: absolute;
+        width: 80%;
+        max-width: 390px;
+        left: 20px;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    /* RIGHT SIDE */
+    .content {
+        padding: 0 35px 70px 0;
     }
 
     .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
+        width: 100%;
+        margin: 0;
     }
 
-    .hero-image {
-      width: 100%;
-      height: 62vh;
-      background: #ddd9d8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 45px;
+    .hero img {
+        display: block;
+        width: 100%;
+        height: auto;
     }
 
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-    h1 {
-      font-size: clamp(48px, 8vw, 105px);
-      font-weight: normal;
-      line-height: 0.95;
-      margin: 0 0 20px;
-      letter-spacing: -2px;
+    /* ARTIST STATEMENT */
+    .statement {
+        max-width: 850px;
+        margin: 55px auto 0;
+        padding: 0 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        line-height: 1.55;
+        color: #303030;
     }
 
-    .subtitle {
-      font-size: 23px;
-      line-height: 1.4;
-      max-width: 650px;
-      margin: 0;
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+        header {
+            height: 80px;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 25px;
+            letter-spacing: 1.5px;
+        }
+
+        .page {
+            display: block;
+        }
+
+        .sidebar {
+            min-height: auto;
+            padding: 25px 25px 15px;
+        }
+
+        .menu {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 18px 28px;
+        }
+
+        .menu a {
+            font-size: 20px;
+        }
+
+        .pink-figure {
+            display: none;
+        }
+
+        .content {
+            padding: 0 20px 50px;
+        }
+
+        .hero img {
+            width: 100%;
+        }
+
+        .statement {
+            margin-top: 35px;
+            padding: 0;
+            font-size: 18px;
+            line-height: 1.5;
+        }
     }
-
-    .intro {
-      margin-top: 55px;
-      max-width: 620px;
-      font-size: 18px;
-      line-height: 1.65;
-    }
-
-    footer {
-      padding: 30px 45px 45px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-
-      nav {
-        padding: 20px;
-        align-items: flex-start;
-      }
-
-      .menu {
-        gap: 14px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
-      .menu a {
-        font-size: 14px;
-      }
-
-      main {
-        padding: 110px 20px 60px;
-      }
-
-      .hero-image {
-        height: 50vh;
-      }
-
-      h1 {
-        font-size: 55px;
-      }
-
-      .subtitle {
-        font-size: 19px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <a class="name" href="index.html">OLGA PROKHOROVA</a>
+<header>
+    <h1>OLGA PROKHOROVA</h1>
+</header>
 
-    <div class="menu">
-      <a href="work.html">Work</a>
-      <a href="cv.html">CV</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+<div class="page">
 
-  <main>
-    <section class="hero">
+    <aside class="sidebar">
 
-   <div class="hero-image">
-  <img src="Performance_artist_Olga_Prokhorova_Juoppo_Joogaa_2026_Oulu.JPG"
-       alt="Olga Prokhorova — Juoppo Joogaa, Oulu 2026">
+        <nav class="menu">
+            <a href="#works">works</a>
+            <a href="#about">about</a>
+            <a href="#cv">CV</a>
+            <a href="#shop">shop</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+        <img
+            class="pink-figure"
+            src="pink_figure_ji.png"
+            alt=""
+        >
+
+    </aside>
+
+    <main class="content">
+
+        <section id="works" class="hero">
+            <img
+                src="RESIZED_banner_web_juoppo.png"
+                alt="Performance by Olga Prokhorova"
+            >
+        </section>
+
+        <section id="about" class="statement">
+            I make poetic interventions in familiar situations through performance,
+            rearranging behaviours and relationships. I explore how these encounters
+            can transform our understanding of dignity and human experience.
+        </section>
+
+        <section id="cv"></section>
+        <section id="shop"></section>
+        <section id="contact"></section>
+
+    </main>
+
 </div>
-
-      <h1>Olga Prokhorova</h1>
-
-      <p class="subtitle">
-        Performance artist working across performance, movement,
-        visual communication and participatory practice.
-      </p>
-
-      <p class="intro">
-        Based in Finland, working internationally.
-      </p>
-
-    </section>
-  </main>
-
-  <footer>
-    © Olga Prokhorova
-  </footer>
 
 </body>
 </html>
