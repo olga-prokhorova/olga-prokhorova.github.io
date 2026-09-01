@@ -53,8 +53,10 @@
     .about-name {
       position: absolute;
       left: 4.5%;
-      bottom: 23%;
-      
+
+      /* moved 50px UP */
+      bottom: calc(23% + 50px);
+
       margin: 0;
 
       font-size: 42px;
@@ -135,10 +137,8 @@
       }
 
 
-      /* -----------------------------------------
-         MOBILE IMAGE
-         DO NOT CHANGE
-         ----------------------------------------- */
+      /* MOBILE IMAGE
+         DO NOT CHANGE */
 
       .about-image {
         display: block;
@@ -154,15 +154,15 @@
       }
 
 
-      /* -----------------------------------------
+      /* =====================================
          MOBILE NAME
          20px HIGHER
-         ----------------------------------------- */
+         ===================================== */
 
       .about-name {
         position: absolute;
 
-        top: 55px;
+        top: 35px;
         left: 0;
 
         width: 100%;
@@ -184,10 +184,10 @@
       }
 
 
-      /* -----------------------------------------
+      /* =====================================
          MOBILE TEXT + LINK
          20px LOWER
-         ----------------------------------------- */
+         ===================================== */
 
       .about-content {
         position: relative;
@@ -201,7 +201,8 @@
 
         color: #333333;
 
-        transform: translateY(-220px);
+        /* was -220px, now 20px lower */
+        transform: translateY(-200px);
       }
 
 
@@ -252,7 +253,8 @@
     @media (max-width: 390px) {
 
       .about-name {
-        top: 45px;
+        /* also 20px higher */
+        top: 25px;
 
         font-size: 29px;
         letter-spacing: 2px;
@@ -264,7 +266,8 @@
 
         padding-bottom: 40px;
 
-        transform: translateY(-220px);
+        /* 20px lower */
+        transform: translateY(-200px);
       }
 
       .about-text {
@@ -289,12 +292,12 @@
 
     <picture>
 
-      <!-- MOBILE -->
+      <!-- MOBILE IMAGE -->
       <source
         media="(max-width: 700px)"
         srcset="about_banner_2.png">
 
-      <!-- DESKTOP -->
+      <!-- DESKTOP IMAGE -->
       <img
         class="about-image"
         src="banner_web_about.png"
