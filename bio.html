@@ -17,38 +17,51 @@
       padding: 0;
       width: 100%;
       min-height: 100%;
-      background: #000;
     }
 
     body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 300;
       overflow-x: hidden;
+      background: #000;
     }
 
 
-    /* =========================
-       BIO PAGE
-       ========================= */
+    /* =================================
+       BIO PAGE — DESKTOP
+       ================================= */
 
     .bio-page {
       position: relative;
+
       width: 100vw;
+
+      /*
+        The page can now become taller than
+        the viewport when the text needs it.
+      */
       min-height: 100vh;
 
       background-image: url("bio_desktop.png");
       background-size: cover;
-      background-position: center center;
+      background-position: center top;
       background-repeat: no-repeat;
+
+      /*
+        Extend the background through the
+        whole scrollable page.
+      */
+      background-attachment: scroll;
     }
 
 
-    /* =========================
+    /* =================================
        NAME
-       ========================= */
+       ================================= */
 
     .bio-name {
       position: absolute;
+
       top: 12%;
       left: 6.7%;
 
@@ -63,20 +76,32 @@
       letter-spacing: 0;
 
       white-space: nowrap;
+
+      z-index: 5;
     }
 
 
-    /* =========================
+    /* =================================
        BIO TEXT
-       ========================= */
+       ================================= */
 
     .bio-text {
-      position: absolute;
-      top: 23%;
-      left: 6.7%;
+      position: relative;
+
+      top: auto;
+      left: auto;
 
       width: 32%;
       max-width: 520px;
+
+      /*
+        This creates the same visual position
+        as before, but now the text contributes
+        to the page height naturally.
+      */
+      margin-left: 6.7%;
+      padding-top: 23vh;
+      padding-bottom: 12vh;
 
       color: #d8d8d8;
 
@@ -84,6 +109,8 @@
       font-size: 14px;
       font-weight: 300;
       line-height: 1.55;
+
+      z-index: 4;
     }
 
     .bio-text p {
@@ -99,10 +126,9 @@
     }
 
 
-    /* =========================
-       NAVIGATION — DESKTOP
-       Same visual zone as HOME
-       ========================= */
+    /* =================================
+       NAVIGATION
+       ================================= */
 
     .bio-nav {
       position: absolute;
@@ -115,6 +141,8 @@
       align-items: flex-start;
 
       gap: 32px;
+
+      z-index: 6;
     }
 
     .bio-nav a {
@@ -133,9 +161,9 @@
     }
 
 
-    /* =========================
+    /* =================================
        INSTAGRAM
-       ========================= */
+       ================================= */
 
     .instagram-link {
       display: block;
@@ -152,23 +180,28 @@
     }
 
 
-    /* =========================
+    /* =================================
        MOBILE
-       ========================= */
+       ================================= */
 
     @media (max-width: 700px) {
 
+      body {
+        background: #000;
+      }
+
       .bio-page {
+        width: 100%;
         min-height: 100vh;
 
         background-image: url("bio_mobile.png");
         background-size: cover;
-        background-position: center center;
+        background-position: center top;
         background-repeat: no-repeat;
       }
 
 
-      /* ---------- NAME ---------- */
+      /* NAME */
 
       .bio-name {
         top: 31%;
@@ -192,16 +225,16 @@
       }
 
 
-      /* ---------- TEXT ---------- */
+      /* TEXT */
 
       .bio-text {
-        position: absolute;
-
-        top: 37%;
-        left: 11%;
-
         width: 78%;
         max-width: none;
+
+        margin-left: 11%;
+
+        padding-top: 37vh;
+        padding-bottom: 10vh;
 
         color: #d8d8d8;
 
@@ -216,7 +249,7 @@
       }
 
 
-      /* ---------- MOBILE NAV ---------- */
+      /* MOBILE NAVIGATION */
 
       .bio-nav {
         position: absolute;
@@ -242,9 +275,6 @@
         text-decoration: none;
       }
 
-
-      /* ---------- MOBILE INSTAGRAM ---------- */
-
       .instagram-icon {
         width: 18px;
         height: 18px;
@@ -258,7 +288,6 @@
 <body>
 
   <main class="bio-page">
-
 
     <!-- NAME -->
 
