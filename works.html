@@ -3,18 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Works — Olga Prokhorova</title>
 
-<link rel="stylesheet" href="style.css">
-
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
+}
+
+body {
     background: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
     color: #515151;
     overflow-x: hidden;
 }
+
+
+/* =================================
+   WORKS PAGE
+   ================================= */
 
 .works-page {
     position: relative;
@@ -22,9 +38,42 @@ body {
     background: #ffffff;
 }
 
-/* =========================
-   WORKS
-   ========================= */
+
+/* =================================
+   ARTIST NAME
+   ================================= */
+
+.name {
+    position: absolute;
+
+    top: calc(11% + 30px);
+    left: calc(5.5% + 30px);
+
+    margin: 0;
+
+    z-index: 10;
+
+    color: #efefef;
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 55px;
+    font-weight: 200;
+
+    line-height: 1;
+    letter-spacing: 5px;
+
+    white-space: nowrap;
+}
+
+
+/* =================================
+   WORK
+   ================================= */
 
 .work {
     width: 100%;
@@ -33,146 +82,251 @@ body {
     background: #ffffff;
 }
 
+
+/* =================================
+   WORK IMAGE
+   ================================= */
+
 .work-image {
     display: block;
+
     width: 100%;
     height: 100vh;
-    object-fit: cover;
-    object-position: center;
+
     margin: 0;
     padding: 0;
+
+    object-fit: cover;
+    object-position: center;
 }
+
+
+/* =================================
+   WHITE TEXT BLOCK
+   ================================= */
 
 .work-info {
     width: 100%;
+
     margin: 0;
     padding: 50px 5.5% 100px 5.5%;
-    box-sizing: border-box;
+
     background: #ffffff;
     color: #515151;
 }
 
+
 .work-info h2 {
     margin: 0 0 18px 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
     font-size: 14px;
     font-weight: 500;
+
     line-height: 1.45;
     letter-spacing: 0;
+
     color: #515151;
 }
 
+
 .work-info p {
     margin: 0 0 12px 0;
+
     max-width: 650px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
     font-size: 14px;
     font-weight: 300;
+
     line-height: 1.45;
+
     color: #515151;
 }
+
 
 .work-info p:last-child {
     margin-bottom: 0;
 }
 
 
-/* =========================
-   SITE NAME
-   ========================= */
-
-.works-page .site-name {
-    position: absolute;
-    top: calc(11% + 30px);
-    left: calc(5.5% + 30px);
-    z-index: 100;
-    margin: 0;
-
-    color: #efefef;
-    text-decoration: none;
-
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 55px;
-    font-weight: 200;
-    line-height: 1;
-    letter-spacing: 5px;
-    white-space: nowrap;
-}
-
-
-/* =========================
+/* =================================
    NAVIGATION
-   ========================= */
+   ================================= */
 
-.works-page .site-navigation {
+.navigation {
     position: fixed;
+
     z-index: 100;
+
+    top: calc(50% + 180px);
+    left: 79%;
+
+    transform: translate(-50%, -50%);
 
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 22px;
+    align-items: flex-start;
 
-    color: #515151;
+    gap: 34px;
 }
 
-.works-page .site-navigation a {
-    color: #515151;
-    text-decoration: none;
 
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1;
-}
+/* =================================
+   INSTAGRAM
+   ================================= */
 
-.works-page .site-navigation a:hover {
-    text-decoration: underline;
-}
-
-.works-page .site-navigation .instagram {
+.instagram {
     display: block;
-    width: auto;
-    height: auto;
-    line-height: 0;
+
+    width: 22px;
+    height: 22px;
+
+    margin-bottom: 8px;
+
+    opacity: 0.95;
+
+    transition: opacity 0.25s ease;
 }
 
-.works-page .site-navigation .instagram img {
+
+.instagram img {
     display: block;
-    width: 14px;
-    height: 14px;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: contain;
 }
 
 
-/* =========================
+.instagram:hover {
+    opacity: 0.55;
+}
+
+
+/* =================================
+   NAVIGATION LINKS
+   ================================= */
+
+.navigation a:not(.instagram) {
+    color: #efefef;
+
+    text-decoration: none;
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 23px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    transition: opacity 0.25s ease;
+}
+
+
+.navigation a:not(.instagram):hover {
+    opacity: 0.55;
+}
+
+
+/* =================================
    UP
-   ========================= */
+   ================================= */
 
 .up-button {
     position: fixed;
+
     left: 50%;
     bottom: 6%;
+
     transform: translateX(-50%);
+
     z-index: 101;
 
     color: #515151;
+
     text-decoration: none;
 
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
     font-size: 14px;
     font-weight: 300;
+
     line-height: 1;
 }
 
 .up-button:hover {
-    text-decoration: underline;
+    opacity: 0.55;
 }
 
 
-/* =========================
+/* =================================
+   TABLET
+   ================================= */
+
+@media (max-width: 1100px) {
+
+    .name {
+        top: calc(10% + 30px);
+        left: calc(5% + 30px);
+
+        font-size: 45px;
+        font-weight: 200;
+
+        letter-spacing: 4px;
+    }
+
+
+    .navigation {
+        top: calc(50% + 150px);
+        left: 79%;
+
+        gap: 30px;
+    }
+
+
+    .navigation a:not(.instagram) {
+        font-size: 21px;
+    }
+
+
+    .instagram {
+        width: 20px;
+        height: 20px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .work-info {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+/* =================================
    MOBILE
-   ========================= */
+   ================================= */
 
 @media (max-width: 700px) {
 
@@ -181,120 +335,138 @@ body {
         overflow-y: auto;
     }
 
-    .works-page {
-        width: 100vw;
+
+    .name {
+        top: calc(6% + 70px);
+        left: 6%;
+
+        font-size: 30px;
+        font-weight: 200;
+
+        letter-spacing: 3px;
     }
+
 
     .work-image {
         width: 100%;
         height: 100svh;
+
         object-fit: cover;
         object-position: center;
     }
 
+
     .work-info {
         width: 100%;
+
         padding: 50px 6% 100px 6%;
-        box-sizing: border-box;
+
         background: #ffffff;
         color: #515151;
     }
 
+
     .work-info h2 {
         margin: 0 0 16px 0;
+
         font-size: 12px;
         font-weight: 500;
+
         line-height: 1.45;
+
         color: #515151;
     }
+
 
     .work-info p {
         margin: 0 0 10px 0;
+
         max-width: calc(81vw - 57px);
+
         font-size: 12px;
         font-weight: 300;
+
         line-height: 1.45;
+
         color: #515151;
     }
 
-    .works-page .site-name {
-        position: absolute;
-        top: calc(11% + 30px);
-        left: 6%;
-        font-size: 30px;
-        letter-spacing: 3px;
-    }
 
-    .works-page .site-navigation {
-        position: fixed;
+    /* MOBILE NAVIGATION */
+
+    .navigation {
+        top: auto;
+        left: auto;
+
         right: 7%;
         bottom: 9%;
+
+        transform: none;
+
         gap: 22px;
     }
 
-    .works-page .site-navigation a {
-        font-size: 12px;
-        color: #515151;
+
+    .navigation a:not(.instagram) {
+        font-size: 19px;
+        font-weight: 300;
     }
 
-    .works-page .site-navigation .instagram img {
-        width: 12px;
-        height: 12px;
+
+    .instagram {
+        width: 20px;
+        height: 20px;
+
+        margin-bottom: 0;
     }
+
 
     .up-button {
         bottom: 9%;
+
         font-size: 12px;
-        color: #515151;
     }
 }
 
 
-/* =========================
-   SMALL PHONES
-   ========================= */
+/* =================================
+   SMALL MOBILE
+   ================================= */
 
 @media (max-width: 430px) {
 
-    .work-info {
-        padding: 50px 6% 100px 6%;
-    }
+    .name {
+        top: calc(6% + 60px);
 
-    .work-info h2 {
-        margin-bottom: 16px;
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    .work-info p {
-        font-size: 12px;
-    }
-
-    .works-page .site-name {
-        top: calc(11% + 30px);
-        left: 6%;
         font-size: 25px;
+        font-weight: 200;
+
         letter-spacing: 3px;
     }
 
-    .works-page .site-navigation {
+
+    .navigation {
         right: 7%;
         bottom: 7%;
+
         gap: 18px;
     }
 
-    .works-page .site-navigation a {
-        font-size: 12px;
-        color: #515151;
+
+    .navigation a:not(.instagram) {
+        font-size: 17px;
     }
 
-    .works-page .site-navigation .instagram img {
-        width: 12px;
-        height: 12px;
+
+    .instagram {
+        width: 18px;
+        height: 18px;
     }
+
 
     .up-button {
         bottom: 7%;
+
         font-size: 12px;
     }
 }
@@ -303,21 +475,33 @@ body {
 </head>
 
 
-<body id="top">
+<body>
 
 <main class="works-page">
 
-    <a href="index.html" class="site-name">OLGA PROKHOROVA</a>
+
+    <!-- =================================
+         ARTIST NAME
+         ================================= -->
+
+    <h1 class="name">
+        OLGA PROKHOROVA
+    </h1>
 
 
-    <!-- 1. JUOPPO JOOGAA -->
+    <!-- =================================
+         1. JUOPPO JOOGAA
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_2.jpg"
             alt="JUOPPO JOOGAA"
             class="work-image">
 
         <div class="work-info">
+
             <h2>JUOPPO JOOGAA</h2>
 
             <p>
@@ -331,18 +515,25 @@ body {
             <p>
                 Each performance is a 20-minute session
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- 2. AS ATTACHMENT -->
+    <!-- =================================
+         2. AS ATTACHMENT
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_3.jpg"
             alt="AS ATTACHMENT"
             class="work-image">
 
         <div class="work-info">
+
             <h2>AS ATTACHMENT</h2>
 
             <p>
@@ -356,18 +547,25 @@ body {
             <p>
                 Duration 4 hours
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- 3. WEARING BURDEN -->
+    <!-- =================================
+         3. WEARING BURDEN
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_4.jpg"
             alt="WEARING BURDEN"
             class="work-image">
 
         <div class="work-info">
+
             <h2>WEARING BURDEN</h2>
 
             <p>
@@ -385,18 +583,25 @@ body {
             <p>
                 Duration 2 hours
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- 4. COUNTING DAYS -->
+    <!-- =================================
+         4. COUNTING DAYS
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_1_1.jpg"
             alt="COUNTING DAYS"
             class="work-image">
 
         <div class="work-info">
+
             <h2>COUNTING DAYS</h2>
 
             <p>
@@ -414,18 +619,25 @@ body {
             <p>
                 Duration 2 years
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- 5. BOTTOM OF BLOOD -->
+    <!-- =================================
+         5. BOTTOM OF BLOOD
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_7.jpg"
             alt="BOTTOM OF BLOOD"
             class="work-image">
 
         <div class="work-info">
+
             <h2>BOTTOM OF BLOOD</h2>
 
             <p>
@@ -443,18 +655,25 @@ body {
             <p>
                 Duration 30 minutes
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- 6. OPPOSITE CATHERINE -->
+    <!-- =================================
+         6. OPPOSITE CATHERINE
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_9.jpg"
             alt="OPPOSITE CATHERINE"
             class="work-image">
 
         <div class="work-info">
+
             <h2>OPPOSITE CATHERINE</h2>
 
             <p>
@@ -476,18 +695,25 @@ body {
             <p>
                 Duration 5 hours
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- 7. ABUNDANCE -->
+    <!-- =================================
+         7. ABUNDANCE
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_6.jpg"
             alt="ABUNDANCE"
             class="work-image">
 
         <div class="work-info">
+
             <h2>ABUNDANCE</h2>
 
             <p>
@@ -505,18 +731,25 @@ body {
             <p>
                 Duration 1 hour 20 minutes
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- 8. IN LOVE WITH THE BUS STOP -->
+    <!-- =================================
+         8. IN LOVE WITH THE BUS STOP
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_8_2.jpg"
             alt="IN LOVE WITH THE BUS STOP"
             class="work-image">
 
         <div class="work-info">
+
             <h2>IN LOVE WITH THE BUS STOP</h2>
 
             <p>
@@ -534,18 +767,25 @@ body {
             <p>
                 Duration 1 hour
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- 9. NEVER-LOST IN KUHASALO -->
+    <!-- =================================
+         9. NEVER-LOST IN KUHASALO
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_5.jpg"
             alt="NEVER-LOST IN KUHASALO"
             class="work-image">
 
         <div class="work-info">
+
             <h2>NEVER-LOST IN KUHASALO</h2>
 
             <p>
@@ -563,18 +803,25 @@ body {
             <p>
                 Duration 1 hour 30 minutes
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- 10. STRESS OR MISTRESS -->
+    <!-- =================================
+         10. STRESS OR MISTRESS
+         ================================= -->
+
     <section class="work">
+
         <img
             src="w_10.jpg"
             alt="STRESS OR MISTRESS"
             class="work-image">
 
         <div class="work-info">
+
             <h2>STRESS OR MISTRESS</h2>
 
             <p>
@@ -596,38 +843,46 @@ body {
             <p>
                 Duration 20 minutes
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- NAVIGATION -->
-    <nav class="site-navigation">
+    <!-- =================================
+         NAVIGATION
+         ================================= -->
+
+    <nav class="navigation">
 
         <a
             class="instagram"
             href="https://www.instagram.com/performateria/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram">
-
+            aria-label="Instagram"
+        >
             <img
                 src="instagram_icon_grey.png"
-                alt="Instagram">
-
+                alt="Instagram"
+            >
         </a>
 
         <a href="works.html">works</a>
 
-        <a href="cv.html">cv</a>
+        <a href="about.html">about</a>
 
-        <a href="bio.html">ABOUT</a>
+        <a href="bio.html">bio</a>
 
         <a href="contact.html">contact</a>
 
     </nav>
 
 
-    <!-- UP -->
+    <!-- =================================
+         UP
+         ================================= -->
+
     <a href="#top" class="up-button">UP</a>
 
 </main>
