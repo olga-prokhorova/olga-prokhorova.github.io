@@ -46,36 +46,8 @@ body {
 
 
 /* =========================
-   CONTACT INSTAGRAM
-========================= */
-
-.instagram-link {
-    position: absolute;
-
-    top: calc(53% - 10px);
-    left: 29%;
-
-    display: block;
-
-    line-height: 0;
-
-    z-index: 10;
-}
-
-.instagram-icon {
-    display: block;
-
-    width: 82px;
-    height: 82px;
-
-    object-fit: contain;
-}
-
-
-/* =========================
    CONTACT NAME
    MASTER STYLE
-   Contact controls position
 ========================= */
 
 .contact-name {
@@ -116,8 +88,7 @@ body {
 
 /* =========================
    CONTACT NAVIGATION
-   MASTER STYLE
-   Contact controls position
+   SAME AS MASTER
 ========================= */
 
 .contact-page .site-navigation {
@@ -152,24 +123,7 @@ body {
     }
 
 
-    /* INSTAGRAM */
-
-    .instagram-link {
-        top: 14%;
-        left: 50%;
-
-        transform: translateX(-50%);
-    }
-
-    .instagram-icon {
-        width: 44px;
-        height: 44px;
-    }
-
-
-    /* NAME
-       MASTER MOBILE TYPOGRAPHY
-       Contact controls position */
+    /* NAME */
 
     .contact-name {
         top: 22%;
@@ -190,8 +144,7 @@ body {
 
 
     /* NAVIGATION
-       MASTER MOBILE TYPOGRAPHY
-       Contact controls position */
+       SAME AS MASTER */
 
     .contact-page .site-navigation {
         top: auto;
@@ -229,11 +182,6 @@ body {
         bottom: 7%;
     }
 
-    .instagram-icon {
-        width: 40px;
-        height: 40px;
-    }
-
 }
 
 </style>
@@ -262,23 +210,6 @@ body {
     </picture>
 
 
-    <!-- CONTACT INSTAGRAM -->
-
-    <a
-        class="instagram-link"
-        href="https://www.instagram.com/performateria/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram">
-
-        <img
-            class="instagram-icon"
-            src="instagram_icon.png"
-            alt="Instagram">
-
-    </a>
-
-
     <!-- CLICKABLE NAME -->
 
     <a
@@ -304,6 +235,19 @@ body {
     <!-- NAVIGATION -->
 
     <nav class="site-navigation">
+
+        <a
+            class="instagram"
+            href="https://www.instagram.com/performateria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram">
+
+            <img
+                src="instagram_icon.png"
+                alt="Instagram">
+
+        </a>
 
         <a href="work.html">works</a>
 
