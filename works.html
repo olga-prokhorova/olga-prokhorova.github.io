@@ -40,6 +40,34 @@ body {
 
 
 /* =================================
+   WORK
+   ================================= */
+
+.work {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+
+/* =================================
+   FIRST IMAGE AREA
+   ================================= */
+
+.first-work-image {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.first-work-image .work-image {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =================================
    ARTIST NAME
    ================================= */
 
@@ -68,18 +96,6 @@ body {
     letter-spacing: 5px;
 
     white-space: nowrap;
-}
-
-
-/* =================================
-   WORK
-   ================================= */
-
-.work {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
 }
 
 
@@ -336,6 +352,11 @@ body {
     }
 
 
+    .first-work-image {
+        height: 100svh;
+    }
+
+
     .name {
         top: calc(6% + 70px);
         left: 6%;
@@ -475,18 +496,9 @@ body {
 </head>
 
 
-<body>
+<body id="top">
 
 <main class="works-page">
-
-
-    <!-- =================================
-         ARTIST NAME
-         ================================= -->
-
-    <h1 class="name">
-        OLGA PROKHOROVA
-    </h1>
 
 
     <!-- =================================
@@ -495,10 +507,19 @@ body {
 
     <section class="work">
 
-        <img
-            src="w_2.jpg"
-            alt="JUOPPO JOOGAA"
-            class="work-image">
+        <div class="first-work-image">
+
+            <img
+                src="w_2.jpg"
+                alt="JUOPPO JOOGAA"
+                class="work-image">
+
+            <h1 class="name">
+                OLGA PROKHOROVA
+            </h1>
+
+        </div>
+
 
         <div class="work-info">
 
@@ -863,7 +884,7 @@ body {
             aria-label="Instagram"
         >
             <img
-                src="instagram_icon_grey.png"
+                src="instagram_icon.png"
                 alt="Instagram"
             >
         </a>
