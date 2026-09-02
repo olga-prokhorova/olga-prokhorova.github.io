@@ -38,15 +38,12 @@ body {
     width: 100%;
     height: 100vh;
 
-    margin: 0;
-    padding: 0;
-
     object-fit: cover;
 }
 
 
 /* =========================
-   CONTACT IMAGE INSTAGRAM
+   CONTACT INSTAGRAM
 ========================= */
 
 .instagram-link {
@@ -74,6 +71,7 @@ body {
 
 /* =========================
    CONTACT NAME
+   Uses MASTER typography
 ========================= */
 
 .contact-name {
@@ -82,9 +80,12 @@ body {
     top: 68%;
     left: calc(5.5% + 30px);
 
+    z-index: 5;
+
     margin: 0;
 
     color: #efefef;
+    text-decoration: none;
 
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 55px;
@@ -93,8 +94,6 @@ body {
     letter-spacing: 5px;
 
     white-space: nowrap;
-
-    z-index: 5;
 }
 
 
@@ -108,27 +107,25 @@ body {
     top: 76%;
     left: calc(5.5% + 30px);
 
+    z-index: 5;
+
     color: #efefef;
-
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: clamp(22px, 2.4vw, 38px);
-    font-weight: 200;
-    line-height: 1.1;
-
     text-decoration: none;
 
-    z-index: 5;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 1.1;
 }
 
 .contact-email:hover {
-    text-decoration: underline;
+    opacity: 0.55;
 }
 
 
 /* =========================
    CONTACT NAVIGATION
-   Uses master typography
-   and position.
+   MASTER POSITION + STYLE
 ========================= */
 
 .contact-page .site-navigation {
@@ -142,29 +139,28 @@ body {
 
 @media (max-width: 700px) {
 
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
     .contact-page {
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
+        width: 100vw;
+        min-height: 100svh;
     }
 
 
-    /* MOBILE IMAGE */
+    /* IMAGE */
 
     .contact-background {
-        display: block;
-
         width: 100%;
         height: auto;
-
-        margin: 0;
-        padding: 0;
 
         object-fit: contain;
     }
 
 
-    /* MOBILE INSTAGRAM */
+    /* INSTAGRAM */
 
     .instagram-link {
         top: 14%;
@@ -179,62 +175,57 @@ body {
     }
 
 
-    /* MOBILE NAME */
+    /* NAME
+       Same master mobile typography */
 
     .contact-name {
         top: 22%;
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        width: 90%;
-
-        text-align: center;
-
-        font-size: 25px;
-        font-weight: 300;
-        line-height: 1.1;
-
-        white-space: nowrap;
-    }
-
-
-    /* MOBILE EMAIL */
-
-    .contact-email {
-        top: 27%;
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        width: 90%;
-
-        text-align: center;
-
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 1.1;
-
-        white-space: nowrap;
-    }
-
-
-    /* MOBILE NAVIGATION */
-
-    .contact-page .site-navigation {
-        top: calc(31% + 40px);
-        left: auto;
-
-        right: 24%;
-        bottom: auto;
+        left: 6%;
 
         transform: none;
 
-        gap: 28px;
+        width: auto;
+
+        font-size: 30px;
+        font-weight: 200;
+        letter-spacing: 3px;
+        line-height: 1;
+
+        white-space: nowrap;
+    }
+
+
+    /* EMAIL */
+
+    .contact-email {
+        top: 28%;
+        left: 6%;
+
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 1.1;
+
+        white-space: nowrap;
+    }
+
+
+    /* NAVIGATION
+       Same master mobile style */
+
+    .contact-page .site-navigation {
+        top: auto;
+        left: auto;
+
+        right: 7%;
+        bottom: 9%;
+
+        transform: none;
+
+        gap: 22px;
     }
 
     .contact-page .site-navigation a:not(.instagram) {
-        font-size: 12px;
+        font-size: 19px;
         font-weight: 300;
     }
 
@@ -247,9 +238,36 @@ body {
 
 @media (max-width: 430px) {
 
+    .contact-name {
+        top: 21%;
+        left: 6%;
+
+        font-size: 25px;
+        font-weight: 200;
+        letter-spacing: 3px;
+    }
+
+    .contact-email {
+        top: 27%;
+        left: 6%;
+
+        font-size: 17px;
+    }
+
     .contact-page .site-navigation {
-        right: 24%;
+        right: 7%;
+        bottom: 7%;
+
         gap: 18px;
+    }
+
+    .contact-page .site-navigation a:not(.instagram) {
+        font-size: 17px;
+    }
+
+    .instagram-icon {
+        width: 40px;
+        height: 40px;
     }
 
 }
@@ -264,7 +282,7 @@ body {
 <main class="contact-page">
 
 
-    <!-- IMAGE -->
+    <!-- BACKGROUND IMAGE -->
 
     <picture>
 
