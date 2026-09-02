@@ -35,24 +35,26 @@ body {
 
 .bio-background {
     display: block;
+
     width: 100%;
     height: auto;
+
     object-fit: contain;
 }
 
 
 /* =========================
-   BIO TEXT
+   BIO TEXT — DESKTOP
 ========================= */
 
 .bio-content {
     position: absolute;
 
-    top: 23%;
+    top: calc(23% + 15px);
     left: calc(5.5% + 30px);
 
-    width: 570px;
-    max-width: 570px;
+    width: 456px;
+    max-width: 456px;
 
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -97,16 +99,20 @@ body {
         overflow: visible;
     }
 
+
+    /* IMAGE */
+
     .bio-background {
         width: 100%;
         height: auto;
+
         object-fit: contain;
     }
 
 
     /* BIO TEXT
-       Aligned with the name,
-       15px more space below it */
+       SAME LEFT EDGE AS NAME
+       MOBILE WIDTH PRESERVED */
 
     .bio-content {
         position: absolute;
@@ -114,8 +120,8 @@ body {
         top: 200px;
         left: 6%;
 
-        width: 330px;
-        max-width: 330px;
+        width: calc(81vw - 57px);
+        max-width: calc(81vw - 57px);
 
         font-size: 12px;
         font-weight: 300;
@@ -133,9 +139,12 @@ body {
     }
 
 
-    /* NAVIGATION */
+    /* NAVIGATION
+       FIXED AND INDEPENDENT FROM IMAGE */
 
     .bio-page .site-navigation {
+        position: fixed;
+
         top: auto;
         left: auto;
 
@@ -146,6 +155,7 @@ body {
 
         gap: 22px;
     }
+
 }
 
 
@@ -159,15 +169,17 @@ body {
         top: 175px;
         left: 6%;
 
-        width: 275px;
-        max-width: 275px;
+        width: calc(81vw - 57px);
+        max-width: calc(81vw - 57px);
     }
 
     .bio-page .site-navigation {
         right: 7%;
         bottom: 7%;
+
         gap: 18px;
     }
+
 }
 
 </style>
@@ -198,8 +210,12 @@ body {
 
     <!-- CLICKABLE NAME -->
 
-    <a href="index.html" class="site-name">
+    <a
+        href="index.html"
+        class="site-name">
+
         OLGA PROKHOROVA
+
     </a>
 
 
@@ -216,7 +232,7 @@ body {
         </p>
 
         <p>
-            She makes poetic interventions in everyday environments, often working with public space, participation and situations that shift familiar ways of seeing and experiencing. Through this work, Olga seeks to maintain her personal dignity as a human being — a dignity that has been doubted and challenged many times in her life. She creates space for others to recognise their own experiences and embrace the freedom of not being fixed.
+            She makes poetic interventions in everyday environments, often working with public space, participation and situations that shift familiar ways of seeing and experiencing. Through this work, Olga seeks to maintain a dignity for human being — a dignity that has been doubted and challenged many times in her life. She creates space for others to recognise their own experiences and embrace the uncertainty.
         </p>
 
         <p>
