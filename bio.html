@@ -1,298 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Bio — Olga Prokhorova</title>
+<title>Bio — Olga Prokhorova</title>
 
-  <style>
+<style>
 
-    * {
-      box-sizing: border-box;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100%;
-    }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
 
-    body {
-      background: #000;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-
-    /* =================================
-       BIO PAGE
-       ================================= */
-
-    .bio-page {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-    }
+body {
+    background: #000;
+    color: #d8d8d8;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+}
 
 
-    /* =================================
-       BIO IMAGE
-       ================================= */
+/* =========================
+   PAGE
+========================= */
 
-    .bio-background {
-      display: block;
-
-      width: 100%;
-      height: auto;
-
-      margin: 0;
-      padding: 0;
-
-      object-fit: contain;
-    }
+.bio-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
 
 
-    /* =================================
-       MASTER NAME
-       ================================= */
+/* =========================
+   BACKGROUND IMAGE
+========================= */
+
+.bio-background {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.name-link {
+    position: absolute;
+    top: calc(11% + 30px);
+    left: calc(5.5% + 30px);
+    z-index: 10;
+
+    color: #efefef;
+    text-decoration: none;
+}
+
+.bio-name {
+    margin: 0;
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 55px;
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: 5px;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   BIO TEXT
+========================= */
+
+.bio-content {
+    position: absolute;
+    top: 23%;
+    left: 6.7%;
+
+    width: 32%;
+    max-width: 520px;
+
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.55;
+
+    color: #d8d8d8;
+}
+
+.bio-content p {
+    margin: 0 0 25px 0;
+}
+
+.bio-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   NAVIGATION — SAME AS HOME
+========================= */
+
+.bio-nav {
+    position: absolute;
+    z-index: 3;
+
+    top: calc(50% + 180px);
+    left: 79%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 34px;
+}
+
+.bio-nav a:not(.instagram) {
+    color: #efefef;
+    text-decoration: none;
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 1;
+
+    transition: opacity 0.25s ease;
+}
+
+.bio-nav a:not(.instagram):hover {
+    opacity: 0.55;
+}
+
+
+/* =========================
+   INSTAGRAM — SAME AS HOME
+========================= */
+
+.bio-nav .instagram {
+    display: block;
+
+    width: 22px;
+    height: 22px;
+
+    margin-bottom: 8px;
+
+    opacity: 0.95;
+
+    transition: opacity 0.25s ease;
+}
+
+.bio-nav .instagram img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.bio-nav .instagram:hover {
+    opacity: 0.55;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
 
     .name-link {
-      position: absolute;
-
-      top: calc(11% + 30px);
-      left: calc(5.5% + 30px);
-
-      z-index: 20;
-
-      color: #efefef;
-      text-decoration: none;
+        top: calc(10% + 30px);
+        left: calc(5% + 30px);
     }
 
     .bio-name {
-      margin: 0;
-
-      color: #efefef;
-
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 55px;
-      font-weight: 200;
-      line-height: 1;
-      letter-spacing: 5px;
-
-      white-space: nowrap;
-    }
-
-
-    /* =================================
-       BIO TEXT
-       PAGE-SPECIFIC
-       ================================= */
-
-    .bio-text {
-      position: absolute;
-
-      top: 23%;
-      left: 6.7%;
-
-      width: 32%;
-      max-width: 520px;
-
-      color: #d8d8d8;
-
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 1.55;
-
-      z-index: 10;
-    }
-
-    .bio-text p {
-      margin: 0 0 25px 0;
-    }
-
-    .bio-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .bio-text em {
-      font-style: italic;
-    }
-
-
-    /* =================================
-       MASTER NAVIGATION
-       ================================= */
-
-    .navigation {
-      position: absolute;
-
-      z-index: 20;
-
-      top: calc(50% + 180px);
-      left: 79%;
-
-      transform: translate(-50%, -50%);
-
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      gap: 34px;
-    }
-
-
-    /* =================================
-       INSTAGRAM
-       ================================= */
-
-    .instagram {
-      display: block;
-
-      width: 22px;
-      height: 22px;
-
-      margin-bottom: 8px;
-
-      opacity: 0.95;
-
-      transition: opacity 0.25s ease;
-    }
-
-    .instagram img {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: contain;
-    }
-
-    .instagram:hover {
-      opacity: 0.55;
-    }
-
-
-    /* =================================
-       MASTER NAVIGATION LINKS
-       ================================= */
-
-    .navigation a:not(.instagram) {
-      color: #efefef;
-
-      text-decoration: none;
-
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 23px;
-      font-weight: 300;
-      line-height: 1;
-
-      transition: opacity 0.25s ease;
-    }
-
-    .navigation a:not(.instagram):hover {
-      opacity: 0.55;
-    }
-
-
-    /* =================================
-       TABLET
-       ================================= */
-
-    @media (max-width: 1100px) {
-
-      .name-link {
-        top: calc(10% + 30px);
-        left: calc(5% + 30px);
-      }
-
-      .bio-name {
         font-size: 45px;
         font-weight: 200;
         letter-spacing: 4px;
-      }
+    }
 
-      .navigation {
+    .bio-nav {
         top: calc(50% + 150px);
         left: 79%;
-
         gap: 30px;
-      }
+    }
 
-      .navigation a:not(.instagram) {
+    .bio-nav a:not(.instagram) {
         font-size: 21px;
-      }
+    }
 
-      .instagram {
+    .bio-nav .instagram {
         width: 20px;
         height: 20px;
         margin-bottom: 5px;
-      }
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .bio-page {
+        width: 100vw;
+        min-height: 100svh;
+        overflow: visible;
+    }
+
+    .bio-background {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
 
-    /* =================================
-       MOBILE
-       ================================= */
+    /* NAME — SAME AS HOME */
 
-    @media (max-width: 700px) {
-
-      .bio-page {
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
-      }
-
-
-      /* MOBILE IMAGE */
-
-      .bio-background {
-        display: block;
-
-        width: 100%;
-        height: auto;
-
-        margin: 0;
-        padding: 0;
-
-        object-fit: contain;
-      }
-
-
-      /* MASTER MOBILE NAME */
-
-      .name-link {
-        position: absolute;
-
+    .name-link {
         top: calc(6% + 70px);
         left: 6%;
+    }
 
-        width: auto;
-
-        transform: none;
-
-        color: #efefef;
-      }
-
-      .bio-name {
-        margin: 0;
-
+    .bio-name {
         font-size: 30px;
         font-weight: 200;
-        line-height: 1.1;
         letter-spacing: 3px;
-
-        color: #efefef;
-      }
+    }
 
 
-      /* BIO TEXT */
+    /* BIO TEXT */
 
-      .bio-text {
+    .bio-content {
         position: absolute;
 
         top: 37%;
@@ -301,27 +258,19 @@
         width: 78%;
         max-width: none;
 
-        color: #d8d8d8;
-
         font-size: 12px;
         font-weight: 300;
         line-height: 1.55;
+    }
 
-        z-index: 10;
-      }
-
-      .bio-text p {
-        margin: 0 0 20px 0;
-      }
-
-      .bio-text p:last-child {
-        margin-bottom: 0;
-      }
+    .bio-content p {
+        margin-bottom: 25px;
+    }
 
 
-      /* MASTER MOBILE NAVIGATION */
+    /* NAVIGATION — SAME AS HOME */
 
-      .navigation {
+    .bio-nav {
         top: auto;
         left: auto;
 
@@ -331,163 +280,147 @@
         transform: none;
 
         gap: 22px;
-      }
-
-      .navigation a:not(.instagram) {
-        font-size: 19px;
-        font-weight: 300;
-      }
-
-      .instagram {
-        width: 20px;
-        height: 20px;
-
-        margin-bottom: 0;
-      }
-
     }
 
+    .bio-nav a:not(.instagram) {
+        font-size: 19px;
+        font-weight: 300;
+    }
 
-    /* =================================
-       SMALL MOBILE
-       ================================= */
+    .bio-nav .instagram {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 0;
+    }
+}
 
-    @media (max-width: 430px) {
 
-      .name-link {
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 430px) {
+
+    .name-link {
         top: calc(6% + 60px);
-      }
+        left: 6%;
+    }
 
-      .bio-name {
+    .bio-name {
         font-size: 25px;
         font-weight: 200;
         letter-spacing: 3px;
-      }
+    }
 
-      .navigation {
+    .bio-nav {
         right: 7%;
         bottom: 7%;
 
         gap: 18px;
-      }
-
-      .navigation a:not(.instagram) {
-        font-size: 17px;
-      }
-
-      .instagram {
-        width: 18px;
-        height: 18px;
-      }
-
     }
 
-  </style>
+    .bio-nav a:not(.instagram) {
+        font-size: 17px;
+    }
+
+    .bio-nav .instagram {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+</style>
 </head>
 
 
 <body>
 
-  <main class="bio-page">
+<main class="bio-page">
 
 
-    <!-- =================================
-         BIO IMAGE
-         ================================= -->
+    <!-- BACKGROUND IMAGE -->
 
     <picture>
 
-      <source
-        media="(max-width: 700px)"
-        srcset="bio_mobile_RESIZED.png">
+        <source
+            media="(max-width: 700px)"
+            srcset="bio_mobile_RESIZED.png">
 
-      <img
-        class="bio-background"
-        src="bio_desktop_RESIZED.png"
-        alt=""
-      >
-
+        <img
+            class="bio-background"
+            src="bio_desktop_RESIZED.png"
+            alt="Olga Prokhorova">
+            
     </picture>
 
 
-    <!-- =================================
-         CLICKABLE ARTIST NAME
-         ================================= -->
+    <!-- CLICKABLE NAME -->
 
-    <a
-      class="name-link"
-      href="index.html"
-      aria-label="Olga Prokhorova — Home"
-    >
-      <h1 class="bio-name">
-        OLGA PROKHOROVA
-      </h1>
+    <a href="index.html" class="name-link">
+        <h1 class="bio-name">OLGA PROKHOROVA</h1>
     </a>
 
 
-    <!-- =================================
-         BIO TEXT
-         ================================= -->
+    <!-- BIO TEXT -->
 
-    <section class="bio-text">
+    <section class="bio-content">
 
-      <p>
-        Olga Prokhorova (b. 1981, Udmurtia, Russian Federation) is a performance artist based in Oulu, Northern Finland, working internationally since 2007. Having lived nearly half of her life as an immigrant and being a mother of two sons, her experiences of belonging, displacement, family and gender roles affect her artistic perspective.
-      </p>
+        <p>
+            Olga Prokhorova (b. 1981, Udmurtia, Russian Federation) is a performance artist based in Oulu, Northern Finland, working internationally since 2007. Having lived nearly half of her life as an immigrant and being a mother of two sons, her experiences of belonging, displacement, family and gender roles affect her artistic perspective.
+        </p>
 
-      <p>
-        Olga’s performance practice is informed by studies in journalism at Udmurtia State University, performance at Sverigefinska folkhögskola, dance at Itä-Suomen Liikuntaopisto, and visual media and communication at Oulu University of Applied Sciences. These different fields shape the way she works with the body, movement, attention, storytelling and the relationship between people and place.
-      </p>
+        <p>
+            Olga’s performance practice is informed by studies in journalism at Udmurtia State University, performance at Sverigefinska folkhögskola, dance at Itä-Suomen Liikuntaopisto, and visual media and communication at Oulu University of Applied Sciences. These different fields shape the way she works with the body, movement, attention, storytelling and the relationship between people and place.
+        </p>
 
-      <p>
-        She makes poetic interventions in everyday environments, often working with public space, participation and situations that shift familiar ways of seeing and experiencing. Through this work, Olga seeks to maintain her personal dignity as a human being — a dignity that has been doubted and challenged many times in her life. She creates space for others to recognise their own experiences and embrace their right to remain unfinished.
-      </p>
+        <p>
+            She makes poetic interventions in everyday environments, often working with public space, participation and situations that shift familiar ways of seeing and experiencing. Through this work, Olga seeks to maintain her personal dignity as a human being — a dignity that has been doubted and challenged many times in her life. She creates space for others to recognise their own experiences and embrace their right to remain unfinished.
+        </p>
 
-      <p>
-        Alongside performance, Prokhorova works with poetry and photography. In 2025, she published <em>Märkä kivi</em> (<em>Wet Stone</em>), a book of poetry and photographic self-portraits, extending her exploration of the body, personal narrative and image.
-      </p>
+        <p>
+            Alongside performance, Prokhorova works with poetry and photography. In 2025, she published <em>Märkä kivi</em> (<em>Wet Stone</em>), a book of poetry and photographic self-portraits, extending her exploration of the body, personal narrative and image.
+        </p>
 
-      <p>
-        Prokhorova frequently presents her work in the midst of everyday life — on streets, in residential areas and in nature. Her works have been presented internationally in Sweden, Norway, Estonia, Russia and Mexico, and virtually in Germany, India and Canada.
-      </p>
+        <p>
+            Prokhorova frequently presents her work in the midst of everyday life — on streets, in residential areas and in nature. Her works have been presented internationally in Sweden, Norway, Estonia, Russia and Mexico, and virtually in Germany, India and Canada.
+        </p>
 
-      <p>
-        MUU ry member.
-      </p>
+        <p>
+            MUU ry member.
+        </p>
 
     </section>
 
 
-    <!-- =================================
-         MASTER NAVIGATION
-         ================================= -->
+    <!-- NAVIGATION -->
 
-    <nav class="navigation">
+    <nav class="bio-nav">
 
-      <a
-        class="instagram"
-        href="https://www.instagram.com/performateria/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-      >
-        <img
-          src="instagram_icon.png"
-          alt="Instagram"
-        >
-      </a>
+        <a
+            class="instagram"
+            href="https://www.instagram.com/performateria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram">
 
-      <a href="work.html">works</a>
+            <img
+                src="instagram_icon.png"
+                alt="Instagram">
 
-      <a href="cv.html">cv</a>
+        </a>
 
-      <a href="bio.html">bio</a>
+        <a href="work.html">works</a>
 
-      <a href="contact.html">contact</a>
+        <a href="cv.html">cv</a>
+
+        <a href="bio.html">bio</a>
+
+        <a href="contact.html">contact</a>
 
     </nav>
 
-  </main>
+
+</main>
 
 </body>
 </html>
