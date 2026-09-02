@@ -1,531 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Works — Olga Prokhorova</title>
+    <title>Works — Olga Prokhorova</title>
 
-<style>
+    <style>
 
-* {
-    box-sizing: border-box;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
 
-body {
-    background: #ffffff;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    color: #515151;
-    overflow-x: hidden;
-}
+        body {
+            background: #ffffff;
+            color: #515151;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+        }
 
 
-/* =================================
-   WORKS PAGE
-   ================================= */
+        /* =================================
+           WORKS PAGE
+           ================================= */
 
-.works-page {
-    position: relative;
-    width: 100%;
-    background: #ffffff;
-}
+        .works-page {
+            width: 100%;
+            min-height: 100vh;
+        }
 
 
-/* =================================
-   WORK
-   ================================= */
+        /* =================================
+           FIRST IMAGE / NAME
+           ================================= */
 
-.work {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-}
+        .work-first {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
 
+        .work-first img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
-/* =================================
-   FIRST IMAGE
-   ================================= */
 
-.first-work-image {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
+        /* =================================
+           ARTIST NAME
+           ================================= */
 
-.first-work-image .work-image {
-    width: 100%;
-    height: 100%;
-}
+        .name {
+            position: absolute;
 
+            top: calc(11% + 30px);
+            left: calc(5.5% + 30px);
 
-/* =================================
-   ARTIST NAME
-   ================================= */
+            margin: 0;
 
-.name {
-    position: absolute;
+            z-index: 10;
 
-    top: calc(11% + 30px);
-    left: calc(5.5% + 30px);
+            color: #efefef;
 
-    margin: 0;
+            font-family:
+                "Helvetica Neue",
+                Helvetica,
+                Arial,
+                sans-serif;
 
-    z-index: 10;
+            font-size: 55px;
+            font-weight: 200;
 
-    color: #efefef;
-    text-decoration: none;
+            line-height: 1;
+            letter-spacing: 5px;
 
-    font-family:
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+            white-space: nowrap;
 
-    font-size: 55px;
-    font-weight: 200;
+            text-decoration: none;
+        }
 
-    line-height: 1;
-    letter-spacing: 5px;
 
-    white-space: nowrap;
-}
+        /* =================================
+           NAVIGATION
+           ================================= */
 
+        .navigation {
+            position: fixed;
 
-/* =================================
-   WORK IMAGES
-   ================================= */
+            z-index: 100;
 
-.work-image {
-    display: block;
+            top: calc(50% + 180px);
+            left: 79%;
 
-    width: 100%;
-    height: 100vh;
+            transform: translate(-50%, -50%);
 
-    margin: 0;
-    padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
 
-    object-fit: cover;
-    object-position: center;
-}
+            gap: 34px;
+        }
 
 
-/* =================================
-   WHITE TEXT BLOCKS
-   ================================= */
+        /* =================================
+           INSTAGRAM
+           ================================= */
 
-.work-info {
-    width: 100%;
+        .instagram {
+            display: block;
 
-    margin: 0;
-    padding: 50px 5.5% 100px 5.5%;
+            width: 22px;
+            height: 22px;
 
-    background: #ffffff;
-    color: #515151;
-}
+            margin-bottom: 8px;
 
+            opacity: 0.95;
 
-.work-info h2 {
-    margin: 0 0 18px 0;
+            transition: opacity 0.25s ease;
+        }
 
-    font-family:
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+        .instagram img {
+            display: block;
 
-    font-size: 14px;
-    font-weight: 500;
+            width: 100%;
+            height: 100%;
 
-    line-height: 1.45;
-    letter-spacing: 0;
+            object-fit: contain;
+        }
 
-    color: #515151;
-}
+        .instagram:hover {
+            opacity: 0.55;
+        }
 
 
-.work-info p {
-    margin: 0 0 12px 0;
+        /* =================================
+           NAVIGATION LINKS
+           ================================= */
 
-    max-width: 650px;
+        .navigation a:not(.instagram) {
+            color: #efefef;
 
-    font-family:
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+            text-decoration: none;
 
-    font-size: 14px;
-    font-weight: 300;
+            font-family:
+                "Helvetica Neue",
+                Helvetica,
+                Arial,
+                sans-serif;
 
-    line-height: 1.45;
+            font-size: 23px;
+            font-weight: 300;
 
-    color: #515151;
-}
+            line-height: 1;
 
+            transition: opacity 0.25s ease;
+        }
 
-.work-info p:last-child {
-    margin-bottom: 0;
-}
+        .navigation a:not(.instagram):hover {
+            opacity: 0.55;
+        }
 
 
-/* =================================
-   NAVIGATION
-   ================================= */
+        /* =================================
+           WORK IMAGE
+           ================================= */
 
-.navigation {
-    position: fixed;
+        .work-image {
+            display: block;
 
-    z-index: 100;
+            width: 100%;
+            height: 100vh;
 
-    top: calc(50% + 180px);
-    left: 79%;
+            object-fit: cover;
+            object-position: center;
+        }
 
-    transform: translate(-50%, -50%);
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+        /* =================================
+           WORK TEXT
+           ================================= */
 
-    gap: 34px;
-}
+        .work-text {
+            background: #ffffff;
 
+            padding-top: 40px;
+            padding-bottom: 110px;
 
-/* =================================
-   INSTAGRAM
-   ================================= */
+            padding-left: calc(5.5% + 30px);
+            padding-right: 30px;
 
-.instagram {
-    display: block;
+            color: #515151;
+        }
 
-    width: 22px;
-    height: 22px;
+        .work-text h2 {
+            margin: 0 0 18px 0;
 
-    margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
 
-    opacity: 0.95;
+            line-height: 1.45;
+        }
 
-    transition: opacity 0.25s ease;
-}
+        .work-text p {
+            margin: 0 0 18px 0;
 
+            max-width: 650px;
 
-.instagram img {
-    display: block;
+            font-size: 14px;
+            font-weight: 300;
 
-    width: 100%;
-    height: 100%;
+            line-height: 1.45;
+        }
 
-    object-fit: contain;
-}
+        .work-text p:last-child {
+            margin-bottom: 0;
+        }
 
 
-.instagram:hover {
-    opacity: 0.55;
-}
+        /* =================================
+           UP BUTTON
+           ================================= */
 
+        .up-button {
+            display: block;
 
-/* =================================
-   NAVIGATION LINKS
-   ================================= */
+            width: fit-content;
 
-.navigation a:not(.instagram) {
-    color: #efefef;
+            margin: 0 auto;
 
-    text-decoration: none;
+            padding: 0 0 60px 0;
 
-    font-family:
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+            color: #515151;
 
-    font-size: 23px;
-    font-weight: 300;
+            text-decoration: none;
 
-    line-height: 1;
+            font-family:
+                "Helvetica Neue",
+                Helvetica,
+                Arial,
+                sans-serif;
 
-    transition: opacity 0.25s ease;
-}
+            font-size: 14px;
+            font-weight: 500;
 
+            line-height: 1;
+        }
 
-.navigation a:not(.instagram):hover {
-    opacity: 0.55;
-}
+        .up-button:hover {
+            opacity: 0.55;
+        }
 
 
-/* =================================
-   UP
-   Appears only at bottom of page
-   ================================= */
+        /* =================================
+           TABLET
+           ================================= */
 
-.up-button {
-    display: block;
+        @media (max-width: 1100px) {
 
-    width: fit-content;
+            .name {
+                top: calc(10% + 30px);
+                left: calc(5% + 30px);
 
-    margin: 0 auto;
-    padding: 0 0 60px 0;
+                font-size: 45px;
+                font-weight: 200;
 
-    color: #515151;
+                letter-spacing: 4px;
+            }
 
-    text-decoration: none;
+            .navigation {
+                top: calc(50% + 150px);
+                left: 79%;
 
-    font-family:
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+                gap: 30px;
+            }
 
-    font-size: 14px;
-    font-weight: 500;
+            .navigation a:not(.instagram) {
+                font-size: 21px;
+            }
 
-    line-height: 1;
-}
+            .instagram {
+                width: 20px;
+                height: 20px;
 
-.up-button:hover {
-    opacity: 0.55;
-}
+                margin-bottom: 0;
+            }
 
+            .work-text {
+                padding-top: 40px;
+                padding-bottom: 110px;
 
-/* =================================
-   TABLET
-   ================================= */
+                padding-left: calc(5% + 30px);
+                padding-right: 30px;
+            }
+        }
 
-@media (max-width: 1100px) {
 
-    .name {
-        top: calc(10% + 30px);
-        left: calc(5% + 30px);
+        /* =================================
+           MOBILE
+           ================================= */
 
-        font-size: 45px;
-        font-weight: 200;
+        @media (max-width: 700px) {
 
-        letter-spacing: 4px;
-    }
+            body {
+                overflow-x: hidden;
+            }
 
+            .works-page {
+                width: 100%;
+                min-height: 100svh;
+            }
 
-    .navigation {
-        top: calc(50% + 150px);
-        left: 79%;
 
-        gap: 30px;
-    }
+            /* FIRST IMAGE */
 
+            .work-first {
+                height: 100svh;
+                min-height: 600px;
+            }
 
-    .navigation a:not(.instagram) {
-        font-size: 21px;
-    }
 
+            /* NAME */
 
-    .instagram {
-        width: 20px;
-        height: 20px;
+            .name {
+                top: calc(6% + 70px);
+                left: 6%;
 
-        margin-bottom: 5px;
-    }
+                font-size: 30px;
+                font-weight: 200;
 
+                letter-spacing: 3px;
+            }
 
-    .work-info {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-}
 
+            /* NAVIGATION */
 
-/* =================================
-   MOBILE
-   ================================= */
+            .navigation {
+                top: auto;
+                left: auto;
 
-@media (max-width: 700px) {
+                right: 7%;
+                bottom: 9%;
 
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
+                transform: none;
 
+                gap: 22px;
+            }
 
-    .first-work-image {
-        height: 100svh;
-    }
+            .navigation a:not(.instagram) {
+                font-size: 19px;
+                font-weight: 300;
+            }
 
+            .instagram {
+                width: 20px;
+                height: 20px;
 
-    .name {
-        top: calc(6% + 70px);
-        left: 6%;
+                margin-bottom: 0;
+            }
 
-        font-size: 30px;
-        font-weight: 200;
 
-        letter-spacing: 3px;
-    }
+            /* WORK IMAGES */
 
+            .work-image {
+                height: 100svh;
+                min-height: 600px;
+            }
 
-    .work-image {
-        width: 100%;
-        height: 100svh;
 
-        object-fit: cover;
-        object-position: center;
-    }
+            /* WORK TEXT */
 
+            .work-text {
+                padding-top: 40px;
+                padding-bottom: 110px;
 
-    .work-info {
-        width: 100%;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
 
-        padding: 50px 6% 100px 6%;
+            .work-text h2 {
+                margin-bottom: 16px;
 
-        background: #ffffff;
-        color: #515151;
-    }
+                font-size: 12px;
+                font-weight: 500;
 
+                line-height: 1.45;
+            }
 
-    .work-info h2 {
-        margin: 0 0 16px 0;
+            .work-text p {
+                margin-bottom: 16px;
 
-        font-size: 12px;
-        font-weight: 500;
+                max-width: calc(81vw - 57px);
 
-        line-height: 1.45;
+                font-size: 12px;
+                font-weight: 300;
 
-        color: #515151;
-    }
+                line-height: 1.45;
+            }
 
 
-    .work-info p {
-        margin: 0 0 10px 0;
+            /* UP */
 
-        max-width: calc(81vw - 57px);
+            .up-button {
+                padding-bottom: 50px;
 
-        font-size: 12px;
-        font-weight: 300;
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
 
-        line-height: 1.45;
 
-        color: #515151;
-    }
+        /* =================================
+           SMALL MOBILE
+           ================================= */
 
+        @media (max-width: 430px) {
 
-    /* MOBILE NAVIGATION */
+            .name {
+                top: calc(6% + 60px);
 
-    .navigation {
-        top: auto;
-        left: auto;
+                font-size: 25px;
+                font-weight: 200;
 
-        right: 7%;
-        bottom: 9%;
+                letter-spacing: 3px;
+            }
 
-        transform: none;
+            .navigation {
+                right: 7%;
+                bottom: 7%;
 
-        gap: 22px;
-    }
+                gap: 18px;
+            }
 
+            .navigation a:not(.instagram) {
+                font-size: 17px;
+            }
 
-    .navigation a:not(.instagram) {
-        font-size: 19px;
-        font-weight: 300;
-    }
+            .instagram {
+                width: 18px;
+                height: 18px;
+            }
 
 
-    .instagram {
-        width: 20px;
-        height: 20px;
+            /* WORK TEXT */
 
-        margin-bottom: 0;
-    }
+            .work-text {
+                padding-top: 40px;
+                padding-bottom: 110px;
 
+                padding-left: 6%;
+                padding-right: 6%;
+            }
 
-    .up-button {
-        padding-bottom: 50px;
+            .work-text h2 {
+                font-size: 12px;
+                font-weight: 500;
+            }
 
-        font-size: 12px;
-        font-weight: 500;
-    }
-}
+            .work-text p {
+                font-size: 12px;
+                max-width: calc(81vw - 57px);
+            }
 
 
-/* =================================
-   SMALL MOBILE
-   ================================= */
+            /* UP */
 
-@media (max-width: 430px) {
+            .up-button {
+                padding-bottom: 40px;
 
-    .name {
-        top: calc(6% + 60px);
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
 
-        font-size: 25px;
-        font-weight: 200;
-
-        letter-spacing: 3px;
-    }
-
-
-    .navigation {
-        right: 7%;
-        bottom: 7%;
-
-        gap: 18px;
-    }
-
-
-    .navigation a:not(.instagram) {
-        font-size: 17px;
-    }
-
-
-    .instagram {
-        width: 18px;
-        height: 18px;
-    }
-
-
-    .up-button {
-        padding-bottom: 40px;
-
-        font-size: 12px;
-        font-weight: 500;
-    }
-}
-
-</style>
+    </style>
 </head>
 
 
 <body id="top">
 
-<main class="works-page">
+    <main class="works-page">
 
 
-    <!-- =================================
-         1. JUOPPO JOOGAA
-         ================================= -->
+        <!-- =================================
+             JUOPPO JOOGAA
+             ================================= -->
 
-    <section class="work">
+        <div class="work-first">
 
-        <div class="first-work-image">
-
-            <img
-                src="w_2.jpg"
-                alt="JUOPPO JOOGAA"
-                class="work-image">
-
-            <a
-                href="index.html"
-                class="name">
+            <a href="index.html" class="name">
                 OLGA PROKHOROVA
             </a>
 
+            <nav class="navigation">
+
+                <a
+                    class="instagram"
+                    href="https://www.instagram.com/performateria/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <img
+                        src="instagram_icon.png"
+                        alt="Instagram"
+                    >
+                </a>
+
+                <a href="works.html">works</a>
+                <a href="about.html">about</a>
+                <a href="bio.html">bio</a>
+                <a href="contact.html">contact</a>
+
+            </nav>
+
+            <img
+                class="work-image"
+                src="w_2.jpg"
+                alt="JUOPPO JOOGAA"
+            >
+
         </div>
 
-
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>JUOPPO JOOGAA</h2>
 
@@ -541,23 +548,20 @@ body {
                 Each performance is a 20-minute session
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         2. AS ATTACHMENT
-         ================================= -->
-
-    <section class="work">
+        <!-- =================================
+             AS ATTACHMENT
+             ================================= -->
 
         <img
+            class="work-image"
             src="w_3.jpg"
             alt="AS ATTACHMENT"
-            class="work-image">
+        >
 
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>AS ATTACHMENT</h2>
 
@@ -566,30 +570,27 @@ body {
             </p>
 
             <p>
-                Joensuu, Finland 2021
+                Joensuu, Finland 2021.
             </p>
 
             <p>
-                Duration 4 hours
+                Duration 4 hours.
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         3. WEARING BURDEN
-         ================================= -->
-
-    <section class="work">
+        <!-- =================================
+             WEARING BURDEN
+             ================================= -->
 
         <img
+            class="work-image"
             src="w_4.jpg"
             alt="WEARING BURDEN"
-            class="work-image">
+        >
 
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>WEARING BURDEN</h2>
 
@@ -602,30 +603,27 @@ body {
             </p>
 
             <p>
-                Joensuu, Finland 2021
+                Joensuu, Finland 2021.
             </p>
 
             <p>
-                Duration 2 hours
+                Duration 2 hours.
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         4. COUNTING DAYS
-         ================================= -->
-
-    <section class="work">
+        <!-- =================================
+             COUNTING DAYS
+             ================================= -->
 
         <img
+            class="work-image"
             src="w_1_1.jpg"
             alt="COUNTING DAYS"
-            class="work-image">
+        >
 
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>COUNTING DAYS</h2>
 
@@ -638,30 +636,27 @@ body {
             </p>
 
             <p>
-                Mexico–Finland 2022
+                Mexico–Finland 2022.
             </p>
 
             <p>
-                Duration 2 years
+                Duration 2 years.
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         5. BOTTOM OF BLOOD
-         ================================= -->
-
-    <section class="work">
+        <!-- =================================
+             BOTTOM OF BLOOD
+             ================================= -->
 
         <img
+            class="work-image"
             src="w_7.jpg"
             alt="BOTTOM OF BLOOD"
-            class="work-image">
+        >
 
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>BOTTOM OF BLOOD</h2>
 
@@ -674,30 +669,27 @@ body {
             </p>
 
             <p>
-                Joensuu, Finland 2021
+                Joensuu, Finland 2021.
             </p>
 
             <p>
-                Duration 30 minutes
+                Duration 30 minutes.
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         6. OPPOSITE CATHERINE
-         ================================= -->
-
-    <section class="work">
+        <!-- =================================
+             OPPOSITE CATHERINE
+             ================================= -->
 
         <img
+            class="work-image"
             src="w_9.jpg"
             alt="OPPOSITE CATHERINE"
-            class="work-image">
+        >
 
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>OPPOSITE CATHERINE</h2>
 
@@ -714,30 +706,27 @@ body {
             </p>
 
             <p>
-                Oulu, Finland 2016
+                Oulu, Finland 2016.
             </p>
 
             <p>
-                Duration 5 hours
+                Duration 5 hours.
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         7. ABUNDANCE
-         ================================= -->
-
-    <section class="work">
+        <!-- =================================
+             ABUNDANCE
+             ================================= -->
 
         <img
+            class="work-image"
             src="w_6.jpg"
             alt="ABUNDANCE"
-            class="work-image">
+        >
 
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>ABUNDANCE</h2>
 
@@ -750,30 +739,27 @@ body {
             </p>
 
             <p>
-                Joensuu, Finland 2021, Night of Arts
+                Joensuu, Finland 2021, Night of Arts.
             </p>
 
             <p>
-                Duration 1 hour 20 minutes
+                Duration 1 hour 20 minutes.
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         8. IN LOVE WITH THE BUS STOP
-         ================================= -->
-
-    <section class="work">
+        <!-- =================================
+             IN LOVE WITH THE BUS STOP
+             ================================= -->
 
         <img
+            class="work-image"
             src="w_8_2.jpg"
             alt="IN LOVE WITH THE BUS STOP"
-            class="work-image">
+        >
 
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>IN LOVE WITH THE BUS STOP</h2>
 
@@ -786,30 +772,27 @@ body {
             </p>
 
             <p>
-                Joensuu, Finland 2022
+                Joensuu, Finland 2022.
             </p>
 
             <p>
-                Duration 1 hour
+                Duration 1 hour.
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         9. NEVER-LOST IN KUHASALO
-         ================================= -->
-
-    <section class="work">
+        <!-- =================================
+             NEVER-LOST IN KUHASALO
+             ================================= -->
 
         <img
+            class="work-image"
             src="w_5.jpg"
             alt="NEVER-LOST IN KUHASALO"
-            class="work-image">
+        >
 
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>NEVER-LOST IN KUHASALO</h2>
 
@@ -822,30 +805,27 @@ body {
             </p>
 
             <p>
-                Joensuu, Finland 2021
+                Joensuu, Finland 2021.
             </p>
 
             <p>
-                Duration 1 hour 30 minutes
+                Duration 1 hour 30 minutes.
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         10. STRESS OR MISTRESS
-         ================================= -->
-
-    <section class="work">
+        <!-- =================================
+             STRESS OR MISTRESS
+             ================================= -->
 
         <img
+            class="work-image"
             src="w_10.jpg"
             alt="STRESS OR MISTRESS"
-            class="work-image">
+        >
 
-        <div class="work-info">
+        <section class="work-text">
 
             <h2>STRESS OR MISTRESS</h2>
 
@@ -862,59 +842,26 @@ body {
             </p>
 
             <p>
-                Oulu, Finland 2022
+                Oulu, Finland 2022.
             </p>
 
             <p>
-                Duration 20 minutes
+                Duration 20 minutes.
             </p>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================
-         NAVIGATION
-         ================================= -->
+        <!-- =================================
+             UP
+             ================================= -->
 
-    <nav class="navigation">
-
-        <a
-            class="instagram"
-            href="https://www.instagram.com/performateria/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram">
-
-            <img
-                src="instagram_icon.png"
-                alt="Instagram">
-
+        <a href="#top" class="up-button">
+            UP
         </a>
 
-        <a href="works.html">works</a>
 
-        <a href="about.html">about</a>
-
-        <a href="bio.html">bio</a>
-
-        <a href="contact.html">contact</a>
-
-    </nav>
-
-
-    <!-- =================================
-         UP — ONLY AT THE VERY BOTTOM
-         ================================= -->
-
-    <a
-        href="#top"
-        class="up-button">
-        UP
-    </a>
-
-</main>
+    </main>
 
 </body>
 </html>
