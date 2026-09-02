@@ -43,7 +43,7 @@ body {
 
 
 /* =========================
-   ABOUT TEXT
+   ABOUT TEXT — DESKTOP
 ========================= */
 
 .about-content {
@@ -73,7 +73,7 @@ body {
 ========================= */
 
 .about-page .site-navigation {
-    position: absolute;
+    position: fixed;
 }
 
 
@@ -105,31 +105,34 @@ body {
 
 
     /* TEXT
-       SAME LEFT EDGE AS NAME
-       SAME WIDTH AS BIO
-       50PX HIGHER */
+       LEFT EDGE ALIGNED WITH NAME
+       INDEPENDENT FROM IMAGE
+       BOTTOM ALIGNED WITH CONTACT BUTTON */
 
     .about-content {
-        position: relative;
+        position: fixed;
 
         left: 6%;
-        bottom: auto;
+        bottom: 9%;
 
         width: 330px;
         max-width: 330px;
 
-        padding: 0 0 45px 0;
+        padding: 0;
 
-        transform: translateY(-230px);
+        transform: none;
 
         font-size: 14px;
         font-weight: 300;
         line-height: 1.45;
+
+        color: #444;
     }
 
 
     /* NAVIGATION
-       FIXED ON RIGHT SIDE */
+       FIXED ON RIGHT
+       SAME MASTER POSITION */
 
     .about-page .site-navigation {
         position: fixed;
@@ -156,17 +159,14 @@ body {
 
     .about-content {
         left: 6%;
+        bottom: 7%;
 
         width: 275px;
         max-width: 275px;
 
-        transform: translateY(-230px);
-
         font-size: 14px;
     }
 
-
-    /* NAVIGATION */
 
     .about-page .site-navigation {
         right: 7%;
@@ -193,7 +193,7 @@ body {
 
         <source
             media="(max-width: 700px)"
-            srcset="about_banner_2.jpg">
+            srcset="about_banner_2.png">
 
         <img
             class="about-background"
