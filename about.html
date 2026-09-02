@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About — Olga Prokhrova</title>
+  <title>About — Olga Prokhorova</title>
 
   <style>
 
@@ -29,7 +29,7 @@
 
 
     /* =========================================
-       DESKTOP
+       ABOUT PAGE
        ========================================= */
 
     .about-page {
@@ -48,29 +48,35 @@
     }
 
 
-    /* NAME — DESKTOP */
+    /* =========================================
+       MASTER NAME
+       ========================================= */
 
     .about-name {
       position: absolute;
-      left: 4.5%;
 
-      /* 40px further UP */
-      bottom: calc(23% + 90px);
+      top: calc(11% + 30px);
+      left: calc(5.5% + 30px);
 
       margin: 0;
 
-      font-size: 42px;
-      line-height: 1.05;
-      font-weight: 300;
-      letter-spacing: 4px;
-
       color: #efefef;
+
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 55px;
+      font-weight: 200;
+      line-height: 1;
+      letter-spacing: 5px;
+
+      white-space: nowrap;
 
       z-index: 10;
     }
 
 
-    /* TEXT BLOCK — DESKTOP */
+    /* =========================================
+       ABOUT TEXT
+       ========================================= */
 
     .about-content {
       position: absolute;
@@ -116,6 +122,112 @@
 
 
     /* =========================================
+       MASTER NAVIGATION
+       ========================================= */
+
+    .navigation {
+      position: absolute;
+
+      z-index: 20;
+
+      top: calc(50% + 180px);
+      left: 79%;
+
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      gap: 34px;
+    }
+
+
+    /* INSTAGRAM */
+
+    .instagram {
+      display: block;
+
+      width: 22px;
+      height: 22px;
+
+      margin-bottom: 8px;
+
+      opacity: 0.95;
+
+      transition: opacity 0.25s ease;
+    }
+
+    .instagram img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .instagram:hover {
+      opacity: 0.55;
+    }
+
+
+    /* NAVIGATION LINKS */
+
+    .navigation a:not(.instagram) {
+      color: #efefef;
+
+      text-decoration: none;
+
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 23px;
+      font-weight: 300;
+      line-height: 1;
+
+      transition: opacity 0.25s ease;
+    }
+
+    .navigation a:not(.instagram):hover {
+      opacity: 0.55;
+    }
+
+
+    /* =========================================
+       TABLET
+       ========================================= */
+
+    @media (max-width: 1100px) {
+
+      .about-name {
+        top: calc(10% + 30px);
+        left: calc(5% + 30px);
+
+        font-size: 45px;
+        font-weight: 200;
+
+        letter-spacing: 4px;
+      }
+
+      .navigation {
+        top: calc(50% + 150px);
+        left: 79%;
+
+        gap: 30px;
+      }
+
+      .navigation a:not(.instagram) {
+        font-size: 21px;
+      }
+
+      .instagram {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+      }
+    }
+
+
+    /* =========================================
        MOBILE
        ========================================= */
 
@@ -137,8 +249,7 @@
       }
 
 
-      /* MOBILE IMAGE
-         DO NOT CHANGE */
+      /* MOBILE IMAGE — KEEP */
 
       .about-image {
         display: block;
@@ -155,28 +266,27 @@
 
 
       /* =====================================
-         MOBILE NAME
-         10px DOWN
+         MASTER MOBILE NAME
          ===================================== */
 
       .about-name {
         position: absolute;
 
-        top: 45px;
-        left: 0;
+        top: calc(6% + 70px);
+        left: 6%;
 
-        width: 100%;
+        width: auto;
 
         margin: 0;
-        padding: 0 20px;
+        padding: 0;
 
-        text-align: center;
+        text-align: left;
 
-        font-size: 32px;
+        font-size: 30px;
         line-height: 1.1;
 
-        font-weight: 300;
-        letter-spacing: 2px;
+        font-weight: 200;
+        letter-spacing: 3px;
 
         color: #efefef;
 
@@ -185,7 +295,7 @@
 
 
       /* =====================================
-         MOBILE TEXT + LINK
+         MOBILE TEXT
          ===================================== */
 
       .about-content {
@@ -203,9 +313,6 @@
         transform: translateY(-200px);
       }
 
-
-      /* BODY TEXT */
-
       .about-text {
         max-width: none;
 
@@ -217,9 +324,6 @@
 
         color: #333333;
       }
-
-
-      /* LINK */
 
       .about-link {
         display: block;
@@ -238,9 +342,35 @@
         text-underline-offset: 3px;
       }
 
-      .about-link:hover {
-        opacity: 0.65;
+
+      /* =====================================
+         MOBILE NAVIGATION
+         ===================================== */
+
+      .navigation {
+        top: auto;
+        left: auto;
+
+        right: 7%;
+        bottom: 9%;
+
+        transform: none;
+
+        gap: 22px;
       }
+
+      .navigation a:not(.instagram) {
+        font-size: 19px;
+        font-weight: 300;
+      }
+
+      .instagram {
+        width: 20px;
+        height: 20px;
+
+        margin-bottom: 0;
+      }
+
     }
 
 
@@ -248,35 +378,33 @@
        SMALL PHONES
        ========================================= */
 
-    @media (max-width: 390px) {
+    @media (max-width: 430px) {
 
       .about-name {
-        /* 10px DOWN from previous */
-        top: 35px;
+        top: calc(6% + 60px);
 
-        font-size: 29px;
-        letter-spacing: 2px;
+        font-size: 25px;
+        font-weight: 200;
+
+        letter-spacing: 3px;
       }
 
-      .about-content {
-        padding-left: 9%;
-        padding-right: 9%;
+      .navigation {
+        right: 7%;
+        bottom: 7%;
 
-        padding-bottom: 40px;
-
-        transform: translateY(-200px);
+        gap: 18px;
       }
 
-      .about-text {
-        font-size: 14px;
-        line-height: 1.45;
+      .navigation a:not(.instagram) {
+        font-size: 17px;
       }
 
-      .about-link {
-        margin-top: 32px;
-
-        font-size: 12px;
+      .instagram {
+        width: 18px;
+        height: 18px;
       }
+
     }
 
   </style>
@@ -287,30 +415,37 @@
 
   <main class="about-page">
 
+
+    <!-- =================================
+         IMAGE
+         ================================= -->
+
     <picture>
 
-      <!-- MOBILE IMAGE -->
       <source
         media="(max-width: 700px)"
         srcset="about_banner_2.png">
 
-      <!-- DESKTOP IMAGE -->
       <img
         class="about-image"
         src="banner_web_about.png"
-        alt="Olga Prokhrova performance">
+        alt="Olga Prokhorova performance">
 
     </picture>
 
 
-    <!-- NAME -->
+    <!-- =================================
+         ARTIST NAME
+         ================================= -->
 
     <h1 class="about-name">
       OLGA PROKHOROVA
     </h1>
 
 
-    <!-- BODY TEXT + LINK -->
+    <!-- =================================
+         ABOUT TEXT
+         ================================= -->
 
     <section class="about-content">
 
@@ -326,6 +461,39 @@
       </a>
 
     </section>
+
+
+    <!-- =================================
+         MASTER NAVIGATION
+         ================================= -->
+
+    <nav class="navigation">
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/performateria/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <img
+          src="instagram_icon.png"
+          alt="Instagram"
+        >
+      </a>
+
+      <a href="work.html">works</a>
+
+      <a href="about.html">about</a>
+
+      <a href="cv.html">cv</a>
+
+      <a href="bio.html">bio</a>
+
+      <a href="contact.html">contact</a>
+
+    </nav>
+
 
   </main>
 
