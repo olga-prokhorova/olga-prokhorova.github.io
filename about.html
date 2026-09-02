@@ -16,8 +16,8 @@
 ========================= */
 
 body {
-    background: #c2c9d3;
-    color: #333;
+    background: #efefef;
+    color: #444;
     overflow-x: hidden;
 }
 
@@ -25,27 +25,25 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 
 /* =========================
-   ABOUT IMAGE
+   BACKGROUND IMAGE
 ========================= */
 
-.about-image {
+.about-background {
     display: block;
 
     width: 100%;
-    height: 100vh;
+    height: auto;
 
-    object-fit: cover;
-    object-position: center center;
+    object-fit: contain;
 }
 
 
 /* =========================
-   ABOUT CONTENT
+   ABOUT TEXT
 ========================= */
 
 .about-content {
@@ -54,8 +52,8 @@ body {
     left: calc(5.5% + 30px);
     bottom: calc(12% + 100px);
 
-    width: 370px;
-    max-width: 370px;
+    width: 400px;
+    max-width: 400px;
 
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -67,6 +65,15 @@ body {
 
 .about-content p {
     margin: 0;
+}
+
+
+/* =========================
+   ABOUT NAVIGATION
+========================= */
+
+.about-page .site-navigation {
+    position: absolute;
 }
 
 
@@ -84,55 +91,57 @@ body {
     .about-page {
         width: 100vw;
         min-height: 100svh;
-        overflow: visible;
     }
 
-    .about-image {
+
+    /* IMAGE */
+
+    .about-background {
         width: 100%;
         height: auto;
 
         object-fit: contain;
-
-        transform: translateY(-50px);
-
-        margin-bottom: -50px;
     }
+
+
+    /* TEXT
+       SAME LEFT EDGE AS NAME
+       CALCULATED WIDTH */
 
     .about-content {
         position: relative;
 
-        left: auto;
+        left: 6%;
         bottom: auto;
 
-        width: 100%;
-        max-width: none;
+        width: calc(81vw - 57px);
+        max-width: calc(81vw - 57px);
 
-        padding: 0 9.5% 45px;
+        padding: 0 0 45px 0;
 
         transform: translateY(-180px);
 
         font-size: 14px;
         font-weight: 300;
         line-height: 1.45;
-
-        color: #333;
     }
 
 
-    /* About page navigation:
-       About is intentionally omitted. */
+    /* NAVIGATION
+       ALWAYS ON RIGHT */
 
-    .site-navigation {
+    .about-page .site-navigation {
         top: 48%;
         left: auto;
-        right: 7%;
 
+        right: 7%;
         bottom: auto;
 
-        transform: none;
+        transform: translateY(-50%);
 
         gap: 22px;
     }
+
 }
 
 
@@ -142,12 +151,22 @@ body {
 
 @media (max-width: 430px) {
 
-    .site-navigation {
-        top: 48%;
-        right: 7%;
+    .about-content {
+        left: 6%;
 
+        width: calc(81vw - 57px);
+        max-width: calc(81vw - 57px);
+
+        transform: translateY(-180px);
+
+        font-size: 14px;
+    }
+
+    .about-page .site-navigation {
+        right: 7%;
         gap: 18px;
     }
+
 }
 
 </style>
@@ -160,7 +179,7 @@ body {
 <main class="about-page">
 
 
-    <!-- ABOUT IMAGE -->
+    <!-- BACKGROUND IMAGE -->
 
     <picture>
 
@@ -169,17 +188,21 @@ body {
             srcset="about_banner_2.png">
 
         <img
-            class="about-image"
+            class="about-background"
             src="banner_web_about.png"
-            alt="Olga Prokhorova">
+            alt="">
 
     </picture>
 
 
     <!-- CLICKABLE NAME -->
 
-    <a href="index.html" class="site-name">
+    <a
+        href="index.html"
+        class="site-name">
+
         OLGA PROKHOROVA
+
     </a>
 
 
@@ -203,12 +226,12 @@ body {
             href="https://www.instagram.com/performateria/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
-        >
+            aria-label="Instagram">
+
             <img
                 src="instagram_icon.png"
-                alt="Instagram"
-            >
+                alt="Instagram">
+
         </a>
 
         <a href="work.html">works</a>
