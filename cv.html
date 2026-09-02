@@ -1,1 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CV — Olga Prokhorova</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================
+   CV PAGE
+========================= */
+
+body {
+    background: #efefef;
+    color: #515151;
+    overflow-x: hidden;
+}
+
+.cv-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: visible;
+}
+
+
+/* =========================
+   BACKGROUND IMAGE
+========================= */
+
+.cv-background {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   CV CONTENT — DESKTOP
+========================= */
+
+.cv-content {
+    position: absolute;
+
+    top: calc(23% + 15px);
+    left: calc(5.5% + 30px);
+
+    width: 456px;
+    max-width: 456px;
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.55;
+
+    color: #515151;
+}
+
+.cv-content h1 {
+    margin: 0 0 45px 0;
+
+    font-size: 28px;
+    font-weight: 200;
+    line-height: 1.1;
+    letter-spacing: 3px;
+
+    color: #515151;
+}
+
+.cv-content h2 {
+    margin: 0 0 25px 0;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.3;
+
+    color: #515151;
+}
+
+.cv-content p {
+    margin: 0 0 25px 0;
+}
+
+.cv-content .year {
+    margin: 0 0 5px 0;
+
+    font-weight: 400;
+}
+
+.cv-content .section {
+    margin-bottom: 45px;
+}
+
+.cv-content .entry {
+    margin-bottom: 25px;
+}
+
+.cv-content .entry:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.cv-page .site-navigation {
+    position: fixed;
+}
+
+.cv-page .site-navigation a:not(.instagram) {
+    color: #515151;
+}
+
+.cv-page .site-navigation a:not(.instagram):hover {
+    opacity: 0.55;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .cv-page {
+        width: 100vw;
+        min-height: 100svh;
+        overflow: visible;
+    }
+
+
+    /* IMAGE */
+
+    .cv-background {
+        width: 100%;
+        height: auto;
+
+        object-fit: contain;
+    }
+
+
+    /* CV TEXT */
+
+    .cv-content {
+        position: absolute;
+
+        top: 200px;
+        left: 6%;
+
+        width: calc(81vw - 57px);
+        max-width: calc(81vw - 57px);
+
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.55;
+
+        color: #515151;
+    }
+
+    .cv-content h1 {
+        margin-bottom: 35px;
+
+        font-size: 22px;
+        font-weight: 200;
+        letter-spacing: 2px;
+    }
+
+    .cv-content h2 {
+        margin-bottom: 20px;
+
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .cv-content p {
+        margin-bottom: 20px;
+    }
+
+    .cv-content .section {
+        margin-bottom: 40px;
+    }
+
+    .cv-content .entry {
+        margin-bottom: 20px;
+    }
+
+
+    /* NAVIGATION
+       FIXED — INDEPENDENT FROM IMAGE */
+
+    .cv-page .site-navigation {
+        position: fixed;
+
+        top: auto;
+        left: auto;
+
+        right: 7%;
+        bottom: 9%;
+
+        transform: none;
+
+        gap: 22px;
+    }
+
+    .cv-page .site-navigation a:not(.instagram) {
+        color: #515151;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 430px) {
+
+    .cv-content {
+        top: 175px;
+        left: 6%;
+
+        width: calc(81vw - 57px);
+        max-width: calc(81vw - 57px);
+    }
+
+    .cv-page .site-navigation {
+        right: 7%;
+        bottom: 7%;
+
+        gap: 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<main class="cv-page">
+
+
+    <!-- =========================
+         BACKGROUND IMAGE
+    ========================= -->
+
+    <picture>
+
+        <source
+            media="(max-width: 700px)"
+            srcset="cv_mobile.jpg">
+
+        <img
+            class="cv-background"
+            src="cv_desktop.jpg"
+            alt="">
+
+    </picture>
+
+
+    <!-- =========================
+         CLICKABLE NAME
+    ========================= -->
+
+    <a
+        href="index.html"
+        class="site-name"
+        style="color: #515151;">
+
+        OLGA PROKHOROVA
+
+    </a>
+
+
+    <!-- =========================
+         CV CONTENT
+    ========================= -->
+
+    <section class="cv-content">
+
+
+        <h1>CURRICULUM VITAE</h1>
+
+
+        <!-- EDUCATION -->
+
+        <div class="section">
+
+            <h2>Education</h2>
+
+            <div class="entry">
+                <p class="year">2021</p>
+                <p>
+                    Oulu University of Applied Sciences, Visual Media,
+                    Oulu / Finland
+                </p>
+            </div>
+
+            <div class="entry">
+                <p class="year">2019</p>
+                <p>
+                    PAS#62 Performance Art Studies with Johannes BBB Deimling,
+                    Tallinn / Estonia
+                </p>
+            </div>
+
+            <div class="entry">
+                <p class="year">2018–2019</p>
+                <p>
+                    Dance and Somatics, Eastern Finland Sports Institute,
+                    Joensuu / Finland
+                </p>
+            </div>
+
+            <div class="entry">
+                <p class="year">2007–2009</p>
+                <p>
+                    Performance Art, Sverigefinska folkhögskola,
+                    Haparanda / Sweden
+                </p>
+            </div>
+
+            <div class="entry">
+                <p class="year">1999–2004</p>
+                <p>
+                    Journalism, State University of Udmurtia,
+                    Russian Federation
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- CURRENT ARTISTIC PRACTICE -->
+
+        <div class="section">
+
+            <h2>Current Artistic Practice</h2>
+
+            <div class="entry">
+
+                <p>
+                    <strong>Juoppo Joogaa</strong> — ongoing performance project,
+                    Oulu, Finland.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SELECTED SOLO PERFORMANCES -->
+
+        <div class="section">
+
+            <h2>Selected Solo Performances</h2>
+
+
+            <div class="entry">
+
+                <p class="year">2024</p>
+
+                <p>
+                    Hidden — 2h solo performance,
+                    Rapumaja, Oulu / Finland.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2023</p>
+
+                <p>
+                    Street performance, Oulu / Finland.<br>
+                    Several site-specific performances in Oulu.<br>
+                    My identity is clear — street performance + Kiasma,
+                    Helsinki / Finland.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2022</p>
+
+                <p>
+                    Stress or Mistress, Oulu / Finland.<br>
+                    Counting Days 155, Rauha Kone,
+                    Oulu 2026 project, Oulu / Finland.<br>
+                    Counting Days 75, Oulu / Finland.<br>
+                    Counting Days 51, Norogachi / Mexico.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2021</p>
+
+                <p>
+                    Visible, Joensuu / Finland.<br>
+                    How Women Bares Her Sexuality, Joensuu / Finland.<br>
+                    When My Life Was a Burden, Joensuu / Finland.<br>
+                    Bottom of Blood, action painting performance,
+                    Joensuu / Finland.<br>
+                    Abundance, Art at Night, Joensuu / Finland.<br>
+                    Neverlost in Kuhasalo, Joensuu / Finland.<br>
+                    As Attachment, Joensuu / Finland.<br>
+                    Juoppo Joogaa, month-long performance experience,
+                    Joensuu / Finland.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2019</p>
+
+                <p>
+                    Gods on a Catwalk, Joensuu / Finland.<br>
+                    Suffocating Outside, Joensuu / Finland.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2018</p>
+
+                <p>
+                    Where Are the Blue Orange?,
+                    Izhevsk / Russia.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2017</p>
+
+                <p>
+                    Say Hello to the Mirror,
+                    Oulu / Finland.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2016</p>
+
+                <p>
+                    Multa Katriina,
+                    Oulu / Finland.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2013</p>
+
+                <p>
+                    Karamazo,
+                    Izhevsk / Russia.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2011</p>
+
+                <p>
+                    Audio Exhibition,
+                    Saint Petersburg / Russia.<br>
+                    Zakusologia,
+                    Izhevsk / Russia.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2010</p>
+
+                <p>
+                    Let's Drink for Love!,
+                    Izhevsk / Russia.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- GROUP PERFORMANCES -->
+
+        <div class="section">
+
+            <h2>Selected Group Performances, Festivals & Events</h2>
+
+
+            <div class="entry">
+
+                <p class="year">2025</p>
+
+                <p>
+                    The Other Side — Performance Festival,
+                    Vantaa / Finland.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2024–2025</p>
+
+                <p>
+                    Performanssilupi,
+                    Oulu / Finland.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2023</p>
+
+                <p>
+                    FADO Festival,
+                    Toronto / Canada.<br>
+                    Strömsfors Art Biennale,
+                    Strömsfors / Finland.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2022</p>
+
+                <p>
+                    O'Morir Festival,
+                    Norogachi / Mexico.<br>
+                    Video exhibition,
+                    Goa / India.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2021</p>
+
+                <p>
+                    BLACK KIT art archive,
+                    Cologne / Germany.<br>
+                    Mirrored, photo exhibition on performing for cameras,
+                    Helsinki / Finland.<br>
+                    Performance Art Oslo retrospective,
+                    Oslo / Norway.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2020</p>
+
+                <p>
+                    THE HOUR — 24-hour performance with 24 artists,
+                    Bergen / Norway.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2019</p>
+
+                <p>
+                    Performance at EKA — Estonian Academy of Arts,
+                    Tallinn / Estonia.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2018</p>
+
+                <p>
+                    Hostages, performance at Espoo City Theatre,
+                    Finland, as part of Diana Soria's project
+                    How to Teach About Violence Without Repeating It.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <p class="year">2016</p>
+
+                <p>
+                    PAO Festival — Performance Art Oslo,
+                    theme: Artist as a Nomad,
+                    Oslo / Norway.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- GRANTS -->
+
+        <div class="section">
+
+            <h2>Grants & Awards</h2>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2021</span><br>
+                    6-month performance art grant in North Karelia,
+                    Taike.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2016</span><br>
+                    Kultur i Nord — travel support.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2010</span><br>
+                    Joknainen — travel and material budget.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2010</span><br>
+                    Riksteatern Sweden — travel and show budget.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2009</span><br>
+                    Hans Hedbergs art stipendium.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2007–2009</span><br>
+                    Svenska Institutet — 2-year study grant.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PUBLICATIONS -->
+
+        <div class="section">
+
+            <h2>Publications</h2>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2025</span><br>
+                    <em>Märkä kivi (Wet Stone)</em> —
+                    poetry and photographic self-portraits.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2022</span><br>
+                    Kaleva — “Keho ei osaa valehdella”
+                    (Body Can't Lie), 10.06.2022.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2021</span><br>
+                    Performance Art Oslo — publication and book review.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2018</span><br>
+                    <em>Mother's Tongue</em>,
+                    edited by Willem Wilhelmus.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2016</span><br>
+                    Kaleva — “Multa Katriina askaroi kultaperuukissa”.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2013</span><br>
+                    X-Border Art Biennial publication.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMBERSHIPS -->
+
+        <div class="section">
+
+            <h2>Memberships</h2>
+
+            <p>
+                MUU ry.<br>
+                Joensuu Artists' Association.
+            </p>
+
+        </div>
+
+
+        <!-- TEACHING -->
+
+        <div class="section">
+
+            <h2>Teaching</h2>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2021</span><br>
+                    3-day performance art workshop,
+                    Joensuu / Finland.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2018–2020</span><br>
+                    Free movement workshops for children and adults,
+                    Finland and Russia.
+                </p>
+
+            </div>
+
+            <div class="entry">
+
+                <p>
+                    <span class="year">2014–2016</span><br>
+                    Video art and free movement workshops for children,
+                    Oulu / Finland.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav class="site-navigation">
+
+        <a
+            class="instagram"
+            href="https://www.instagram.com/performateria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram">
+
+            <img
+                src="instagram_icon_cv.png"
+                alt="Instagram">
+
+        </a>
+
+        <a href="work.html">works</a>
+
+        <a href="about.html">about</a>
+
+        <a href="bio.html">bio</a>
+
+        <a href="contact.html">contact</a>
+
+    </nav>
+
+
+</main>
+
+</body>
+</html>
