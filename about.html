@@ -106,7 +106,8 @@ body {
 
     /* TEXT
        SAME LEFT EDGE AS NAME
-       CALCULATED WIDTH */
+       CALCULATED WIDTH
+       MOVED 50PX HIGHER */
 
     .about-content {
         position: relative;
@@ -119,7 +120,7 @@ body {
 
         padding: 0 0 45px 0;
 
-        transform: translateY(-280px);
+        transform: translateY(-230px);
 
         font-size: 14px;
         font-weight: 300;
@@ -128,16 +129,16 @@ body {
 
 
     /* NAVIGATION
-       ALWAYS ON RIGHT */
+       SAME POSITION AS HOME */
 
     .about-page .site-navigation {
-        top: 48%;
+        top: auto;
         left: auto;
 
         right: 7%;
-        bottom: auto;
+        bottom: 9%;
 
-        transform: translateY(-50%);
+        transform: none;
 
         gap: 22px;
     }
@@ -157,13 +158,18 @@ body {
         width: calc(81vw - 57px);
         max-width: calc(81vw - 57px);
 
-        transform: translateY(-280px);
+        transform: translateY(-230px);
 
         font-size: 14px;
     }
 
+
+    /* NAVIGATION */
+
     .about-page .site-navigation {
         right: 7%;
+        bottom: 7%;
+
         gap: 18px;
     }
 
