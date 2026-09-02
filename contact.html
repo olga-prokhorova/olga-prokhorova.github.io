@@ -62,7 +62,6 @@ body {
 
 /* =========================
    EMAIL
-   ALIGNED WITH NAME
 ========================= */
 
 .contact-email {
@@ -89,7 +88,6 @@ body {
 
 /* =========================
    CONTACT INFORMATION
-   ALIGNED WITH NAME
 ========================= */
 
 .contact-info {
@@ -167,10 +165,11 @@ body {
 
 
     /* EMAIL
-       SAME LEFT EDGE AS NAME */
+       SAME LEFT EDGE AS NAME
+       MOVED 500PX DOWN */
 
     .contact-email {
-        top: 27%;
+        top: calc(27% + 500px);
         left: 6%;
         right: auto;
 
@@ -182,10 +181,11 @@ body {
 
 
     /* CONTACT INFORMATION
-       SAME LEFT EDGE AS NAME */
+       SAME LEFT EDGE AS NAME
+       MOVED 500PX DOWN */
 
     .contact-info {
-        top: 31%;
+        top: calc(31% + 500px);
         left: 6%;
         right: auto;
 
@@ -226,15 +226,23 @@ body {
         left: 6%;
     }
 
+
+    /* EMAIL
+       MOVED 500PX DOWN */
+
     .contact-email {
-        top: 27%;
+        top: calc(27% + 500px);
         left: 6%;
 
         font-size: 17px;
     }
 
+
+    /* CONTACT INFORMATION
+       MOVED 500PX DOWN */
+
     .contact-info {
-        top: 31%;
+        top: calc(31% + 500px);
         left: 6%;
 
         width: 275px;
@@ -242,6 +250,7 @@ body {
 
         font-size: 13px;
     }
+
 
     .contact-page .site-navigation {
         top: 57%;
