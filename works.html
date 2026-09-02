@@ -52,7 +52,7 @@ body {
 
 
 /* =================================
-   FIRST IMAGE AREA
+   FIRST IMAGE
    ================================= */
 
 .first-work-image {
@@ -82,6 +82,7 @@ body {
     z-index: 10;
 
     color: #efefef;
+    text-decoration: none;
 
     font-family:
         "Helvetica Neue",
@@ -100,7 +101,7 @@ body {
 
 
 /* =================================
-   WORK IMAGE
+   WORK IMAGES
    ================================= */
 
 .work-image {
@@ -118,7 +119,7 @@ body {
 
 
 /* =================================
-   WHITE TEXT BLOCK
+   WHITE TEXT BLOCKS
    ================================= */
 
 .work-info {
@@ -262,17 +263,16 @@ body {
 
 /* =================================
    UP
+   Appears only at bottom of page
    ================================= */
 
 .up-button {
-    position: fixed;
+    display: block;
 
-    left: 50%;
-    bottom: 6%;
+    width: fit-content;
 
-    transform: translateX(-50%);
-
-    z-index: 101;
+    margin: 0 auto;
+    padding: 0 0 60px 0;
 
     color: #515151;
 
@@ -285,7 +285,7 @@ body {
         sans-serif;
 
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 500;
 
     line-height: 1;
 }
@@ -443,9 +443,10 @@ body {
 
 
     .up-button {
-        bottom: 9%;
+        padding-bottom: 50px;
 
         font-size: 12px;
+        font-weight: 500;
     }
 }
 
@@ -486,9 +487,10 @@ body {
 
 
     .up-button {
-        bottom: 7%;
+        padding-bottom: 40px;
 
         font-size: 12px;
+        font-weight: 500;
     }
 }
 
@@ -514,9 +516,11 @@ body {
                 alt="JUOPPO JOOGAA"
                 class="work-image">
 
-            <h1 class="name">
+            <a
+                href="index.html"
+                class="name">
                 OLGA PROKHOROVA
-            </h1>
+            </a>
 
         </div>
 
@@ -881,12 +885,12 @@ body {
             href="https://www.instagram.com/performateria/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
-        >
+            aria-label="Instagram">
+
             <img
                 src="instagram_icon.png"
-                alt="Instagram"
-            >
+                alt="Instagram">
+
         </a>
 
         <a href="works.html">works</a>
@@ -901,10 +905,14 @@ body {
 
 
     <!-- =================================
-         UP
+         UP — ONLY AT THE VERY BOTTOM
          ================================= -->
 
-    <a href="#top" class="up-button">UP</a>
+    <a
+        href="#top"
+        class="up-button">
+        UP
+    </a>
 
 </main>
 
