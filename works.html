@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Works — Olga Prokhorova</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -17,13 +19,14 @@
         body {
             margin: 0;
             padding: 0;
-            background: #efefef;
-            color: #444;
+            background: #515151;
+            color: #efefef;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 14px;
             font-weight: 300;
             line-height: 1.45;
         }
+
 
         /* =========================
            WORKS
@@ -33,13 +36,17 @@
             width: 100%;
         }
 
+
         .work {
-            position: relative;
             width: 100%;
-            min-height: 100vh;
-            background: #efefef;
+            background: #515151;
             margin-bottom: 5px;
         }
+
+
+        /* =========================
+           IMAGE
+        ========================= */
 
         .work-image {
             display: block;
@@ -47,17 +54,21 @@
             height: 100vh;
             object-fit: cover;
             object-position: center;
+            margin: 0;
         }
 
+
+        /* =========================
+           TEXT
+        ========================= */
+
         .work-info {
-            position: absolute;
-            left: 5.5%;
-            bottom: 6%;
-            width: 420px;
-            max-width: 42%;
+            width: 100%;
+            padding: 42px 5.5% 48px 5.5%;
+            background: #515151;
             color: #efefef;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
         }
+
 
         .work-info h2 {
             margin: 0 0 18px 0;
@@ -66,19 +77,23 @@
             line-height: 1.45;
         }
 
+
         .work-info p {
             margin: 0 0 12px 0;
             font-size: 14px;
             font-weight: 300;
             line-height: 1.45;
+            max-width: 650px;
         }
+
 
         .work-info p:last-child {
             margin-bottom: 0;
         }
 
+
         /* =========================
-           FIXED NAVIGATION
+           FIXED SITE NAME
         ========================= */
 
         .site-name {
@@ -86,9 +101,12 @@
             top: calc(11% + 30px);
             left: calc(5.5% + 30px);
             z-index: 100;
+
             margin: 0;
+
             color: #efefef;
             text-decoration: none;
+
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 55px;
             font-weight: 200;
@@ -97,28 +115,38 @@
             white-space: nowrap;
         }
 
+
+        /* =========================
+           FIXED NAVIGATION
+        ========================= */
+
         .works-nav {
             position: fixed;
             right: 5.5%;
             bottom: 6%;
             z-index: 100;
+
             display: flex;
             flex-direction: column;
             align-items: flex-end;
             gap: 22px;
         }
 
+
         .works-nav a {
             color: #efefef;
             text-decoration: none;
+
             font-size: 14px;
             font-weight: 300;
             line-height: 1;
         }
 
+
         .works-nav a:hover {
             text-decoration: underline;
         }
+
 
         /* =========================
            UP BUTTON
@@ -130,16 +158,20 @@
             bottom: 6%;
             transform: translateX(-50%);
             z-index: 101;
+
             color: #efefef;
             text-decoration: none;
+
             font-size: 14px;
             font-weight: 300;
             line-height: 1;
         }
 
+
         .up-button:hover {
             text-decoration: underline;
         }
+
 
         /* =========================
            MOBILE
@@ -151,10 +183,11 @@
                 font-size: 12px;
             }
 
+
             .work {
-                min-height: 100svh;
                 margin-bottom: 5px;
             }
+
 
             .work-image {
                 width: 100%;
@@ -163,33 +196,46 @@
                 object-position: center;
             }
 
+
             .work-info {
-                left: 6%;
-                bottom: 9%;
-                width: calc(81vw - 57px);
-                max-width: calc(81vw - 57px);
+                width: 100%;
+                padding: 32px 6% 38px 6%;
+                background: #515151;
             }
 
+
             .work-info h2 {
-                margin-bottom: 16px;
+                margin: 0 0 16px 0;
+
                 font-size: 12px;
                 font-weight: 500;
                 line-height: 1.45;
             }
 
+
             .work-info p {
-                margin-bottom: 10px;
+                margin: 0 0 10px 0;
+
+                max-width: calc(81vw - 57px);
+
                 font-size: 12px;
                 font-weight: 300;
                 line-height: 1.45;
             }
 
+
+            /* SITE NAME */
+
             .site-name {
                 top: calc(11% + 30px);
                 left: 6%;
+
                 font-size: 30px;
                 letter-spacing: 3px;
             }
+
+
+            /* NAVIGATION */
 
             .works-nav {
                 right: 7%;
@@ -197,9 +243,13 @@
                 gap: 22px;
             }
 
+
             .works-nav a {
                 font-size: 12px;
             }
+
+
+            /* UP */
 
             .up-button {
                 bottom: 9%;
@@ -207,44 +257,48 @@
             }
         }
 
+
         /* =========================
            SMALL PHONES
         ========================= */
 
         @media (max-width: 430px) {
 
-            .work {
-                min-height: 100svh;
-                margin-bottom: 5px;
-            }
-
             .work-image {
                 height: 100svh;
             }
 
+
             .work-info {
-                left: 6%;
-                bottom: 7%;
-                width: calc(81vw - 57px);
-                max-width: calc(81vw - 57px);
+                padding: 28px 6% 34px 6%;
             }
+
 
             .work-info h2 {
                 margin-bottom: 16px;
+
                 font-size: 12px;
                 font-weight: 500;
             }
+
 
             .work-info p {
                 font-size: 12px;
             }
 
+
+            /* SITE NAME */
+
             .site-name {
                 top: calc(11% + 30px);
                 left: 6%;
+
                 font-size: 25px;
                 letter-spacing: 3px;
             }
+
+
+            /* NAVIGATION */
 
             .works-nav {
                 right: 7%;
@@ -252,22 +306,34 @@
                 gap: 18px;
             }
 
+
             .works-nav a {
                 font-size: 12px;
             }
+
+
+            /* UP */
 
             .up-button {
                 bottom: 7%;
                 font-size: 12px;
             }
         }
+
     </style>
 </head>
 
+
 <body id="top">
 
-    <!-- SITE NAME -->
-    <a href="index.html" class="site-name">OLGA PROKHOROVA</a>
+
+    <!-- =========================
+         SITE NAME
+    ========================= -->
+
+    <a href="index.html" class="site-name">
+        OLGA PROKHOROVA
+    </a>
 
 
     <!-- =========================
@@ -276,8 +342,11 @@
 
     <main class="works">
 
+
         <!-- 1. JUOPPO JOO GAA -->
+
         <section class="work">
+
             <img
                 src="w_2.jpg"
                 alt="Juoppo Joogaa"
@@ -285,6 +354,7 @@
             >
 
             <div class="work-info">
+
                 <h2>Juoppo Joogaa</h2>
 
                 <p>
@@ -295,15 +365,23 @@
                     asanas.
                 </p>
 
-                <p>Oulu, Finland 2026.</p>
+                <p>
+                    Oulu, Finland 2026.
+                </p>
 
-                <p>Each performance is a 20-minute session.</p>
+                <p>
+                    Each performance is a 20-minute session.
+                </p>
+
             </div>
+
         </section>
 
 
         <!-- 2. AS ATTACHMENT -->
+
         <section class="work">
+
             <img
                 src="w_3.jpg"
                 alt="As attachment"
@@ -311,6 +389,7 @@
             >
 
             <div class="work-info">
+
                 <h2>As attachment</h2>
 
                 <p>
@@ -321,15 +400,23 @@
                     relationships.
                 </p>
 
-                <p>Joensuu, Finland 2021.</p>
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
 
-                <p>Duration 4 hours.</p>
+                <p>
+                    Duration 4 hours.
+                </p>
+
             </div>
+
         </section>
 
 
         <!-- 3. WEARING BURDEN -->
+
         <section class="work">
+
             <img
                 src="w_4.jpg"
                 alt="Wearing burden"
@@ -337,6 +424,7 @@
             >
 
             <div class="work-info">
+
                 <h2>Wearing burden</h2>
 
                 <p>
@@ -350,15 +438,23 @@
                     adapts to freedom and how it feels to let go.
                 </p>
 
-                <p>Joensuu, Finland 2021.</p>
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
 
-                <p>Duration 2 hours.</p>
+                <p>
+                    Duration 2 hours.
+                </p>
+
             </div>
+
         </section>
 
 
         <!-- 4. COUNTING DAYS -->
+
         <section class="work">
+
             <img
                 src="w_1_1.jpg"
                 alt="Counting days"
@@ -366,6 +462,7 @@
             >
 
             <div class="work-info">
+
                 <h2>Counting days</h2>
 
                 <p>
@@ -381,15 +478,23 @@
                     the war keeps going into its fifth year.
                 </p>
 
-                <p>Mexico–Finland 2022.</p>
+                <p>
+                    Mexico–Finland 2022.
+                </p>
 
-                <p>Duration 2 years.</p>
+                <p>
+                    Duration 2 years.
+                </p>
+
             </div>
+
         </section>
 
 
         <!-- 5. BOTTOM OF BLOOD -->
+
         <section class="work">
+
             <img
                 src="w_7.jpg"
                 alt="Bottom of blood"
@@ -397,6 +502,7 @@
             >
 
             <div class="work-info">
+
                 <h2>Bottom of blood</h2>
 
                 <p>
@@ -407,15 +513,23 @@
                     A poetic performance-exploration.
                 </p>
 
-                <p>Joensuu, Finland 2021.</p>
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
 
-                <p>Duration 30 minutes.</p>
+                <p>
+                    Duration 30 minutes.
+                </p>
+
             </div>
+
         </section>
 
 
         <!-- 6. OPPOSITE CATHERINE -->
+
         <section class="work">
+
             <img
                 src="w_9.jpg"
                 alt="Opposite Catherine"
@@ -423,6 +537,7 @@
             >
 
             <div class="work-info">
+
                 <h2>Opposite Catherine</h2>
 
                 <p>
@@ -442,15 +557,23 @@
                     Plenty of mud.
                 </p>
 
-                <p>Oulu, Finland 2016.</p>
+                <p>
+                    Oulu, Finland 2016.
+                </p>
 
-                <p>Duration 5 hours.</p>
+                <p>
+                    Duration 5 hours.
+                </p>
+
             </div>
+
         </section>
 
 
         <!-- 7. ABUNDANCE -->
+
         <section class="work">
+
             <img
                 src="w_6.jpg"
                 alt="Abundance"
@@ -458,6 +581,7 @@
             >
 
             <div class="work-info">
+
                 <h2>Abundance</h2>
 
                 <p>
@@ -473,15 +597,23 @@
                     aggression, occupation, and inequality.
                 </p>
 
-                <p>Joensuu, Finland 2021, Night of Arts.</p>
+                <p>
+                    Joensuu, Finland 2021, Night of Arts.
+                </p>
 
-                <p>Duration 1 hour 20 minutes.</p>
+                <p>
+                    Duration 1 hour 20 minutes.
+                </p>
+
             </div>
+
         </section>
 
 
         <!-- 8. IN LOVE WITH THE BUS STOP -->
+
         <section class="work">
+
             <img
                 src="w_8_2.jpg"
                 alt="In love with the bus stop"
@@ -489,6 +621,7 @@
             >
 
             <div class="work-info">
+
                 <h2>In love with the bus stop</h2>
 
                 <p>
@@ -502,15 +635,23 @@
                     place into a strange, intimate meeting point.
                 </p>
 
-                <p>Joensuu, Finland 2022.</p>
+                <p>
+                    Joensuu, Finland 2022.
+                </p>
 
-                <p>Duration 1 hour.</p>
+                <p>
+                    Duration 1 hour.
+                </p>
+
             </div>
+
         </section>
 
 
         <!-- 9. NEVER-LOST IN KUHASALO -->
+
         <section class="work">
+
             <img
                 src="w_5.jpg"
                 alt="Never-lost in Kuhasalo"
@@ -518,6 +659,7 @@
             >
 
             <div class="work-info">
+
                 <h2>Never-lost in Kuhasalo</h2>
 
                 <p>
@@ -530,18 +672,27 @@
                     easy and accessible. With vision dramatically reduced,
                     the body becomes dependent on touch, sound, and smell.
                     The new road makes it impossible to get lost — but
-                    perhaps a forest is not supposed to be so easy to navigate.
+                    perhaps a forest is not supposed to be so easy to
+                    navigate.
                 </p>
 
-                <p>Joensuu, Finland 2021.</p>
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
 
-                <p>Duration 1 hour 30 minutes.</p>
+                <p>
+                    Duration 1 hour 30 minutes.
+                </p>
+
             </div>
+
         </section>
 
 
         <!-- 10. STRESS OR MISTRESS -->
+
         <section class="work">
+
             <img
                 src="w_10.jpg"
                 alt="Stress or Mistress"
@@ -549,6 +700,7 @@
             >
 
             <div class="work-info">
+
                 <h2>Stress or Mistress</h2>
 
                 <p>
@@ -570,29 +722,63 @@
                     movements that were publicly criticized.
                 </p>
 
-                <p>Oulu, Finland 2022.</p>
+                <p>
+                    Oulu, Finland 2022.
+                </p>
 
-                <p>Duration 20 minutes.</p>
+                <p>
+                    Duration 20 minutes.
+                </p>
+
             </div>
+
         </section>
+
 
     </main>
 
 
-    <!-- FIXED NAVIGATION -->
+    <!-- =========================
+         FIXED NAVIGATION
+    ========================= -->
 
     <nav class="works-nav">
-        <a href="https://www.instagram.com/" target="_blank">instagram</a>
-        <a href="works.html">works</a>
-        <a href="cv.html">cv</a>
-        <a href="about.html">bio</a>
-        <a href="contact.html">contact</a>
+
+        <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            instagram
+        </a>
+
+        <a href="works.html">
+            works
+        </a>
+
+        <a href="cv.html">
+            cv
+        </a>
+
+        <a href="about.html">
+            bio
+        </a>
+
+        <a href="contact.html">
+            contact
+        </a>
+
     </nav>
 
 
-    <!-- UP -->
+    <!-- =========================
+         UP
+    ========================= -->
 
-    <a href="#top" class="up-button">UP</a>
+    <a href="#top" class="up-button">
+        UP
+    </a>
+
 
 </body>
 </html>
