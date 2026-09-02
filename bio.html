@@ -40,7 +40,7 @@
 
 
     /* =================================
-       BACKGROUND IMAGE
+       BIO IMAGE
        ================================= */
 
     .bio-background {
@@ -57,8 +57,7 @@
 
 
     /* =================================
-       ARTIST NAME
-       CLICKABLE — RETURNS TO HOME
+       MASTER NAME
        ================================= */
 
     .name-link {
@@ -90,6 +89,7 @@
 
     /* =================================
        BIO TEXT
+       PAGE-SPECIFIC
        ================================= */
 
     .bio-text {
@@ -108,7 +108,7 @@
       font-weight: 300;
       line-height: 1.55;
 
-      z-index: 4;
+      z-index: 10;
     }
 
     .bio-text p {
@@ -125,37 +125,24 @@
 
 
     /* =================================
-       NAVIGATION — DESKTOP
+       MASTER NAVIGATION
        ================================= */
 
-    .bio-nav {
+    .navigation {
       position: absolute;
 
-      top: calc(48% - 200px);
-      right: 16%;
+      z-index: 20;
+
+      top: calc(50% + 180px);
+      left: 79%;
+
+      transform: translate(-50%, -50%);
 
       display: flex;
       flex-direction: column;
       align-items: flex-start;
 
-      gap: 32px;
-
-      z-index: 20;
-    }
-
-    .bio-nav a {
-      color: #efefef;
-
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 20px;
-      font-weight: 300;
-      line-height: 1;
-
-      text-decoration: none;
-    }
-
-    .bio-nav a:hover {
-      text-decoration: underline;
+      gap: 34px;
     }
 
 
@@ -163,18 +150,88 @@
        INSTAGRAM
        ================================= */
 
-    .instagram-link {
-      display: block;
-      line-height: 0;
-    }
-
-    .instagram-icon {
+    .instagram {
       display: block;
 
       width: 22px;
       height: 22px;
 
+      margin-bottom: 8px;
+
+      opacity: 0.95;
+
+      transition: opacity 0.25s ease;
+    }
+
+    .instagram img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
       object-fit: contain;
+    }
+
+    .instagram:hover {
+      opacity: 0.55;
+    }
+
+
+    /* =================================
+       MASTER NAVIGATION LINKS
+       ================================= */
+
+    .navigation a:not(.instagram) {
+      color: #efefef;
+
+      text-decoration: none;
+
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 23px;
+      font-weight: 300;
+      line-height: 1;
+
+      transition: opacity 0.25s ease;
+    }
+
+    .navigation a:not(.instagram):hover {
+      opacity: 0.55;
+    }
+
+
+    /* =================================
+       TABLET
+       ================================= */
+
+    @media (max-width: 1100px) {
+
+      .name-link {
+        top: calc(10% + 30px);
+        left: calc(5% + 30px);
+      }
+
+      .bio-name {
+        font-size: 45px;
+        font-weight: 200;
+        letter-spacing: 4px;
+      }
+
+      .navigation {
+        top: calc(50% + 150px);
+        left: 79%;
+
+        gap: 30px;
+      }
+
+      .navigation a:not(.instagram) {
+        font-size: 21px;
+      }
+
+      .instagram {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+      }
     }
 
 
@@ -191,7 +248,7 @@
       }
 
 
-      /* ---------- MOBILE IMAGE ---------- */
+      /* MOBILE IMAGE */
 
       .bio-background {
         display: block;
@@ -206,21 +263,17 @@
       }
 
 
-      /* ---------- MOBILE NAME ---------- */
+      /* MASTER MOBILE NAME */
 
       .name-link {
         position: absolute;
 
-        top: calc(31% - 20px);
-        left: 50%;
+        top: calc(6% + 70px);
+        left: 6%;
 
-        width: 90%;
+        width: auto;
 
-        transform: translateX(-50%);
-
-        margin: 0;
-
-        text-align: center;
+        transform: none;
 
         color: #efefef;
       }
@@ -228,19 +281,16 @@
       .bio-name {
         margin: 0;
 
-        color: #efefef;
-
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 31px;
+        font-size: 30px;
         font-weight: 200;
         line-height: 1.1;
-        letter-spacing: 0;
+        letter-spacing: 3px;
 
-        white-space: nowrap;
+        color: #efefef;
       }
 
 
-      /* ---------- MOBILE TEXT ---------- */
+      /* BIO TEXT */
 
       .bio-text {
         position: absolute;
@@ -253,7 +303,6 @@
 
         color: #d8d8d8;
 
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 12px;
         font-weight: 300;
         line-height: 1.55;
@@ -270,38 +319,63 @@
       }
 
 
-      /* ---------- MOBILE NAVIGATION ---------- */
+      /* MASTER MOBILE NAVIGATION */
 
-      .bio-nav {
-        position: absolute;
+      .navigation {
+        top: auto;
+        left: auto;
 
-        top: 7%;
-        right: 11%;
+        right: 7%;
+        bottom: 9%;
 
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        transform: none;
 
-        gap: 25px;
-
-        z-index: 20;
+        gap: 22px;
       }
 
-      .bio-nav a {
-        color: #efefef;
-
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 12px;
+      .navigation a:not(.instagram) {
+        font-size: 19px;
         font-weight: 300;
-        line-height: 1;
-
-        text-decoration: none;
       }
 
+      .instagram {
+        width: 20px;
+        height: 20px;
 
-      /* ---------- MOBILE INSTAGRAM ---------- */
+        margin-bottom: 0;
+      }
 
-      .instagram-icon {
+    }
+
+
+    /* =================================
+       SMALL MOBILE
+       ================================= */
+
+    @media (max-width: 430px) {
+
+      .name-link {
+        top: calc(6% + 60px);
+      }
+
+      .bio-name {
+        font-size: 25px;
+        font-weight: 200;
+        letter-spacing: 3px;
+      }
+
+      .navigation {
+        right: 7%;
+        bottom: 7%;
+
+        gap: 18px;
+      }
+
+      .navigation a:not(.instagram) {
+        font-size: 17px;
+      }
+
+      .instagram {
         width: 18px;
         height: 18px;
       }
@@ -318,7 +392,7 @@
 
 
     <!-- =================================
-         BACKGROUND IMAGE
+         BIO IMAGE
          ================================= -->
 
     <picture>
@@ -337,8 +411,7 @@
 
 
     <!-- =================================
-         ARTIST NAME
-         CLICKING NAME RETURNS TO HOME
+         CLICKABLE ARTIST NAME
          ================================= -->
 
     <a
@@ -386,28 +459,29 @@
 
 
     <!-- =================================
-         NAVIGATION
+         MASTER NAVIGATION
          ================================= -->
 
-    <nav class="bio-nav">
+    <nav class="navigation">
 
       <a
-        class="instagram-link"
+        class="instagram"
         href="https://www.instagram.com/performateria/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Instagram"
       >
         <img
-          class="instagram-icon"
           src="instagram_icon.png"
           alt="Instagram"
         >
       </a>
 
-      <a href="index.html">works</a>
+      <a href="work.html">works</a>
 
       <a href="cv.html">cv</a>
+
+      <a href="bio.html">bio</a>
 
       <a href="contact.html">contact</a>
 
