@@ -48,7 +48,7 @@ body {
 ========================= */
 
 .site-navigation {
-    position: absolute;
+    position: fixed;
     z-index: 10;
 
     top: calc(50% + 180px);
