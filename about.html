@@ -1,469 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About — Olga Prokhrova</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>About — Olga Prokhorova</title>
 
-    * {
-      box-sizing: border-box;
-    }
+<link rel="stylesheet" href="style.css">
 
-    html,
+<style>
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+body {
+    background: #c2c9d3;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.about-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================
+   ABOUT IMAGE
+========================= */
+
+.about-image {
+    display: block;
+
+    width: 100%;
+    height: 100vh;
+
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* =========================
+   ABOUT CONTENT
+========================= */
+
+.about-content {
+    position: absolute;
+
+    left: 4.5%;
+    bottom: 12%;
+
+    width: 520px;
+    max-width: 500px;
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.45;
+
+    color: #444;
+}
+
+.about-content p {
+    margin: 0;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
     body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100%;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 300;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
-
-    body {
-      background: #c2c9d3;
-      color: #333333;
-    }
-
-
-    /* =========================================
-       ABOUT PAGE
-       ========================================= */
 
     .about-page {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      overflow: hidden;
+        width: 100vw;
+        min-height: 100svh;
+        overflow: visible;
     }
+
 
     .about-image {
-      display: block;
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      object-position: center center;
-    }
-
-
-    /* =========================================
-       ARTIST NAME
-       CLICKABLE — RETURNS TO HOME
-       ========================================= */
-
-    .name-link {
-      position: absolute;
-
-      top: calc(11% + 30px);
-      left: calc(5.5% + 30px);
-
-      z-index: 10;
-
-      color: #efefef;
-      text-decoration: none;
-    }
-
-    .about-name {
-      margin: 0;
-
-      color: #efefef;
-
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 55px;
-      font-weight: 200;
-      line-height: 1;
-      letter-spacing: 5px;
-
-      white-space: nowrap;
-    }
-
-
-    /* =========================================
-       ABOUT TEXT
-       ========================================= */
-
-    .about-content {
-      position: absolute;
-
-      left: 4.5%;
-      bottom: 12%;
-
-      width: 520px;
-
-      color: #555555;
-
-      z-index: 10;
-    }
-
-    .about-text {
-      margin: 0;
-      max-width: 500px;
-
-      font-size: 16px;
-      line-height: 1.45;
-      font-weight: 300;
-
-      color: #444444;
-    }
-
-
-    /* =========================================
-       NAVIGATION
-       ========================================= */
-
-    .navigation {
-      position: absolute;
-
-      z-index: 20;
-
-      top: calc(50% + 180px);
-      left: 79%;
-
-      transform: translate(-50%, -50%);
-
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      gap: 34px;
-    }
-
-
-    /* INSTAGRAM */
-
-    .instagram {
-      display: block;
-
-      width: 22px;
-      height: 22px;
-
-      margin-bottom: 8px;
-
-      opacity: 0.95;
-
-      transition: opacity 0.25s ease;
-    }
-
-    .instagram img {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: contain;
-    }
-
-    .instagram:hover {
-      opacity: 0.55;
-    }
-
-
-    /* NAVIGATION LINKS */
-
-    .navigation a:not(.instagram) {
-      color: #efefef;
-
-      text-decoration: none;
-
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 23px;
-      font-weight: 300;
-      line-height: 1;
-
-      transition: opacity 0.25s ease;
-    }
-
-    .navigation a:not(.instagram):hover {
-      opacity: 0.55;
-    }
-
-
-    /* =========================================
-       TABLET
-       ========================================= */
-
-    @media (max-width: 1100px) {
-
-      .name-link {
-        top: calc(10% + 30px);
-        left: calc(5% + 30px);
-      }
-
-      .about-name {
-        font-size: 45px;
-        font-weight: 200;
-        letter-spacing: 4px;
-      }
-
-      .navigation {
-        top: calc(50% + 150px);
-        left: 79%;
-
-        gap: 30px;
-      }
-
-      .navigation a:not(.instagram) {
-        font-size: 21px;
-      }
-
-      .instagram {
-        width: 20px;
-        height: 20px;
-        margin-bottom: 5px;
-      }
-    }
-
-
-    /* =========================================
-       MOBILE
-       ========================================= */
-
-    @media (max-width: 700px) {
-
-      html,
-      body {
-        background: #c2c9d3;
-      }
-
-      .about-page {
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
-
-        overflow: visible;
-
-        background: #c2c9d3;
-      }
-
-
-      /* MOBILE IMAGE */
-
-      .about-image {
-        display: block;
-
         width: 100%;
         height: auto;
 
         object-fit: contain;
-        object-position: center center;
 
         transform: translateY(-50px);
+
         margin-bottom: -50px;
-      }
+    }
 
 
-      /* MOBILE NAME */
-
-      .name-link {
-        position: absolute;
-
-        top: calc(6% + 70px);
-        left: 6%;
-
-        width: auto;
-
-        margin: 0;
-        padding: 0;
-
-        color: #efefef;
-      }
-
-      .about-name {
-        font-size: 30px;
-        line-height: 1.1;
-
-        font-weight: 200;
-        letter-spacing: 3px;
-
-        color: #efefef;
-      }
-
-
-      /* MOBILE TEXT */
-
-      .about-content {
+    .about-content {
         position: relative;
 
         left: auto;
         bottom: auto;
 
         width: 100%;
-
-        padding: 0 9.5% 45px 9.5%;
-
-        color: #333333;
-
-        transform: translateY(-180px);
-      }
-
-      .about-text {
         max-width: none;
 
-        margin: 0;
+        padding: 0 9.5% 45px;
+
+        transform: translateY(-180px);
 
         font-size: 14px;
-        line-height: 1.45;
         font-weight: 300;
+        line-height: 1.45;
 
-        color: #333333;
-      }
+        color: #333;
+    }
 
 
-      /* =====================================
-         MOBILE NAVIGATION
-         ===================================== */
+    /* About page uses the master navigation,
+       but is moved upward because this page is long. */
 
-      .navigation {
+    .site-navigation {
         top: 48%;
         left: auto;
-
         right: 7%;
+
+        bottom: auto;
 
         transform: none;
 
         gap: 22px;
-      }
-
-      .navigation a:not(.instagram) {
-        font-size: 19px;
-        font-weight: 300;
-      }
-
-      .instagram {
-        width: 20px;
-        height: 20px;
-
-        margin-bottom: 0;
-      }
-
     }
-
-
-    /* =========================================
-       SMALL PHONES
-       ========================================= */
-
-   @media (max-width: 430px) {
-
-  .name-link {
-    top: calc(6% + 60px);
-  }
-
-  .about-name {
-    font-size: 25px;
-    font-weight: 200;
-    letter-spacing: 3px;
-  }
-
-  .navigation {
-    top: 48%;
-    right: 7%;
-
-    gap: 18px;
-  }
-
-  .navigation a:not(.instagram) {
-    font-size: 17px;
-  }
-
-  .instagram {
-    width: 18px;
-    height: 18px;
-  }
-
 }
-  </style>
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 430px) {
+
+    .site-navigation {
+        top: 48%;
+        right: 7%;
+
+        gap: 18px;
+    }
+}
+
+</style>
+
 </head>
 
 
 <body>
 
-  <main class="about-page">
+<main class="about-page">
 
 
-    <!-- =================================
-         IMAGE
-         ================================= -->
+    <!-- ABOUT IMAGE -->
 
     <picture>
 
-      <source
-        media="(max-width: 700px)"
-        srcset="about_banner_2.png">
+        <source
+            media="(max-width: 700px)"
+            srcset="about_banner_2.png">
 
-      <img
-        class="about-image"
-        src="banner_web_about.png"
-        alt="Olga Prokhrova performance">
+        <img
+            class="about-image"
+            src="banner_web_about.png"
+            alt="Olga Prokhorova">
 
     </picture>
 
 
-    <!-- =================================
-         ARTIST NAME
-         CLICKING NAME RETURNS TO HOME
-         ================================= -->
+    <!-- CLICKABLE NAME -->
 
-    <a
-      class="name-link"
-      href="index.html"
-      aria-label="Olga Prokhrova — Home"
-    >
-      <h1 class="about-name">
+    <a href="index.html" class="site-name">
         OLGA PROKHOROVA
-      </h1>
     </a>
 
 
-    <!-- =================================
-         ABOUT TEXT
-         ================================= -->
+    <!-- ABOUT TEXT -->
 
     <section class="about-content">
 
-      <p class="about-text">
-        I make poetic interventions in familiar situations through
-        performance, rearranging behaviours and relationships.<br>
-        I explore how these encounters can transform our
-        understanding of dignity and human experience.
-      </p>
+        <p>
+            My practice is rooted in performance, but performance for me is not limited to the stage. I work with the body, everyday situations, public space, participation and the fragile space between performer and viewer.
+        </p>
+
+        <p>
+            I am interested in what happens when familiar situations are slightly shifted — when an ordinary place, gesture or encounter begins to feel different. My works often emerge from simple actions, repetition, attention and presence.
+        </p>
+
+        <p>
+            Questions of belonging, displacement, family, gender and personal dignity are present in my work. I approach them through poetic interventions and situations that leave room for uncertainty, vulnerability and different interpretations.
+        </p>
+
+        <p>
+            Alongside performance, I work with poetry and photography. These practices allow me to continue exploring the relationship between body, memory, personal narrative and image.
+        </p>
 
     </section>
 
 
-    <!-- =================================
-         NAVIGATION
-         ================================= -->
+    <!-- MASTER NAVIGATION -->
 
-    <nav class="navigation">
+    <nav class="site-navigation">
 
-      <a
-        class="instagram"
-        href="https://www.instagram.com/performateria/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-      >
-        <img
-          src="instagram_icon.png"
-          alt="Instagram"
+        <a
+            class="instagram"
+            href="https://www.instagram.com/performateria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
         >
-      </a>
+            <img
+                src="instagram_icon.png"
+                alt="Instagram"
+            >
+        </a>
 
-      <a href="work.html">works</a>
+        <a href="work.html">works</a>
 
-      <a href="cv.html">cv</a>
+        <a href="cv.html">cv</a>
 
-      <a href="bio.html">bio</a>
+        <a href="bio.html">bio</a>
 
-      <a href="contact.html">contact</a>
+        <a href="contact.html">contact</a>
 
     </nav>
 
 
-  </main>
+</main>
 
 </body>
 </html>
