@@ -47,7 +47,7 @@ body {
 
 /* =========================
    CONTACT NAME
-   SAME POSITION AS HOME
+   SAME LEFT ALIGNMENT AS MASTER
 ========================= */
 
 .contact-name {
@@ -62,6 +62,7 @@ body {
 
 /* =========================
    EMAIL
+   ALIGNED WITH NAME
 ========================= */
 
 .contact-email {
@@ -88,6 +89,7 @@ body {
 
 /* =========================
    CONTACT INFORMATION
+   ALIGNED WITH NAME
 ========================= */
 
 .contact-info {
@@ -107,6 +109,8 @@ body {
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5;
+
+    text-align: left;
 }
 
 .contact-info p {
@@ -116,7 +120,7 @@ body {
 
 /* =========================
    CONTACT NAVIGATION
-   MASTER TYPOGRAPHY
+   SAME MASTER STYLE
 ========================= */
 
 .contact-page .site-navigation {
@@ -152,41 +156,38 @@ body {
 
 
     /* NAME
-       ALIGNED WITH NAVIGATION AREA */
+       MASTER MOBILE LEFT ALIGNMENT */
 
     .contact-name {
         top: calc(6% + 70px);
-        left: auto;
-        right: 7%;
+        left: 6%;
 
         transform: none;
-
-        text-align: right;
     }
 
 
     /* EMAIL
-       ALIGNED WITH NAVIGATION AREA */
+       SAME LEFT EDGE AS NAME */
 
     .contact-email {
         top: 27%;
-        left: auto;
-        right: 7%;
+        left: 6%;
+        right: auto;
 
         font-size: 19px;
 
-        text-align: right;
+        text-align: left;
         white-space: nowrap;
     }
 
 
     /* CONTACT INFORMATION
-       RIGHT EDGE ALIGNED WITH BIO */
+       SAME LEFT EDGE AS NAME */
 
     .contact-info {
         top: 31%;
-        left: auto;
-        right: 7%;
+        left: 6%;
+        right: auto;
 
         width: 330px;
         max-width: 330px;
@@ -194,12 +195,12 @@ body {
         font-size: 14px;
         line-height: 1.5;
 
-        text-align: right;
+        text-align: left;
     }
 
 
     /* NAVIGATION
-       SAME MASTER POSITION */
+       REMAINS ON RIGHT */
 
     .contact-page .site-navigation {
         top: 57%;
@@ -222,19 +223,19 @@ body {
 
     .contact-name {
         top: calc(6% + 60px);
-        right: 7%;
+        left: 6%;
     }
 
     .contact-email {
         top: 27%;
-        right: 7%;
+        left: 6%;
 
         font-size: 17px;
     }
 
     .contact-info {
         top: 31%;
-        right: 7%;
+        left: 6%;
 
         width: 275px;
         max-width: 275px;
