@@ -1,852 +1,466 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-```
-<title>Olga Prokhorova — Gallery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery</title>
 
 <style>
+:root {
+    --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --light: #efefef;
+    --dark: #515151;
+    --gap: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #000;
+    font-family: var(--font);
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+.gallery-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    padding: 14px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap);
+    width: 100%;
+}
+
+.gallery-item {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.25s ease;
+}
+
+.gallery-item:hover img {
+    opacity: 0.8;
+}
+
+/* Navigation */
+.navigation {
+    position: fixed;
+    z-index: 100;
+    top: calc(50% + 180px);
+    left: 79%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 34px;
+}
+
+.navigation a {
+    color: var(--light);
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 1;
+    transition: opacity 0.25s ease;
+}
+
+.navigation a:hover {
+    opacity: 0.55;
+}
+
+.instagram {
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin-bottom: 8px;
+}
+
+.instagram img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Mobile-only image */
+.mobile-only {
+    display: none;
+}
+
+/* Bottom section */
+.end-block {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: var(--gap);
+    background: #000;
+}
+
+.up-button {
+    position: absolute;
+    left: 50%;
+    bottom: 150px;
+    transform: translateX(-50%);
+
+    display: block;
+    width: fit-content;
+
+    color: #efefef;
+    text-decoration: none;
+    font: 500 14px/1 var(--font);
+
+    transition: opacity 0.25s ease;
+}
+
+.up-button:hover {
+    opacity: 0.55;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1100px) {
 
     :root {
-        --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        --light: #efefef;
-        --dark: #515151;
-        --gap: 14px;
+        --gap: 12px;
     }
-
-
-    * {
-        box-sizing: border-box;
-    }
-
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        min-height: 100%;
-    }
-
-
-    body {
-        background: #000;
-        font-family: var(--font);
-        font-weight: 300;
-        overflow-x: hidden;
-    }
-
-
-    /* =================================
-       GALLERY
-       ================================= */
 
     .gallery-page {
-        width: 100%;
-        min-height: 100vh;
-        background: #000;
-        padding: 14px;
+        padding: 12px;
     }
-
-
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--gap);
-        width: 100%;
-    }
-
-
-    .gallery-item {
-        display: block;
-        width: 100%;
-        overflow: hidden;
-        background: #000;
-    }
-
-
-    .gallery-item img {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        transition: opacity 0.25s ease;
-    }
-
-
-    .gallery-item:hover img {
-        opacity: 0.8;
-    }
-
-
-    /* =================================
-       IMAGES 10 AND 20
-       ================================= */
-
-    .gallery-item-10 img,
-    .gallery-item-20 img {
-        width: 100%;
-    }
-
-
-    /* =================================
-       NAVIGATION
-       ================================= */
 
     .navigation {
-        position: fixed;
-
-        z-index: 100;
-
-        top: calc(50% + 180px);
+        top: calc(50% + 150px);
         left: 79%;
-
-        transform: translate(-50%, -50%);
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        gap: 34px;
+        gap: 30px;
     }
-
 
     .navigation a {
-        color: var(--light);
-
-        text-decoration: none;
-
-        font-family:
-            "Helvetica Neue",
-            Helvetica,
-            Arial,
-            sans-serif;
-
-        font-size: 23px;
-        font-weight: 300;
-
-        line-height: 1;
-
-        transition: opacity 0.25s ease;
+        font-size: 21px;
     }
-
-
-    .navigation a:hover {
-        opacity: 0.55;
-    }
-
-
-    /* =================================
-       INSTAGRAM
-       ================================= */
 
     .instagram {
-        display: block;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 0;
+    }
+}
 
-        width: 22px;
-        height: 22px;
 
-        margin-bottom: 8px;
+/* =========================
+   MOBILE
+   ========================= */
 
-        opacity: 0.95;
+@media (max-width: 700px) {
+
+    :root {
+        --gap: 10px;
     }
 
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 
-    .instagram img {
-        display: block;
+    .gallery-page {
+        width: 100vw;
+        padding: 0;
+    }
 
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .gallery-item {
         width: 100%;
-        height: 100%;
-
-        object-fit: contain;
     }
 
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+    }
 
-    /* =================================
-       MOBILE-ONLY IMAGE
-       ================================= */
+    /* Mobile navigation */
+    .navigation {
+        top: auto;
+        left: auto;
+        right: 7%;
+        bottom: 9%;
+        transform: none;
 
+        gap: 22px;
+    }
+
+    .navigation a {
+        font-size: 19px;
+    }
+
+    .instagram {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 0;
+    }
+
+    /* Show mobile-only final image */
     .mobile-only {
-        display: none;
+        display: block;
     }
 
-
-    /* =================================
-       END WHITE BLOCK
-       ================================= */
-
+    /* Bottom section */
     .end-block {
-        position: relative;
-
-        width: 100%;
         height: 200px;
-
-        margin-top: var(--gap);
-
-        background: var(--light);
+        margin-top: 0;
     }
-
 
     .up-button {
-        position: absolute;
-
-        left: 50%;
         bottom: 150px;
+        font-size: 24px;
+    }
+}
 
-        transform: translateX(-50%);
 
-        display: block;
+/* =========================
+   SMALL MOBILE
+   ========================= */
 
-        width: fit-content;
+@media (max-width: 430px) {
 
-        color: var(--dark);
-
-        text-decoration: none;
-
-        font: 500 14px/1 var(--font);
-
-        transition: opacity 0.25s ease;
+    .navigation {
+        right: 7%;
+        bottom: 7%;
+        gap: 18px;
     }
 
-
-    .up-button:hover {
-        opacity: 0.55;
+    .navigation a {
+        font-size: 17px;
     }
 
-
-    /* =================================
-       TABLET
-       ================================= */
-
-    @media (max-width: 1100px) {
-
-        :root {
-            --gap: 12px;
-        }
-
-
-        .gallery-page {
-            padding: 12px;
-        }
-
-
-        .navigation {
-            top: calc(50% + 150px);
-            left: 79%;
-
-            gap: 30px;
-        }
-
-
-        .navigation a {
-            font-size: 21px;
-        }
-
-
-        .instagram {
-            width: 20px;
-            height: 20px;
-
-            margin-bottom: 0;
-        }
-
+    .instagram {
+        width: 18px;
+        height: 18px;
     }
 
-
-    /* =================================
-       MOBILE
-       ================================= */
-
-    @media (max-width: 700px) {
-
-        :root {
-            --gap: 10px;
-        }
-
-
-        body {
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
-
-
-        .gallery-page {
-            width: 100vw;
-            padding: 0;
-        }
-
-
-        .gallery {
-            grid-template-columns: 1fr;
-            gap: 0;
-        }
-
-
-        .gallery-item {
-            width: 100%;
-        }
-
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-        }
-
-
-        /* =================================
-           MOBILE NAVIGATION
-           ================================= */
-
-        .navigation {
-            top: auto;
-            left: auto;
-
-            right: 7%;
-            bottom: 9%;
-
-            transform: none;
-
-            gap: 22px;
-        }
-
-
-        .navigation a {
-            font-size: 19px;
-        }
-
-
-        .instagram {
-            width: 20px;
-            height: 20px;
-
-            margin-bottom: 0;
-        }
-
-
-        /* =================================
-           MOBILE-ONLY IMAGE
-           ================================= */
-
-        .mobile-only {
-            display: block;
-        }
-
-
-        /* =================================
-           MOBILE END BLOCK
-           ================================= */
-
-        .end-block {
-            height: 200px;
-            margin-top: 0;
-        }
-
-
-        /*
-           UP BUTTON
-
-           Original mobile:
-           12px / 50px from bottom
-
-           New:
-           24px / 150px from bottom
-
-           This makes it 100% larger
-           and 100px higher.
-        */
-
-        .up-button {
-            bottom: 150px;
-            font-size: 24px;
-        }
-
+    .up-button {
+        bottom: 150px;
+        font-size: 24px;
     }
-
-
-    /* =================================
-       SMALL MOBILE
-       ================================= */
-
-    @media (max-width: 430px) {
-
-        .navigation {
-            right: 7%;
-            bottom: 7%;
-
-            gap: 18px;
-        }
-
-
-        .navigation a {
-            font-size: 17px;
-        }
-
-
-        .instagram {
-            width: 18px;
-            height: 18px;
-        }
-
-
-        .up-button {
-            bottom: 150px;
-            font-size: 24px;
-        }
-
-    }
-
+}
 </style>
-```
-
 </head>
 
-<body id="top">
 
-```
-<!-- =================================
-     FIXED NAVIGATION
-     ================================= -->
+<body>
 
+<div class="gallery-page">
+
+    <div class="gallery">
+
+        <!-- 01 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_1.jpg">
+            <img src="galhor_22.jpg" alt="">
+        </picture>
+
+        <!-- 02 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galvert_2.jpg">
+            <img src="galhor_2.jpg" alt="">
+        </picture>
+
+        <!-- 03 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_3.jpg">
+            <img src="galhor_3.jpg" alt="">
+        </picture>
+
+        <!-- 04 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_4.jpg">
+            <img src="galhor_4.jpg" alt="">
+        </picture>
+
+        <!-- 05 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_5.jpg">
+            <img src="galhor_5.jpg" alt="">
+        </picture>
+
+        <!-- 06 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_6.jpg">
+            <img src="galhor_6.jpg" alt="">
+        </picture>
+
+        <!-- 07 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galvert_7.jpg">
+            <img src="galhor_7.jpg" alt="">
+        </picture>
+
+        <!-- 08 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_8.jpg">
+            <img src="galhor_8.jpg" alt="">
+        </picture>
+
+        <!-- 09 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_9.jpg">
+            <img src="galhor_9.jpg" alt="">
+        </picture>
+
+        <!-- 10 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_10.jpg">
+            <img src="galhor_10_1.jpg" alt="">
+        </picture>
+
+        <!-- 11 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_12.jpg">
+            <img src="galhor_11.jpg" alt="">
+        </picture>
+
+        <!-- 12 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_13.jpg">
+            <img src="galhor_12.jpg" alt="">
+        </picture>
+
+        <!-- 13 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_14.jpg">
+            <img src="galhor_13.jpg" alt="">
+        </picture>
+
+        <!-- 14 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_15.jpg">
+            <img src="galhor_14.jpg" alt="">
+        </picture>
+
+        <!-- 15 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_16.jpg">
+            <img src="galhor_15.jpg" alt="">
+        </picture>
+
+        <!-- 16 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_17.jpg">
+            <img src="galhor_16.jpg" alt="">
+        </picture>
+
+        <!-- 17 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_18.jpg">
+            <img src="galhor_17.jpg" alt="">
+        </picture>
+
+        <!-- 18 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_19.jpg">
+            <img src="galhor_18.jpg" alt="">
+        </picture>
+
+        <!-- 19 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_20.jpg">
+            <img src="galhor_19.jpg" alt="">
+        </picture>
+
+        <!-- 20 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_21.jpg">
+            <img src="galhor_20_1.jpg" alt="">
+        </picture>
+
+        <!-- 21 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_22.jpg">
+            <img src="galhor_21.jpg" alt="">
+        </picture>
+
+        <!-- 22 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_23.jpg">
+            <img src="galhor_24.jpg" alt="">
+        </picture>
+
+    </div>
+
+
+    <!-- Mobile-only 23rd image -->
+    <picture class="gallery-item mobile-only">
+        <source media="(max-width: 700px)" srcset="galver_23.jpg">
+        <img src="galhor_24.jpg" alt="">
+    </picture>
+
+
+    <!-- Bottom -->
+    <div class="end-block">
+        <a href="#" class="up-button">UP</a>
+    </div>
+
+</div>
+
+
+<!-- Fixed navigation -->
 <nav class="navigation">
 
-    <a
-        class="instagram"
-        href="https://www.instagram.com/performateria/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-    >
-        <img
-            src="instagram_icon.png"
-            alt="Instagram"
-        >
+    <a href="https://www.instagram.com/" class="instagram" aria-label="Instagram">
+        <img src="instagram_icon.png" alt="Instagram">
     </a>
 
-
-    <a href="index.html">
-        home
-    </a>
+    <a href="index.html">HOME</a>
 
 </nav>
 
 
-<!-- =================================
-     GALLERY
-     ================================= -->
-
-<main class="gallery-page">
-
-    <div class="gallery">
-
-
-        <!-- =================================
-             DESKTOP IMAGE 1
-             Mobile image 1
-             ================================= -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_1.jpg"
-            >
-
-            <img
-                src="galhor_22.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- =================================
-             IMAGE 2
-             ================================= -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galvert_2.jpg"
-            >
-
-            <img
-                src="galhor_2.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 3 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_3.jpg"
-            >
-
-            <img
-                src="galhor_3.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 4 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_4.jpg"
-            >
-
-            <img
-                src="galhor_4.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 5 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_5.jpg"
-            >
-
-            <img
-                src="galhor_5.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 6 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_6.jpg"
-            >
-
-            <img
-                src="galhor_6.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 7 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="Calvert_7.jpg"
-            >
-
-            <img
-                src="galhor_7.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 8 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_8.jpg"
-            >
-
-            <img
-                src="galhor_8.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 9 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_9.jpg"
-            >
-
-            <img
-                src="galhor_9.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 10 -->
-
-        <picture class="gallery-item gallery-item-10">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_10.jpg"
-            >
-
-            <img
-                src="galhor_10.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 11 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_11.jpg"
-            >
-
-            <img
-                src="galhor_11.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 12 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_12.jpg"
-            >
-
-            <img
-                src="galhor_12.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 13 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_13.jpg"
-            >
-
-            <img
-                src="galhor_13.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 14 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_14.jpg"
-            >
-
-            <img
-                src="galhor_14.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 15 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_15.jpg"
-            >
-
-            <img
-                src="galhor_15.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 16 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_16.jpg"
-            >
-
-            <img
-                src="galhor_16.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 17 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_17.jpg"
-            >
-
-            <img
-                src="galhor_17.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 18 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_18.jpg"
-            >
-
-            <img
-                src="galhor_18.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 19 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_19.jpg"
-            >
-
-            <img
-                src="galhor_19.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 20 -->
-
-        <picture class="gallery-item gallery-item-20">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_20.jpg"
-            >
-
-            <img
-                src="galhor_20.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- 21 -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_21.jpg"
-            >
-
-            <img
-                src="galhor_21.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- =================================
-             DESKTOP FINAL IMAGE
-             Mobile image 22
-             ================================= -->
-
-        <picture class="gallery-item">
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_22.jpg"
-            >
-
-            <img
-                src="galhor_24.jpg"
-                alt=""
-                loading="lazy"
-            >
-        </picture>
-
-
-        <!-- =================================
-             MOBILE IMAGE 23 ONLY
-             ================================= -->
-
-        <picture class="gallery-item mobile-only">
-
-            <source
-                media="(max-width: 700px)"
-                srcset="galver_23.jpg"
-            >
-
-            <img
-                src="galhor_24.jpg"
-                alt=""
-                loading="lazy"
-            >
-
-        </picture>
-
-
-    </div>
-
-
-    <!-- =================================
-         WHITE END BLOCK
-         ================================= -->
-
-    <div class="end-block">
-
-        <a
-            href="#top"
-            class="up-button"
-        >
-            UP
-        </a>
-
-    </div>
-
-</main>
-```
+<script>
+document.querySelector('.up-button').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
 
 </body>
 </html>
+```
