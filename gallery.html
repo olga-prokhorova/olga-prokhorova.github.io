@@ -37,6 +37,11 @@ body {
     overflow-x: hidden;
 }
 
+
+/* =========================
+   GALLERY
+   ========================= */
+
 .gallery-page {
     width: 100%;
     min-height: 100vh;
@@ -72,14 +77,29 @@ body {
 
 
 /* =========================
+   DESKTOP / MOBILE VISIBILITY
+   ========================= */
+
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+
+/* =========================
    NAVIGATION
    ========================= */
 
 .navigation {
     position: fixed;
     z-index: 100;
+
     top: calc(50% + 180px);
     left: 79%;
+
     transform: translate(-50%, -50%);
 
     display: flex;
@@ -93,10 +113,12 @@ body {
 .navigation a {
     color: var(--light);
     text-decoration: none;
+
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 23px;
     font-weight: 300;
     line-height: 1;
+
     transition: opacity 0.25s ease;
 }
 
@@ -120,30 +142,26 @@ body {
 
 
 /* =========================
-   MOBILE-ONLY ITEMS
-   ========================= */
-
-.mobile-only {
-    display: none;
-}
-
-
-/* =========================
    BOTTOM SECTION
    ========================= */
 
 .end-block {
     position: relative;
+
     width: 100%;
     height: 200px;
+
     margin-top: var(--gap);
+
     background: #000;
 }
 
 .up-button {
     position: absolute;
+
     left: 50%;
     bottom: 150px;
+
     transform: translateX(-50%);
 
     display: block;
@@ -151,6 +169,7 @@ body {
 
     color: #efefef;
     text-decoration: none;
+
     font: 500 14px/1 var(--font);
 
     transition: opacity 0.25s ease;
@@ -228,13 +247,29 @@ body {
     }
 
 
+    /* Hide desktop gallery */
+
+    .desktop-only {
+        display: none;
+    }
+
+
+    /* Show mobile gallery */
+
+    .mobile-only {
+        display: block;
+    }
+
+
     /* Mobile navigation */
 
     .navigation {
         top: auto;
         left: auto;
+
         right: 7%;
         bottom: 9%;
+
         transform: none;
 
         gap: 22px;
@@ -249,13 +284,6 @@ body {
         width: 20px;
         height: 20px;
         margin-bottom: 0;
-    }
-
-
-    /* Show mobile-only items */
-
-    .mobile-only {
-        display: block;
     }
 
 
@@ -308,217 +336,317 @@ body {
 
 <div class="gallery-page">
 
-    <div class="gallery">
 
+    <!-- ==================================================
+         DESKTOP GALLERY
+         ONLY DESKTOP IMAGES
+         ================================================== -->
 
-        <!-- =========================
-             EXISTING IMAGES
-             ========================= -->
+    <div class="gallery desktop-gallery">
+
 
         <!-- 01 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_1.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_22.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 02 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galvert_2.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_2.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 03 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_3.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_3.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 04 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_4.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_4.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 05 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_5.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_5.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 06 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_6.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_6.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 07 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galvert_7.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_7.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 08 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_8.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_8.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 09 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_9.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_9.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 10 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_10.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_10_1.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 11 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_12.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_11.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 12 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_13.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_12.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 13 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_14.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_13.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 14 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_15.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_14.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 15 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_16.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_15.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 16 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_17.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_16.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 17 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_18.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_17.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 18 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_19.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_18.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 19 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_20.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_21.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 20 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_21.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_19.jpg" alt="">
-        </picture>
+        </div>
 
         <!-- 21 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_22.jpg">
+        <div class="gallery-item desktop-only">
             <img src="galhor_24.jpg" alt="">
-        </picture>
+        </div>
 
 
         <!-- =========================
              NEW DESKTOP IMAGES
-             hor_1.jpg - hor_6.jpg
              ========================= -->
 
-        <!-- Desktop new 01 -->
-        <picture class="gallery-item">
+        <!-- 22 -->
+        <div class="gallery-item desktop-only">
             <img src="hor_1.jpg" alt="">
-        </picture>
+        </div>
 
-        <!-- Desktop new 02 -->
-        <picture class="gallery-item">
+        <!-- 23 -->
+        <div class="gallery-item desktop-only">
             <img src="hor_2.jpg" alt="">
-        </picture>
+        </div>
 
-        <!-- Desktop new 03 -->
-        <picture class="gallery-item">
+        <!-- 24 -->
+        <div class="gallery-item desktop-only">
             <img src="hor_3.jpg" alt="">
-        </picture>
+        </div>
 
-        <!-- Desktop new 04 -->
-        <picture class="gallery-item">
+        <!-- 25 -->
+        <div class="gallery-item desktop-only">
             <img src="hor_4.jpg" alt="">
-        </picture>
+        </div>
 
-        <!-- Desktop new 05 -->
-        <picture class="gallery-item">
+        <!-- 26 -->
+        <div class="gallery-item desktop-only">
             <img src="hor_5.jpg" alt="">
-        </picture>
+        </div>
 
-        <!-- Desktop new 06 -->
-        <picture class="gallery-item">
+        <!-- 27 -->
+        <div class="gallery-item desktop-only">
             <img src="hor_6.jpg" alt="">
-        </picture>
-
-
-        <!-- =========================
-             NEW MOBILE IMAGES
-             ver_1, ver_3, ver_4,
-             ver_5, ver_6, ver_7
-             ========================= -->
-
-        <!-- Mobile new 01 -->
-        <picture class="gallery-item mobile-only">
-            <img src="ver_1.jpg" alt="">
-        </picture>
-
-        <!-- Mobile new 03 -->
-        <picture class="gallery-item mobile-only">
-            <img src="ver_3.jpg" alt="">
-        </picture>
-
-        <!-- Mobile new 04 -->
-        <picture class="gallery-item mobile-only">
-            <img src="ver_4.jpg" alt="">
-        </picture>
-
-        <!-- Mobile new 05 -->
-        <picture class="gallery-item mobile-only">
-            <img src="ver_5.jpg" alt="">
-        </picture>
-
-        <!-- Mobile new 06 -->
-        <picture class="gallery-item mobile-only">
-            <img src="ver_6.jpg" alt="">
-        </picture>
-
-        <!-- Mobile new 07 -->
-        <picture class="gallery-item mobile-only">
-            <img src="ver_7.jpg" alt="">
-        </picture>
-
+        </div>
 
     </div>
 
 
-    <!-- Bottom -->
+
+    <!-- ==================================================
+         MOBILE GALLERY
+         ONLY MOBILE IMAGES
+         ================================================== -->
+
+    <div class="gallery mobile-gallery">
+
+
+        <!-- 01 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_1.jpg" alt="">
+        </div>
+
+        <!-- 02 -->
+        <div class="gallery-item mobile-only">
+            <img src="galvert_2.jpg" alt="">
+        </div>
+
+        <!-- 03 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_3.jpg" alt="">
+        </div>
+
+        <!-- 04 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_4.jpg" alt="">
+        </div>
+
+        <!-- 05 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_5.jpg" alt="">
+        </div>
+
+        <!-- 06 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_6.jpg" alt="">
+        </div>
+
+        <!-- 07 -->
+        <div class="gallery-item mobile-only">
+            <img src="galvert_7.jpg" alt="">
+        </div>
+
+        <!-- 08 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_8.jpg" alt="">
+        </div>
+
+        <!-- 09 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_9.jpg" alt="">
+        </div>
+
+        <!-- 10 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_10.jpg" alt="">
+        </div>
+
+        <!-- 11 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_12.jpg" alt="">
+        </div>
+
+        <!-- galver_13.jpg REMOVED -->
+
+        <!-- 12 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_14.jpg" alt="">
+        </div>
+
+        <!-- 13 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_15.jpg" alt="">
+        </div>
+
+        <!-- 14 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_16.jpg" alt="">
+        </div>
+
+        <!-- 15 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_17.jpg" alt="">
+        </div>
+
+        <!-- 16 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_18.jpg" alt="">
+        </div>
+
+        <!-- 17 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_19.jpg" alt="">
+        </div>
+
+        <!-- 18 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_20.jpg" alt="">
+        </div>
+
+        <!-- 19 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_21.jpg" alt="">
+        </div>
+
+        <!-- 20 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_22.jpg" alt="">
+        </div>
+
+        <!-- 21 -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_23.jpg" alt="">
+        </div>
+
+
+        <!-- =========================
+             NEW MOBILE IMAGES
+             ========================= -->
+
+        <!-- 22 -->
+        <div class="gallery-item mobile-only">
+            <img src="ver_1.jpg" alt="">
+        </div>
+
+        <!-- 23 -->
+        <div class="gallery-item mobile-only">
+            <img src="ver_3.jpg" alt="">
+        </div>
+
+        <!-- 24 -->
+        <div class="gallery-item mobile-only">
+            <img src="ver_4.jpg" alt="">
+        </div>
+
+        <!-- 25 -->
+        <div class="gallery-item mobile-only">
+            <img src="ver_5.jpg" alt="">
+        </div>
+
+        <!-- 26 -->
+        <div class="gallery-item mobile-only">
+            <img src="ver_6.jpg" alt="">
+        </div>
+
+        <!-- 27 -->
+        <div class="gallery-item mobile-only">
+            <img src="ver_7.jpg" alt="">
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         BOTTOM
+         ================================================== -->
+
     <div class="end-block">
         <a href="#" class="up-button">UP</a>
     </div>
@@ -526,11 +654,18 @@ body {
 </div>
 
 
-<!-- Fixed navigation -->
+<!-- ==================================================
+     FIXED NAVIGATION
+     ================================================== -->
+
 <nav class="navigation">
 
-    <a href="https://www.instagram.com/" class="instagram" aria-label="Instagram">
+    <a href="https://www.instagram.com/"
+       class="instagram"
+       aria-label="Instagram">
+
         <img src="instagram_icon.png" alt="Instagram">
+
     </a>
 
     <a href="index.html">home</a>
