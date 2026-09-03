@@ -8,6 +8,12 @@
 
     <style>
 
+        :root {
+            --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --light: #efefef;
+            --dark: #515151;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -26,26 +32,16 @@
 
         body {
             background: #000;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family: var(--font);
             font-weight: 300;
             overflow-x: hidden;
         }
-
-
-        /* =================================
-           WORKS PAGE
-           ================================= */
 
         .works-page {
             width: 100%;
             min-height: 100vh;
             background: #000;
         }
-
-
-        /* =================================
-           TOP
-           ================================= */
 
         #top {
             position: relative;
@@ -58,7 +54,6 @@
 
         .site-name {
             position: absolute;
-
             top: calc(11% + 30px);
             left: calc(5.5% + 30px);
 
@@ -66,21 +61,12 @@
 
             margin: 0;
 
-            color: #efefef;
+            color: var(--light);
             text-decoration: none;
 
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
+            font: 300 55px/1 var(--font);
 
-            font-size: 55px;
-            font-weight: 300;
-
-            line-height: 1;
             letter-spacing: 5px;
-
             white-space: nowrap;
         }
 
@@ -101,57 +87,38 @@
 
 
         /* =================================
-           WORK TEXT BLOCK
+           WORK TEXT
            ================================= */
 
         .work-text {
             width: 100%;
 
-            background: #ffffff;
+            padding: 40px 5.5% 110px;
 
-            padding-top: 40px;
-            padding-bottom: 110px;
-
-            padding-left: 5.5%;
-            padding-right: 5.5%;
-
-            color: #515151;
+            background: #fff;
+            color: var(--dark);
         }
 
         .work-text h2 {
-            margin: 0 0 18px 0;
+            margin: 0 0 18px;
 
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            font-size: 14px;
-            font-weight: 500;
-
-            line-height: 1.45;
+            font: 500 14px/1.45 var(--font);
         }
 
         .work-text p {
-            margin: 0 0 18px 0;
-
             max-width: 650px;
 
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
+            margin: 0 0 18px;
 
-            font-size: 14px;
-            font-weight: 300;
-
-            line-height: 1.45;
+            font: 300 14px/1.45 var(--font);
         }
 
         .work-text p:last-child {
             margin-bottom: 0;
+        }
+
+        .final-work-text {
+            padding-bottom: 310px;
         }
 
 
@@ -176,33 +143,21 @@
             gap: 34px;
         }
 
-
-        /* =================================
-           NAVIGATION LINKS
-           ================================= */
-
         .navigation a:not(.instagram) {
-            color: #efefef;
+            color: var(--light);
 
             text-decoration: none;
 
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            font-size: 23px;
-            font-weight: 300;
-
-            line-height: 1;
+            font: 300 23px/1 var(--font);
 
             transition:
                 color 0.35s ease,
                 opacity 0.25s ease;
         }
 
-        .navigation a:not(.instagram):hover {
+        .navigation a:not(.instagram):hover,
+        .instagram:hover,
+        .up-button:hover {
             opacity: 0.55;
         }
 
@@ -220,8 +175,6 @@
             margin-bottom: 8px;
 
             opacity: 0.95;
-
-            transition: opacity 0.25s ease;
         }
 
         .instagram img {
@@ -235,17 +188,13 @@
             transition: filter 0.35s ease;
         }
 
-        .instagram:hover {
-            opacity: 0.55;
-        }
-
 
         /* =================================
            NAVIGATION OVER WHITE
            ================================= */
 
         .navigation.on-white a:not(.instagram) {
-            color: #515151;
+            color: var(--dark);
         }
 
         .navigation.on-white .instagram img {
@@ -264,26 +213,12 @@
 
             margin: 0 auto;
 
-            padding: 0 0 60px 0;
+            padding-bottom: 60px;
 
-            color: #515151;
-
+            color: var(--dark);
             text-decoration: none;
 
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            font-size: 14px;
-            font-weight: 500;
-
-            line-height: 1;
-        }
-
-        .up-button:hover {
-            opacity: 0.55;
+            font: 500 14px/1 var(--font);
         }
 
 
@@ -298,15 +233,11 @@
                 left: calc(5% + 30px);
 
                 font-size: 45px;
-                font-weight: 300;
-
                 letter-spacing: 4px;
             }
 
             .navigation {
                 top: calc(50% + 150px);
-                left: 79%;
-
                 gap: 30px;
             }
 
@@ -319,11 +250,6 @@
                 height: 20px;
 
                 margin-bottom: 0;
-            }
-
-            .work-text {
-                padding-top: 40px;
-                padding-bottom: 110px;
             }
         }
 
@@ -349,8 +275,6 @@
                 left: 6%;
 
                 font-size: 30px;
-                font-weight: 300;
-
                 letter-spacing: 3px;
             }
 
@@ -371,45 +295,30 @@
 
             .navigation a:not(.instagram) {
                 font-size: 19px;
-                font-weight: 300;
             }
 
             .instagram {
                 width: 20px;
                 height: 20px;
-
-                margin-bottom: 0;
             }
 
 
             /* MOBILE IMAGES */
 
             .work-image {
-                width: 100%;
                 height: 100svh;
-
-                object-fit: cover;
-                object-position: center;
             }
 
 
             /* MOBILE TEXT */
 
             .work-text {
-                padding-top: 40px;
-                padding-bottom: 110px;
-
-                padding-left: 6%;
-                padding-right: 6%;
+                padding: 40px 6% 110px;
             }
 
             .work-text h2 {
                 margin-bottom: 16px;
-
                 font-size: 12px;
-                font-weight: 500;
-
-                line-height: 1.45;
             }
 
             .work-text p {
@@ -418,9 +327,6 @@
                 margin-bottom: 16px;
 
                 font-size: 14px;
-                font-weight: 300;
-
-                line-height: 1.45;
             }
 
 
@@ -428,9 +334,7 @@
 
             .up-button {
                 padding-bottom: 50px;
-
                 font-size: 12px;
-                font-weight: 500;
             }
         }
 
@@ -443,17 +347,12 @@
 
             .site-name {
                 top: calc(6% + 60px);
-
                 font-size: 25px;
-                font-weight: 300;
-
-                letter-spacing: 3px;
             }
 
             .navigation {
                 right: 7%;
                 bottom: 7%;
-
                 gap: 18px;
             }
 
@@ -466,20 +365,17 @@
                 height: 18px;
             }
 
-            .work-text {
-                padding-top: 40px;
-                padding-bottom: 110px;
-            }
-
             .work-text p {
                 max-width: 275px;
             }
 
+            .final-work-text {
+                padding-bottom: 310px;
+            }
+
             .up-button {
                 padding-bottom: 40px;
-
                 font-size: 12px;
-                font-weight: 500;
             }
         }
 
@@ -505,10 +401,8 @@
         >
     </a>
 
-    <a href="works.html">works</a>
     <a href="cv.html">cv</a>
     <a href="bio.html">bio</a>
-    <a href="gallery.html">gallery</a>
     <a href="contact.html">contact</a>
 
 </nav>
@@ -696,11 +590,7 @@
             <h2>BOTTOM OF BLOOD</h2>
 
             <p>
-                Tasting berries and blood with the audience in a park.
-            </p>
-
-            <p>
-                A poetic performance-exploration.
+                Tasting berries and blood with the audience in a park. A poetic performance exploration.
             </p>
 
             <p>
@@ -898,7 +788,7 @@
             alt="STRESS OR MISTRESS"
         >
 
-        <div class="work-text">
+        <div class="work-text final-work-text">
 
             <h2>STRESS OR MISTRESS</h2>
 
@@ -946,10 +836,6 @@
 
 <script>
 
-    /* =================================
-       NAVIGATION COLOUR
-       ================================= */
-
     const navigation = document.querySelector(".navigation");
     const whiteSections = document.querySelectorAll(".work-text");
 
@@ -959,13 +845,8 @@
             return;
         }
 
-        const navRect = navigation.getBoundingClientRect();
-
-        /*
-         * Use the centre of the navigation as the reference point.
-         * If that point is inside a white text block,
-         * turn the navigation dark grey.
-         */
+        const navRect =
+            navigation.getBoundingClientRect();
 
         const navCenterX =
             navRect.left + (navRect.width / 2);
