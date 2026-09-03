@@ -76,7 +76,7 @@
                 sans-serif;
 
             font-size: 55px;
-            font-weight: 100;
+            font-weight: 300;
 
             line-height: 1;
             letter-spacing: 5px;
@@ -174,8 +174,6 @@
             align-items: flex-start;
 
             gap: 34px;
-
-            transition: color 0.35s ease;
         }
 
 
@@ -223,9 +221,7 @@
 
             opacity: 0.95;
 
-            transition:
-                opacity 0.25s ease,
-                filter 0.35s ease;
+            transition: opacity 0.25s ease;
         }
 
         .instagram img {
@@ -236,8 +232,7 @@
 
             object-fit: contain;
 
-            transition:
-                filter 0.35s ease;
+            transition: filter 0.35s ease;
         }
 
         .instagram:hover {
@@ -254,7 +249,7 @@
         }
 
         .navigation.on-white .instagram img {
-            filter: brightness(0) saturate(100%) invert(32%);
+            filter: brightness(0);
         }
 
 
@@ -276,9 +271,7 @@
 
             font-family:
                 "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
+                Helvetica, Arial, sans-serif;
 
             font-size: 14px;
             font-weight: 500;
@@ -302,7 +295,7 @@
                 left: calc(5% + 30px);
 
                 font-size: 45px;
-                font-weight: 100;
+                font-weight: 300;
 
                 letter-spacing: 4px;
             }
@@ -353,7 +346,7 @@
                 left: 6%;
 
                 font-size: 30px;
-                font-weight: 100;
+                font-weight: 300;
 
                 letter-spacing: 3px;
             }
@@ -449,7 +442,7 @@
                 top: calc(6% + 60px);
 
                 font-size: 25px;
-                font-weight: 100;
+                font-weight: 300;
 
                 letter-spacing: 3px;
             }
@@ -931,31 +924,85 @@
     const navigation = document.querySelector(".navigation");
     const whiteSections = document.querySelectorAll(".work-text");
 
-    const observer = new IntersectionObserver(
-        (entries) => {
+    function updateNavigationColor() {
 
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-                    navigation.classList.add("on-white");
-                } else {
-                    navigation.classList.remove("on-white");
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.05
+        if (!navigation) {
+            return;
         }
+
+        const navRect = navigation.getBoundingClientRect();
+
+        /*
+         * Use the centre of the navigation as the reference point.
+         * If that point is inside a white text block,
+         * turn the navigation dark grey.
+         */
+
+        const navCenterX =
+            navRect.left + (navRect.width / 2);
+
+        const navCenterY =
+            navRect.top + (navRect.height / 2);
+
+        let overWhite = false;
+
+        whiteSections.forEach((section) => {
+
+            const rect = section.getBoundingClientRect();
+
+            const insideWhite =
+                navCenterX >= rect.left &&
+                navCenterX <= rect.right &&
+                navCenterY >= rect.top &&
+                navCenterY <= rect.bottom;
+
+            if (insideWhite) {
+                overWhite = true;
+            }
+
+        });
+
+        navigation.classList.toggle("on-white", overWhite);
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateNavigationColor,
+        { passive: true }
     );
 
+    window.addEventListener(
+        "resize",
+        updateNavigationColor
+    );
 
-    whiteSections.forEach((section) => {
-        observer.observe(section);
-    });
+    updateNavigationColor();
 
 </script>
+
+
+<nav class="navigation">
+
+    <a
+        class="instagram"
+        href="https://www.instagram.com/performateria/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+    >
+        <img
+            src="instagram_icon.png"
+            alt="Instagram"
+        >
+    </a>
+
+    <a href="works.html">works</a>
+    <a href="about.html">about</a>
+    <a href="bio.html">bio</a>
+    <a href="contact.html">contact</a>
+
+</nav>
 
 </body>
 </html>
