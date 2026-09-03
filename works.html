@@ -7,7 +7,6 @@
     <title>Olga Prokhorova — Works</title>
 
     <style>
-
         :root {
             --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
             --light: #efefef;
@@ -47,10 +46,6 @@
             position: relative;
         }
 
-        /* =================================
-           DESKTOP SITE NAME
-           ================================= */
-
         .site-name {
             position: fixed;
             top: calc(11% + 30px);
@@ -63,10 +58,6 @@
             letter-spacing: 5px;
             white-space: nowrap;
         }
-
-        /* =================================
-           DESKTOP WORKS
-           ================================= */
 
         .work {
             position: relative;
@@ -90,10 +81,6 @@
         .work:last-of-type .work-image {
             object-position: center bottom;
         }
-
-        /* =================================
-           DESKTOP TEXT
-           ================================= */
 
         .work-text {
             position: absolute;
@@ -123,9 +110,15 @@
             margin-bottom: 0;
         }
 
-        /* =================================
-           END BLOCK
-           ================================= */
+        /* DESKTOP — selected text blocks moved down 50px */
+        @media (min-width: 701px) {
+            .work-juoppo .work-text,
+            .work-bottom-blood .work-text,
+            .work-abundance .work-text,
+            .work-never-lost .work-text {
+                transform: translateY(50px);
+            }
+        }
 
         .end-block {
             position: relative;
@@ -137,10 +130,6 @@
         .end-block .up-button {
             color: var(--dark);
         }
-
-        /* =================================
-           DESKTOP NAVIGATION
-           ================================= */
 
         .navigation {
             position: fixed;
@@ -158,7 +147,6 @@
             color: var(--light);
             text-decoration: none;
             font: 300 23px/1 var(--font);
-            transition: color 0.35s ease, opacity 0.25s ease;
         }
 
         .navigation a:not(.instagram):hover,
@@ -180,15 +168,6 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            transition: filter 0.35s ease;
-        }
-
-        .navigation.on-white a:not(.instagram) {
-            color: var(--dark);
-        }
-
-        .navigation.on-white .instagram img {
-            filter: brightness(0);
         }
 
         .up-button {
@@ -202,10 +181,6 @@
             text-decoration: none;
             font: 500 14px/1 var(--font);
         }
-
-        /* =================================
-           TABLET
-           ================================= */
 
         @media (max-width: 1100px) {
 
@@ -245,11 +220,6 @@
                 font-size: 16px;
             }
         }
-
-        /* =================================
-           MOBILE
-           ALL MOBILE PARAMETERS ARE INDEPENDENT
-           ================================= */
 
         @media (max-width: 700px) {
 
@@ -308,6 +278,7 @@
                 padding: 40px 6% 110px;
                 background: #fff;
                 color: var(--dark);
+                transform: none;
             }
 
             .work-text h2 {
@@ -341,11 +312,6 @@
                 color: var(--dark);
             }
         }
-
-        /* =================================
-           SMALL MOBILE
-           ALL PARAMETERS INDEPENDENT
-           ================================= */
 
         @media (max-width: 430px) {
 
@@ -393,551 +359,538 @@
                 font-size: 12px;
             }
         }
-
     </style>
 </head>
 
-
 <body>
 
-<nav class="navigation">
+    <nav class="navigation">
 
-    <a
-        class="instagram"
-        href="https://www.instagram.com/performateria/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-    >
-        <img
-            src="instagram_icon.png"
-            alt="Instagram"
+        <a
+            class="instagram"
+            href="https://www.instagram.com/performateria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
         >
-    </a>
+            <img
+                src="instagram_icon.png"
+                alt="Instagram"
+            >
+        </a>
 
-    <a href="cv.html">cv</a>
-    <a href="bio.html">bio</a>
-    <a href="gallery.html">gallery</a>
-    <a href="contact.html">contact</a>
+        <a href="cv.html">cv</a>
+        <a href="bio.html">bio</a>
+        <a href="gallery.html">gallery</a>
+        <a href="contact.html">contact</a>
 
-</nav>
+    </nav>
+
+    <main class="works-page" id="top">
+
+        <!-- =================================
+             WORK 1 — JUOPPO JOOGAA
+             ================================= -->
+
+        <section class="work work-juoppo">
+
+            <div style="position: relative;">
+
+                <a href="index.html" class="site-name">
+                    OLGA PROKHOROVA
+                </a>
+
+                <picture>
+                    <source media="(min-width: 701px)" srcset="ww_1.jpg">
+
+                    <img
+                        class="work-image"
+                        src="w_2.jpg"
+                        alt="JUOPPO JOOGAA"
+                    >
+                </picture>
+
+            </div>
+
+            <div class="work-text">
+
+                <h2>JUOPPO JOOGAA</h2>
+
+                <p>
+                    A series of 30 independent performances across different areas
+                    of Oulu, including places commonly frequented by people with
+                    addictions. A pink figure performs yoga routines on the
+                    sidewalks, holding a bottle in different asanas.
+                </p>
+
+                <p>
+                    Oulu, Finland 2026
+                </p>
+
+                <p>
+                    Each performance is a 20-minute session
+                </p>
+
+            </div>
+
+        </section>
 
 
-<main class="works-page" id="top">
+        <!-- =================================
+             WORK 2 — AS ATTACHMENT
+             ================================= -->
 
-
-    <!-- =================================
-         WORK 1 — JUOPPO JOOGAA
-         ================================= -->
-
-    <section class="work">
-
-        <div style="position: relative;">
-
-            <a href="index.html" class="site-name">
-                OLGA PROKHOROVA
-            </a>
+        <section class="work">
 
             <picture>
-                <source media="(min-width: 701px)" srcset="ww_1.jpg">
+                <source media="(min-width: 701px)" srcset="ww_2.jpg">
+
                 <img
                     class="work-image"
-                    src="w_2.jpg"
-                    alt="JUOPPO JOOGAA"
+                    src="w_3.jpg"
+                    alt="AS ATTACHMENT"
                 >
             </picture>
 
-        </div>
+            <div class="work-text">
 
-        <div class="work-text">
+                <h2>AS ATTACHMENT</h2>
 
-            <h2>JUOPPO JOOGAA</h2>
+                <p>
+                    A durational performance of wearing a wedding dress while
+                    chained to a fence next to love locks. Eventually, the
+                    performer begins conversations with passersby about the nature
+                    of love, attachment, and the hardships of relationships.
+                </p>
 
-            <p>
-                A series of 30 independent performances across different areas
-                of Oulu, including places commonly frequented by people with
-                addictions. A pink figure performs yoga routines on the
-                sidewalks, holding a bottle in different asanas.
-            </p>
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
 
-            <p>
-                Oulu, Finland 2026
-            </p>
+                <p>
+                    Duration 4 hours.
+                </p>
 
-            <p>
-                Each performance is a 20-minute session
-            </p>
+            </div>
 
-        </div>
+        </section>
 
-    </section>
 
+        <!-- =================================
+             WORK 3 — WEARING BURDEN
+             ================================= -->
 
-    <!-- =================================
-         WORK 2 — AS ATTACHMENT
-         ================================= -->
+        <section class="work">
 
-    <section class="work">
+            <picture>
+                <source media="(min-width: 701px)" srcset="ww_3.jpg">
 
-        <picture>
-            <source media="(min-width: 701px)" srcset="ww_2.jpg">
-            <img
-                class="work-image"
-                src="w_3.jpg"
-                alt="AS ATTACHMENT"
-            >
-        </picture>
+                <img
+                    class="work-image"
+                    src="w_4.jpg"
+                    alt="WEARING BURDEN"
+                >
+            </picture>
 
-        <div class="work-text">
+            <div class="work-text">
 
-            <h2>AS ATTACHMENT</h2>
+                <h2>WEARING BURDEN</h2>
 
-            <p>
-                A durational performance of wearing a wedding dress while
-                chained to a fence next to love locks. Eventually, the
-                performer begins conversations with passersby about the nature
-                of love, attachment, and the hardships of relationships.
-            </p>
+                <p>
+                    How does it feel to lose your restrictions?
+                </p>
 
-            <p>
-                Joensuu, Finland 2021.
-            </p>
+                <p>
+                    The performer wears 20 kilos of black dough around the city.
+                    Eventually, the burden is gradually released by pinching off
+                    small pieces, experiencing how the body adapts to freedom and
+                    how it feels to let go.
+                </p>
 
-            <p>
-                Duration 4 hours.
-            </p>
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
 
-        </div>
+                <p>
+                    Duration 2 hours.
+                </p>
 
-    </section>
+            </div>
 
+        </section>
 
-    <!-- =================================
-         WORK 3 — WEARING BURDEN
-         ================================= -->
 
-    <section class="work">
+        <!-- =================================
+             WORK 4 — COUNTING DAYS
+             ================================= -->
 
-        <picture>
-            <source media="(min-width: 701px)" srcset="ww_3.jpg">
-            <img
-                class="work-image"
-                src="w_4.jpg"
-                alt="WEARING BURDEN"
-            >
-        </picture>
+        <section class="work">
 
-        <div class="work-text">
+            <picture>
+                <source media="(min-width: 701px)" srcset="ww_4.jpg">
 
-            <h2>WEARING BURDEN</h2>
+                <img
+                    class="work-image"
+                    src="w_1_1.jpg"
+                    alt="COUNTING DAYS"
+                >
+            </picture>
 
-            <p>
-                How does it feel to lose your restrictions?
-            </p>
+            <div class="work-text">
 
-            <p>
-                The performer wears 20 kilos of black dough around the city.
-                Eventually, the burden is gradually released by pinching off
-                small pieces, experiencing how the body adapts to freedom and
-                how it feels to let go.
-            </p>
+                <h2>COUNTING DAYS</h2>
 
-            <p>
-                Joensuu, Finland 2021.
-            </p>
+                <p>
+                    An anti-war performance series presented in Mexico and Finland.
+                    The performer falls and rises as many times as the number of
+                    days the Russian war against Ukraine has lasted. Later, the
+                    action turns into cutting holes in the coat, reaching day 730.
+                </p>
 
-            <p>
-                Duration 2 hours.
-            </p>
+                <p>
+                    The project was paused after two years. Unfortunately, the war
+                    keeps going into its fifth year.
+                </p>
 
-        </div>
+                <p>
+                    Mexico–Finland 2022.
+                </p>
 
-    </section>
+                <p>
+                    Duration 2 years.
+                </p>
 
+            </div>
 
-    <!-- =================================
-         WORK 4 — COUNTING DAYS
-         ================================= -->
+        </section>
 
-    <section class="work">
 
-        <picture>
-            <source media="(min-width: 701px)" srcset="ww_4.jpg">
-            <img
-                class="work-image"
-                src="w_1_1.jpg"
-                alt="COUNTING DAYS"
-            >
-        </picture>
+        <!-- =================================
+             WORK 5 — BOTTOM OF BLOOD
+             ================================= -->
 
-        <div class="work-text">
+        <section class="work work-bottom-blood">
 
-            <h2>COUNTING DAYS</h2>
+            <picture>
+                <source media="(min-width: 701px)" srcset="ww_5.jpg">
 
-            <p>
-                An anti-war performance series presented in Mexico and Finland.
-                The performer falls and rises as many times as the number of
-                days the Russian war against Ukraine has lasted. Later, the
-                action turns into cutting holes in the coat, reaching day 730.
-            </p>
+                <img
+                    class="work-image"
+                    src="w_12.jpg"
+                    alt="BOTTOM OF BLOOD"
+                >
+            </picture>
 
-            <p>
-                The project was paused after two years. Unfortunately, the war
-                keeps going into its fifth year.
-            </p>
+            <div class="work-text">
 
-            <p>
-                Mexico–Finland 2022.
-            </p>
+                <h2>BOTTOM OF BLOOD</h2>
 
-            <p>
-                Duration 2 years.
-            </p>
+                <p>
+                    Tasting berries and blood with the audience in a park. A poetic performance exploration.
+                </p>
 
-        </div>
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
 
-    </section>
+                <p>
+                    Duration 30 minutes.
+                </p>
 
+            </div>
 
-    <!-- =================================
-         WORK 5 — BOTTOM OF BLOOD
-         ================================= -->
+        </section>
 
-    <section class="work">
 
-        <picture>
-            <source media="(min-width: 701px)" srcset="ww_5.jpg">
-            <img
-                class="work-image"
-                src="w_12.jpg"
-                alt="BOTTOM OF BLOOD"
-            >
-        </picture>
+        <!-- =================================
+             WORK 6 — OPPOSITE CATHERINE
+             ================================= -->
 
-        <div class="work-text">
+        <section class="work">
 
-            <h2>BOTTOM OF BLOOD</h2>
+            <picture>
+                <source media="(min-width: 701px)" srcset="ww_6.jpg">
 
-            <p>
-                Tasting berries and blood with the audience in a park. A poetic
-                performance exploration.
-            </p>
+                <img
+                    class="work-image"
+                    src="w_9.jpg"
+                    alt="OPPOSITE CATHERINE"
+                >
+            </picture>
 
-            <p>
-                Joensuu, Finland 2021.
-            </p>
+            <div class="work-text">
 
-            <p>
-                Duration 30 minutes.
-            </p>
+                <h2>OPPOSITE CATHERINE</h2>
 
-        </div>
+                <p>
+                    A long-durational exploration of bodily and behavioural
+                    creativity. The performer is positioned backwards, using the
+                    body's peripheral side as the frontal.
+                </p>
 
-    </section>
+                <p>
+                    “We are crazy about food and food ideologies. About food
+                    rituals. About food information. We have plans for eating
+                    better. Or eating less...”
+                </p>
 
+                <p>
+                    The performer brings only mud into the kitchen space. Plenty
+                    of mud.
+                </p>
 
-    <!-- =================================
-         WORK 6 — OPPOSITE CATHERINE
-         ================================= -->
+                <p>
+                    Oulu, Finland 2016.
+                </p>
 
-    <section class="work">
+                <p>
+                    Duration 5 hours.
+                </p>
 
-        <picture>
-            <source media="(min-width: 701px)" srcset="ww_6.jpg">
-            <img
-                class="work-image"
-                src="w_9.jpg"
-                alt="OPPOSITE CATHERINE"
-            >
-        </picture>
+            </div>
 
-        <div class="work-text">
+        </section>
 
-            <h2>OPPOSITE CATHERINE</h2>
 
-            <p>
-                A long-durational exploration of bodily and behavioural
-                creativity. The performer is positioned backwards, using the
-                body's peripheral side as the frontal.
-            </p>
+        <!-- =================================
+             WORK 7 — ABUNDANCE
+             ================================= -->
 
-            <p>
-                “We are crazy about food and food ideologies. About food
-                rituals. About food information. We have plans for eating
-                better. Or eating less...”
-            </p>
+        <section class="work work-abundance">
 
-            <p>
-                The performer brings only mud into the kitchen space. Plenty
-                of mud.
-            </p>
+            <picture>
+                <source media="(min-width: 701px)" srcset="ww_7.jpg">
 
-            <p>
-                Oulu, Finland 2016.
-            </p>
+                <img
+                    class="work-image"
+                    src="w_6.jpg"
+                    alt="ABUNDANCE"
+                >
+            </picture>
 
-            <p>
-                Duration 5 hours.
-            </p>
+            <div class="work-text">
 
-        </div>
+                <h2>ABUNDANCE</h2>
 
-    </section>
+                <p>
+                    The performer makes interventions in the city space and plants
+                    about 50 sausages on the lawn. Each of them is carved into
+                    “a penis shape”.
+                </p>
 
+                <p>
+                    The newly created sight is offered to citizens to observe the
+                    abundance of Nature. There one can think about beauty,
+                    forgiveness, joy, acceptance, polarities, or even death,
+                    aggression, occupation, and inequality.
+                </p>
 
-    <!-- =================================
-         WORK 7 — ABUNDANCE
-         ================================= -->
+                <p>
+                    Joensuu, Finland 2021, Night of Arts.
+                </p>
 
-    <section class="work">
+                <p>
+                    Duration 1 hour 20 minutes.
+                </p>
 
-        <picture>
-            <source media="(min-width: 701px)" srcset="ww_7.jpg">
-            <img
-                class="work-image"
-                src="w_6.jpg"
-                alt="ABUNDANCE"
-            >
-        </picture>
+            </div>
 
-        <div class="work-text">
+        </section>
 
-            <h2>ABUNDANCE</h2>
 
-            <p>
-                The performer makes interventions in the city space and plants
-                about 50 sausages on the lawn. Each of them is carved into
-                “a penis shape”.
-            </p>
+        <!-- =================================
+             WORK 8 — IN LOVE WITH THE BUS STOP
+             ================================= -->
 
-            <p>
-                The newly created sight is offered to citizens to observe the
-                abundance of Nature. There one can think about beauty,
-                forgiveness, joy, acceptance, polarities, or even death,
-                aggression, occupation, and inequality.
-            </p>
+        <section class="work">
 
-            <p>
-                Joensuu, Finland 2021, Night of Arts.
-            </p>
+            <picture>
+                <source media="(min-width: 701px)" srcset="ww_8.jpg">
 
-            <p>
-                Duration 1 hour 20 minutes.
-            </p>
+                <img
+                    class="work-image"
+                    src="w_8_2.jpg"
+                    alt="IN LOVE WITH THE BUS STOP"
+                >
+            </picture>
 
-        </div>
+            <div class="work-text">
 
-    </section>
+                <h2>IN LOVE WITH THE BUS STOP</h2>
 
+                <p>
+                    An action of covering a distant bus stop with a pattern of
+                    lipstick stamps. The performer remains there, watching passing
+                    cars and buses, while going nowhere.
+                </p>
 
-    <!-- =================================
-         WORK 8 — IN LOVE WITH THE BUS STOP
-         ================================= -->
+                <p>
+                    A simple gesture of affection turns an ordinary public place
+                    into a strange, intimate meeting point.
+                </p>
 
-    <section class="work">
+                <p>
+                    Joensuu, Finland 2022.
+                </p>
 
-        <picture>
-            <source media="(min-width: 701px)" srcset="ww_8.jpg">
-            <img
-                class="work-image"
-                src="w_8_2.jpg"
-                alt="IN LOVE WITH THE BUS STOP"
-            >
-        </picture>
+                <p>
+                    Duration 1 hour.
+                </p>
 
-        <div class="work-text">
+            </div>
 
-            <h2>IN LOVE WITH THE BUS STOP</h2>
+        </section>
 
-            <p>
-                An action of covering a distant bus stop with a pattern of
-                lipstick stamps. The performer remains there, watching passing
-                cars and buses, while going nowhere.
-            </p>
 
-            <p>
-                A simple gesture of affection turns an ordinary public place
-                into a strange, intimate meeting point.
-            </p>
+        <!-- =================================
+             WORK 9 — NEVER-LOST IN KUHASALO
+             ================================= -->
 
-            <p>
-                Joensuu, Finland 2022.
-            </p>
+        <section class="work work-never-lost">
 
-            <p>
-                Duration 1 hour.
-            </p>
+            <picture>
+                <source media="(min-width: 701px)" srcset="ww_9.jpg">
 
-        </div>
+                <img
+                    class="work-image"
+                    src="w_5.jpg"
+                    alt="NEVER-LOST IN KUHASALO"
+                >
+            </picture>
 
-    </section>
+            <div class="work-text">
 
+                <h2>NEVER-LOST IN KUHASALO</h2>
 
-    <!-- =================================
-         WORK 9 — NEVER-LOST IN KUHASALO
-         ================================= -->
+                <p>
+                    The performer walks barefoot and blindfolded along a newly
+                    built road into the wild nature, over 2 km long.
+                </p>
 
-    <section class="work">
+                <p>
+                    The performance questions the idea of making the forest easy
+                    and accessible. With vision dramatically reduced, the body
+                    becomes dependent on touch, sound, and smell. The new road
+                    makes it impossible to get lost — but perhaps a forest is not
+                    supposed to be so easy to navigate.
+                </p>
 
-        <picture>
-            <source media="(min-width: 701px)" srcset="ww_9.jpg">
-            <img
-                class="work-image"
-                src="w_5.jpg"
-                alt="NEVER-LOST IN KUHASALO"
-            >
-        </picture>
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
 
-        <div class="work-text">
+                <p>
+                    Duration 1 hour 30 minutes.
+                </p>
 
-            <h2>NEVER-LOST IN KUHASALO</h2>
+            </div>
 
-            <p>
-                The performer walks barefoot and blindfolded along a newly
-                built road into the wild nature, over 2 km long.
-            </p>
+        </section>
 
-            <p>
-                The performance questions the idea of making the forest easy
-                and accessible. With vision dramatically reduced, the body
-                becomes dependent on touch, sound, and smell. The new road
-                makes it impossible to get lost — but perhaps a forest is not
-                supposed to be so easy to navigate.
-            </p>
 
-            <p>
-                Joensuu, Finland 2021.
-            </p>
+        <!-- =================================
+             WORK 10 — STRESS OR MISTRESS
+             ================================= -->
 
-            <p>
-                Duration 1 hour 30 minutes.
-            </p>
+        <section class="work">
 
-        </div>
+            <picture>
+                <source media="(min-width: 701px)" srcset="ww_10.jpg">
 
-    </section>
+                <img
+                    class="work-image"
+                    src="w_10.jpg"
+                    alt="STRESS OR MISTRESS"
+                >
+            </picture>
 
+            <div class="work-text final-work-text">
 
-    <!-- =================================
-         WORK 10 — STRESS OR MISTRESS
-         ================================= -->
+                <h2>STRESS OR MISTRESS</h2>
 
-    <section class="work">
+                <p>
+                    The performer is drumming on a bag of flour in the city centre.
+                </p>
 
-        <picture>
-            <source media="(min-width: 701px)" srcset="ww_10.jpg">
-            <img
-                class="work-image"
-                src="w_10.jpg"
-                alt="STRESS OR MISTRESS"
-            >
-        </picture>
+                <p>
+                    The Action is a response to the public bullying of Finland's
+                    prime minister Sanna Marin following criticism of her dancing
+                    and rumours about cocaine use. In Finnish slang, “jauho” means
+                    flour and “jauhojengi” means flour people.
+                </p>
 
-        <div class="work-text final-work-text">
+                <p>
+                    The performer creates noise and opposes herself to the bullies.
+                    Covered in flour, she explores the dance movements that were
+                    publicly criticized.
+                </p>
 
-            <h2>STRESS OR MISTRESS</h2>
+                <p>
+                    Oulu, Finland 2022.
+                </p>
 
-            <p>
-                The performer is drumming on a bag of flour in the city centre.
-            </p>
+                <p>
+                    Duration 20 minutes.
+                </p>
 
-            <p>
-                The Action is a response to the public bullying of Finland's
-                prime minister Sanna Marin following criticism of her dancing
-                and rumours about cocaine use. In Finnish slang, “jauho” means
-                flour and “jauhojengi” means flour people.
-            </p>
+            </div>
 
-            <p>
-                The performer creates noise and opposes herself to the bullies.
-                Covered in flour, she explores the dance movements that were
-                publicly criticized.
-            </p>
+        </section>
 
-            <p>
-                Oulu, Finland 2022.
-            </p>
 
-            <p>
-                Duration 20 minutes.
-            </p>
+        <div class="end-block">
+
+            <a href="#top" class="up-button">
+                UP
+            </a>
 
         </div>
 
-    </section>
+    </main>
 
+    <script>
+        const navigation = document.querySelector(".navigation");
+        const whiteSections = document.querySelectorAll(".work-text");
 
-    <div class="end-block">
+        function updateNavigationColor() {
+            if (!navigation) return;
 
-        <a href="#top" class="up-button">
-            UP
-        </a>
+            const navRect = navigation.getBoundingClientRect();
+            const navCenterX = navRect.left + (navRect.width / 2);
+            const navCenterY = navRect.top + (navRect.height / 2);
 
-    </div>
+            let overWhite = false;
 
+            whiteSections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
 
-</main>
+                const insideWhite =
+                    navCenterX >= rect.left &&
+                    navCenterX <= rect.right &&
+                    navCenterY >= rect.top &&
+                    navCenterY <= rect.bottom;
 
+                if (insideWhite) {
+                    overWhite = true;
+                }
+            });
 
-<script>
-
-    /* =================================
-       NAVIGATION COLOUR
-       ================================= */
-
-    const navigation = document.querySelector(".navigation");
-    const whiteSections = document.querySelectorAll(".work-text");
-
-    function updateNavigationColor() {
-
-        if (!navigation) {
-            return;
+            navigation.classList.toggle("on-white", overWhite);
         }
 
-        const navRect = navigation.getBoundingClientRect();
+        window.addEventListener(
+            "scroll",
+            updateNavigationColor,
+            { passive: true }
+        );
 
-        const navCenterX =
-            navRect.left + (navRect.width / 2);
+        window.addEventListener(
+            "resize",
+            updateNavigationColor
+        );
 
-        const navCenterY =
-            navRect.top + (navRect.height / 2);
-
-        let overWhite = false;
-
-        whiteSections.forEach((section) => {
-
-            const rect = section.getBoundingClientRect();
-
-            const insideWhite =
-                navCenterX >= rect.left &&
-                navCenterX <= rect.right &&
-                navCenterY >= rect.top &&
-                navCenterY <= rect.bottom;
-
-            if (insideWhite) {
-                overWhite = true;
-            }
-
-        });
-
-        navigation.classList.toggle("on-white", overWhite);
-    }
-
-    window.addEventListener(
-        "scroll",
-        updateNavigationColor,
-        { passive: true }
-    );
-
-    window.addEventListener(
-        "resize",
-        updateNavigationColor
-    );
-
-    updateNavigationColor();
-
-</script>
-
+        updateNavigationColor();
+    </script>
 
 </body>
 </html>
