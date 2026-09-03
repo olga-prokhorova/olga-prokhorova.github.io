@@ -188,23 +188,6 @@
 
 
         /* =================================
-           WORK VIDEO
-           ================================= */
-
-        .work-video {
-            display: block;
-
-            width: 100%;
-            height: 100vh;
-
-            object-fit: cover;
-            object-position: center;
-
-            background: #000;
-        }
-
-
-        /* =================================
            WORK TEXT
            ================================= */
 
@@ -395,14 +378,6 @@
             }
 
 
-            /* WORK VIDEO */
-
-            .work-video {
-                height: 100svh;
-                min-height: 600px;
-            }
-
-
             /* WORK TEXT */
 
             .work-text {
@@ -474,14 +449,6 @@
             .instagram {
                 width: 18px;
                 height: 18px;
-            }
-
-
-            /* WORK VIDEO */
-
-            .work-video {
-                height: 100svh;
-                min-height: 600px;
             }
 
 
@@ -564,7 +531,6 @@
             >
 
         </div>
-
 
         <section class="work-text">
 
@@ -787,15 +753,11 @@
              IN LOVE WITH THE BUS STOP
              ================================= -->
 
-        <video
-            class="work-video"
-            src="bus_stop.mov"
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            aria-label="IN LOVE WITH THE BUS STOP"
-        ></video>
+        <img
+            class="work-image"
+            src="w_8_2.jpg"
+            alt="IN LOVE WITH THE BUS STOP"
+        >
 
         <section class="work-text">
 
@@ -900,47 +862,6 @@
 
 
     </main>
-
-
-    <script>
-
-        /* =================================
-           VIDEO PLAYBACK
-           ================================= */
-
-        const video = document.querySelector(".work-video");
-
-        if (video) {
-
-            const observer = new IntersectionObserver(
-                (entries) => {
-
-                    entries.forEach((entry) => {
-
-                        if (entry.isIntersecting) {
-
-                            video.play().catch(() => {
-                                /* Browser may prevent playback */
-                            });
-
-                        } else {
-
-                            video.pause();
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.25
-                }
-            );
-
-            observer.observe(video);
-        }
-
-    </script>
 
 </body>
 </html>
