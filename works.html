@@ -14,21 +14,16 @@
             --dark: #515151;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
-        html,
-        body {
+        html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             min-height: 100%;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background: #000;
@@ -43,116 +38,74 @@
             background: #000;
         }
 
-        #top {
-            position: relative;
-        }
-
-
-        /* =================================
-           ARTIST NAME
-           ================================= */
+        #top { position: relative; }
 
         .site-name {
             position: absolute;
             top: calc(11% + 30px);
             left: calc(5.5% + 30px);
-
             z-index: 20;
-
             margin: 0;
-
             color: var(--light);
             text-decoration: none;
-
             font: 300 55px/1 var(--font);
-
             letter-spacing: 5px;
             white-space: nowrap;
         }
 
-
-        /* =================================
-           WORK IMAGE
-           ================================= */
-
         .work-image {
             display: block;
-
             width: 100%;
             height: 100vh;
-
             object-fit: cover;
             object-position: center;
         }
 
-
-        /* =================================
-           WORK TEXT
-           ================================= */
-
         .work-text {
             width: 100%;
-
             padding: 40px 5.5% 110px;
-
             background: #fff;
             color: var(--dark);
         }
 
         .work-text h2 {
             margin: 0 0 18px;
-
             font: 500 14px/1.45 var(--font);
         }
 
         .work-text p {
             max-width: 650px;
-
             margin: 0 0 18px;
-
             font: 300 14px/1.45 var(--font);
         }
 
-        .work-text p:last-child {
-            margin-bottom: 0;
-        }
+        .work-text p:last-child { margin-bottom: 0; }
 
         .final-work-text {
-            padding-bottom: 310px;
+            padding-bottom: 40px;
         }
 
-
-        /* =================================
-           NAVIGATION
-           ================================= */
+        .final-work-text .up-button {
+            margin-top: 270px;
+        }
 
         .navigation {
             position: fixed;
-
             z-index: 30;
-
             top: calc(50% + 180px);
             left: 79%;
-
             transform: translate(-50%, -50%);
-
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-
             gap: 34px;
         }
 
         .navigation a:not(.instagram) {
             color: var(--light);
-
             text-decoration: none;
-
             font: 300 23px/1 var(--font);
-
-            transition:
-                color 0.35s ease,
-                opacity 0.25s ease;
+            transition: color 0.35s ease, opacity 0.25s ease;
         }
 
         .navigation a:not(.instagram):hover,
@@ -161,37 +114,21 @@
             opacity: 0.55;
         }
 
-
-        /* =================================
-           INSTAGRAM
-           ================================= */
-
         .instagram {
             display: block;
-
             width: 22px;
             height: 22px;
-
             margin-bottom: 8px;
-
             opacity: 0.95;
         }
 
         .instagram img {
             display: block;
-
             width: 100%;
             height: 100%;
-
             object-fit: contain;
-
             transition: filter 0.35s ease;
         }
-
-
-        /* =================================
-           NAVIGATION OVER WHITE
-           ================================= */
 
         .navigation.on-white a:not(.instagram) {
             color: var(--dark);
@@ -201,37 +138,21 @@
             filter: brightness(0);
         }
 
-
-        /* =================================
-           UP BUTTON
-           ================================= */
-
         .up-button {
             display: block;
-
             width: fit-content;
-
             margin: 0 auto;
-
             padding-bottom: 60px;
-
             color: var(--dark);
             text-decoration: none;
-
             font: 500 14px/1 var(--font);
         }
-
-
-        /* =================================
-           TABLET
-           ================================= */
 
         @media (max-width: 1100px) {
 
             .site-name {
                 top: calc(10% + 30px);
                 left: calc(5% + 30px);
-
                 font-size: 45px;
                 letter-spacing: 4px;
             }
@@ -248,15 +169,10 @@
             .instagram {
                 width: 20px;
                 height: 20px;
-
                 margin-bottom: 0;
             }
+
         }
-
-
-        /* =================================
-           MOBILE
-           ================================= */
 
         @media (max-width: 700px) {
 
@@ -273,23 +189,16 @@
             .site-name {
                 top: calc(6% + 70px);
                 left: 6%;
-
                 font-size: 30px;
                 letter-spacing: 3px;
             }
 
-
-            /* MOBILE NAVIGATION */
-
             .navigation {
                 top: auto;
                 left: auto;
-
                 right: 7%;
                 bottom: 9%;
-
                 transform: none;
-
                 gap: 22px;
             }
 
@@ -302,15 +211,9 @@
                 height: 20px;
             }
 
-
-            /* MOBILE IMAGES */
-
             .work-image {
                 height: 100svh;
             }
-
-
-            /* MOBILE TEXT */
 
             .work-text {
                 padding: 40px 6% 110px;
@@ -323,25 +226,16 @@
 
             .work-text p {
                 max-width: 330px;
-
                 margin-bottom: 16px;
-
                 font-size: 14px;
             }
-
-
-            /* MOBILE UP */
 
             .up-button {
                 padding-bottom: 50px;
                 font-size: 12px;
             }
+
         }
-
-
-        /* =================================
-           SMALL MOBILE
-           ================================= */
 
         @media (max-width: 430px) {
 
@@ -370,13 +264,18 @@
             }
 
             .final-work-text {
-                padding-bottom: 310px;
+                padding-bottom: 40px;
+            }
+
+            .final-work-text .up-button {
+                margin-top: 270px;
             }
 
             .up-button {
                 padding-bottom: 40px;
                 font-size: 12px;
             }
+
         }
 
     </style>
@@ -384,7 +283,6 @@
 
 
 <body>
-
 
 <nav class="navigation">
 
@@ -403,10 +301,10 @@
 
     <a href="cv.html">cv</a>
     <a href="bio.html">bio</a>
+    <a href="gallery.html">gallery</a>
     <a href="contact.html">contact</a>
 
 </nav>
-
 
 <main class="works-page" id="top">
 
@@ -430,7 +328,6 @@
             >
 
         </div>
-
 
         <div class="work-text">
 
@@ -817,24 +714,23 @@
                 Duration 20 minutes.
             </p>
 
+            <a href="#top" class="up-button">
+                UP
+            </a>
+
         </div>
 
     </section>
-
-
-    <!-- =================================
-         UP
-         ================================= -->
-
-    <a href="#top" class="up-button">
-        UP
-    </a>
 
 
 </main>
 
 
 <script>
+
+    /* =================================
+       NAVIGATION COLOUR
+       ================================= */
 
     const navigation = document.querySelector(".navigation");
     const whiteSections = document.querySelectorAll(".work-text");
@@ -845,8 +741,13 @@
             return;
         }
 
-        const navRect =
-            navigation.getBoundingClientRect();
+        const navRect = navigation.getBoundingClientRect();
+
+        /*
+         * Use the centre of the navigation as the reference point.
+         * If that point is inside a white text block,
+         * turn the navigation dark grey.
+         */
 
         const navCenterX =
             navRect.left + (navRect.width / 2);
@@ -858,8 +759,7 @@
 
         whiteSections.forEach((section) => {
 
-            const rect =
-                section.getBoundingClientRect();
+            const rect = section.getBoundingClientRect();
 
             const insideWhite =
                 navCenterX >= rect.left &&
@@ -873,10 +773,7 @@
 
         });
 
-        navigation.classList.toggle(
-            "on-white",
-            overWhite
-        );
+        navigation.classList.toggle("on-white", overWhite);
     }
 
 
@@ -886,12 +783,10 @@
         { passive: true }
     );
 
-
     window.addEventListener(
         "resize",
         updateNavigationColor
     );
-
 
     updateNavigationColor();
 
