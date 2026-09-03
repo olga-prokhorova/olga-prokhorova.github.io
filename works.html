@@ -198,7 +198,7 @@
             line-height: 1;
 
             transition:
-                color 0.35s ease,
+                color 0.3s ease,
                 opacity 0.25s ease;
         }
 
@@ -232,7 +232,7 @@
 
             object-fit: contain;
 
-            transition: filter 0.35s ease;
+            transition: filter 0.3s ease;
         }
 
         .instagram:hover {
@@ -241,15 +241,15 @@
 
 
         /* =================================
-           NAVIGATION OVER WHITE
+           NAVIGATION DARK STATE
            ================================= */
 
-        .navigation.on-white a:not(.instagram) {
+        .navigation a.nav-dark:not(.instagram) {
             color: #515151;
         }
 
-        .navigation.on-white .instagram img {
-            filter: brightness(0);
+        .navigation .instagram.nav-dark img {
+            filter: brightness(0) opacity(0.68);
         }
 
 
@@ -271,7 +271,9 @@
 
             font-family:
                 "Helvetica Neue",
-                Helvetica, Arial, sans-serif;
+                Helvetica,
+                Arial,
+                sans-serif;
 
             font-size: 14px;
             font-weight: 500;
@@ -485,6 +487,38 @@
 
 
 <body>
+
+
+<!-- =================================
+     FIXED NAVIGATION
+     ================================= -->
+
+<nav class="navigation">
+
+    <a
+        class="instagram"
+        href="https://www.instagram.com/performateria/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+    >
+        <img
+            src="instagram_icon.png"
+            alt="Instagram"
+        >
+    </a>
+
+    <a href="about.html">about</a>
+    <a href="bio.html">bio</a>
+    <a href="gallery.html">gallery</a>
+    <a href="contact.html">contact</a>
+
+</nav>
+
+
+<!-- =================================
+     WORKS
+     ================================= -->
 
 <main class="works-page" id="top">
 
@@ -918,91 +952,91 @@
 <script>
 
     /* =================================
-       NAVIGATION COLOUR
+       NAVIGATION COLOUR WHILE SCROLLING
        ================================= */
 
-    const navigation = document.querySelector(".navigation");
-    const whiteSections = document.querySelectorAll(".work-text");
+    const navigationItems =
+        document.querySelectorAll(".navigation a");
 
-    function updateNavigationColor() {
+    const whiteBlocks =
+        document.querySelectorAll(".work-text");
 
-        if (!navigation) {
-            return;
-        }
 
-        const navRect = navigation.getBoundingClientRect();
+    function updateNavigationColours() {
 
-        /*
-         * Use the centre of the navigation as the reference point.
-         * If that point is inside a white text block,
-         * turn the navigation dark grey.
-         */
+        navigationItems.forEach((item) => {
 
-        const navCenterX =
-            navRect.left + (navRect.width / 2);
+            const itemRect =
+                item.getBoundingClientRect();
 
-        const navCenterY =
-            navRect.top + (navRect.height / 2);
+            /*
+             * We use the vertical centre of each
+             * navigation item as its reference point.
+             */
 
-        let overWhite = false;
+            const itemY =
+                itemRect.top +
+                (itemRect.height / 2);
 
-        whiteSections.forEach((section) => {
+            let overWhite = false;
 
-            const rect = section.getBoundingClientRect();
 
-            const insideWhite =
-                navCenterX >= rect.left &&
-                navCenterX <= rect.right &&
-                navCenterY >= rect.top &&
-                navCenterY <= rect.bottom;
+            whiteBlocks.forEach((block) => {
 
-            if (insideWhite) {
-                overWhite = true;
-            }
+                const blockRect =
+                    block.getBoundingClientRect();
+
+                if (
+                    itemY >= blockRect.top &&
+                    itemY <= blockRect.bottom
+                ) {
+
+                    overWhite = true;
+
+                }
+
+            });
+
+
+            item.classList.toggle(
+                "nav-dark",
+                overWhite
+            );
 
         });
 
-        navigation.classList.toggle("on-white", overWhite);
     }
 
 
+    /*
+     * Update continuously while scrolling.
+     */
+
     window.addEventListener(
         "scroll",
-        updateNavigationColor,
+        updateNavigationColours,
         { passive: true }
     );
 
+
+    /*
+     * Also update if the browser window changes size.
+     */
+
     window.addEventListener(
         "resize",
-        updateNavigationColor
+        updateNavigationColours
     );
 
-    updateNavigationColor();
+
+    /*
+     * Initial state.
+     */
+
+    updateNavigationColours();
 
 </script>
 
-
-<nav class="navigation">
-
-    <a
-        class="instagram"
-        href="https://www.instagram.com/performateria/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-    >
-        <img
-            src="instagram_icon.png"
-            alt="Instagram"
-        >
-    </a>
-
-    <a href="works.html">works</a>
-    <a href="about.html">about</a>
-    <a href="bio.html">bio</a>
-    <a href="contact.html">contact</a>
-
-</nav>
 
 </body>
 </html>
