@@ -48,13 +48,9 @@
             background: #000;
         }
 
-        #top {
-            position: relative;
-        }
-
 
         /* =================================
-           ARTIST NAME — DESKTOP
+           ARTIST NAME
            ================================= */
 
         .site-name {
@@ -87,26 +83,16 @@
 
 
         /* =================================
-           WORK IMAGE
+           WORK
            ================================= */
 
-        .work-image {
-            display: block;
+        .work {
+            position: relative;
 
             width: 100%;
             height: 100vh;
 
-            object-fit: cover;
-            object-position: center;
-        }
-
-
-        /* =================================
-           WORK SEPARATOR
-           ================================= */
-
-        .work {
-            border-bottom: 5px solid #efefef;
+            border-bottom: 3px solid #efefef;
         }
 
         .work:last-child {
@@ -115,19 +101,36 @@
 
 
         /* =================================
-           WORK TEXT BLOCK — DESKTOP
+           WORK IMAGE
+           ================================= */
+
+        .work-image {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        /* =================================
+           WORK TEXT — DESKTOP
            ================================= */
 
         .work-text {
-            width: 700px;
-            max-width: calc(100% - 11% - 30px);
+            position: absolute;
 
-            margin-left: calc(5.5% + 30px);
+            left: calc(5.5% + 30px);
+            bottom: calc(9% + 40px);
 
-            padding-top: 40px;
-            padding-bottom: 110px;
+            width: 456px;
+            max-width: 456px;
 
-            background: #000;
+            padding: 0;
+
+            background: transparent;
 
             color: #efefef;
         }
@@ -149,9 +152,9 @@
         }
 
         .work-text p {
-            max-width: 700px;
-
             margin: 0 0 18px 0;
+
+            max-width: 456px;
 
             font-family:
                 "Helvetica Neue",
@@ -168,47 +171,6 @@
 
         .work-text p:last-child {
             margin-bottom: 0;
-        }
-
-
-        /* =================================
-           FINAL WORK / UP
-           ================================= */
-
-        .final-work-text {
-            padding-bottom: 40px;
-        }
-
-        .final-work-text .up-button {
-            margin-top: 270px;
-        }
-
-        .up-button {
-            display: block;
-
-            width: fit-content;
-
-            margin: 0 auto;
-
-            padding-bottom: 60px;
-
-            color: #efefef;
-
-            text-decoration: none;
-
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1;
-        }
-
-        .up-button:hover {
-            opacity: 0.55;
         }
 
 
@@ -246,7 +208,6 @@
 
             font-size: 23px;
             font-weight: 300;
-
             line-height: 1;
         }
 
@@ -285,6 +246,38 @@
 
 
         /* =================================
+           UP
+           ================================= */
+
+        .up-button {
+            position: absolute;
+
+            left: 50%;
+            bottom: 60px;
+
+            transform: translateX(-50%);
+
+            color: #efefef;
+
+            text-decoration: none;
+
+            font-family:
+                "Helvetica Neue",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .up-button:hover {
+            opacity: 0.55;
+        }
+
+
+        /* =================================
            TABLET
            ================================= */
 
@@ -302,7 +295,6 @@
 
             .navigation {
                 top: calc(50% + 150px);
-
                 gap: 30px;
             }
 
@@ -318,8 +310,11 @@
             }
 
             .work-text {
-                padding-top: 40px;
-                padding-bottom: 110px;
+                left: calc(5% + 30px);
+                bottom: calc(9% + 40px);
+
+                width: 456px;
+                max-width: 456px;
             }
         }
 
@@ -381,11 +376,15 @@
             }
 
 
-            /* MOBILE WORKS */
+            /* MOBILE WORK */
 
             .work {
+                height: auto;
                 border-bottom: 0;
             }
+
+
+            /* MOBILE IMAGE */
 
             .work-image {
                 width: 100%;
@@ -399,18 +398,18 @@
             /* MOBILE TEXT */
 
             .work-text {
+                position: relative;
+
+                left: auto;
+                bottom: auto;
+
                 width: 100%;
                 max-width: none;
 
-                margin-left: 0;
-
-                padding-top: 40px;
-                padding-bottom: 110px;
-
-                padding-left: 6%;
-                padding-right: 6%;
+                padding: 40px 6% 110px;
 
                 background: #fff;
+
                 color: #515151;
             }
 
@@ -439,6 +438,19 @@
             }
 
             .up-button {
+                position: relative;
+
+                left: auto;
+                bottom: auto;
+
+                display: block;
+
+                width: fit-content;
+
+                margin: 270px auto 0;
+
+                transform: none;
+
                 padding-bottom: 50px;
 
                 font-size: 12px;
@@ -460,6 +472,8 @@
 
                 font-size: 25px;
                 font-weight: 300;
+
+                letter-spacing: 3px;
             }
 
             .navigation {
@@ -482,19 +496,12 @@
                 max-width: 275px;
             }
 
-            .final-work-text {
-                padding-bottom: 40px;
-            }
-
-            .final-work-text .up-button {
-                margin-top: 270px;
-            }
-
             .up-button {
+                margin-top: 270px;
+
                 padding-bottom: 40px;
 
                 font-size: 12px;
-                font-weight: 500;
             }
         }
 
@@ -537,13 +544,14 @@
 
     <section class="work">
 
-        <div style="position: relative;">
+        <div style="position: relative; width: 100%; height: 100%;">
 
             <a href="index.html" class="site-name">
                 OLGA PROKHOROVA
             </a>
 
             <picture>
+
                 <source
                     media="(min-width: 701px)"
                     srcset="ww_1.jpg"
@@ -554,6 +562,7 @@
                     src="w_2.jpg"
                     alt="JUOPPO JOOGAA"
                 >
+
             </picture>
 
         </div>
@@ -1005,7 +1014,7 @@
         </picture>
 
 
-        <div class="work-text final-work-text">
+        <div class="work-text">
 
             <h2>STRESS OR MISTRESS</h2>
 
@@ -1033,7 +1042,6 @@
             <p>
                 Duration 20 minutes.
             </p>
-
 
             <a href="#top" class="up-button">
                 UP
