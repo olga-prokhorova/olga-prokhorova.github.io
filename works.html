@@ -46,18 +46,33 @@
             position: relative;
         }
 
+
+        /* =================================
+           ARTIST NAME
+           ================================= */
+
         .site-name {
-            position: fixed;
-            top: 10%;
+            position: absolute;
+            top: calc(11% + 30px);
             left: calc(5.5% + 30px);
+
             z-index: 100;
+
             margin: 0;
+
             color: var(--light);
             text-decoration: none;
-            font: 300 55px/1 var(--font);
+
+            font: 200 55px/1 var(--font);
+
             letter-spacing: 5px;
             white-space: nowrap;
         }
+
+
+        /* =================================
+           WORK
+           ================================= */
 
         .work {
             position: relative;
@@ -82,26 +97,37 @@
             object-position: center bottom;
         }
 
+
+        /* =================================
+           WORK TEXT
+           ================================= */
+
         .work-text {
             position: absolute;
             left: calc(5.5% + 30px);
             bottom: calc(12% + 50px);
+
             width: 380px;
             max-width: 380px;
+
             padding: 0;
+
             background: transparent;
             color: var(--light);
         }
 
         .work-text h2 {
             margin: 0 0 18px;
+
             font: 500 16px/1.45 var(--font);
             color: var(--light);
         }
 
         .work-text p {
             max-width: 380px;
+
             margin: 0 0 18px;
+
             font: 300 16px/1.45 var(--font);
             color: var(--light);
         }
@@ -110,8 +136,14 @@
             margin-bottom: 0;
         }
 
-        /* DESKTOP — selected text blocks moved down 50px */
+
+        /* =================================
+           DESKTOP
+           Selected text blocks moved down 50px
+           ================================= */
+
         @media (min-width: 701px) {
+
             .work-juoppo .work-text,
             .work-bottom-blood .work-text,
             .work-abundance .work-text,
@@ -119,7 +151,9 @@
                 transform: translateY(50px);
             }
 
-            /* DESKTOP — menu always stays light */
+
+            /* Desktop — menu always stays light */
+
             .navigation {
                 color: var(--light);
             }
@@ -137,6 +171,11 @@
             }
         }
 
+
+        /* =================================
+           END BLOCK
+           ================================= */
+
         .end-block {
             position: relative;
             width: 100%;
@@ -148,21 +187,33 @@
             color: var(--dark);
         }
 
+
+        /* =================================
+           NAVIGATION
+           ================================= */
+
         .navigation {
             position: fixed;
+
             z-index: 30;
+
             top: calc(50% + 180px);
             left: 79%;
+
             transform: translate(-50%, -50%);
+
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+
             gap: 34px;
         }
 
         .navigation a:not(.instagram) {
             color: var(--light);
+
             text-decoration: none;
+
             font: 300 23px/1 var(--font);
         }
 
@@ -172,38 +223,70 @@
             opacity: 0.55;
         }
 
+
+        /* =================================
+           INSTAGRAM
+           ================================= */
+
         .instagram {
             display: block;
+
             width: 22px;
             height: 22px;
+
             margin-bottom: 8px;
+
             opacity: 0.95;
         }
 
         .instagram img {
             display: block;
+
             width: 100%;
             height: 100%;
+
             object-fit: contain;
         }
 
+
+        /* =================================
+           UP BUTTON
+           ================================= */
+
         .up-button {
             position: absolute;
+
             left: 50%;
             bottom: 150px;
+
             transform: translateX(-50%);
+
             display: block;
+
             width: fit-content;
+
             color: var(--dark);
             text-decoration: none;
+
             font: 500 14px/1 var(--font);
         }
 
+
+        /* =================================
+           TABLET
+           ================================= */
+
         @media (max-width: 1100px) {
+
             .site-name {
-                top: 10%;
+                position: absolute;
+
+                top: calc(10% + 30px);
                 left: calc(5% + 30px);
+
                 font-size: 45px;
+                font-weight: 200;
+
                 letter-spacing: 4px;
             }
 
@@ -219,6 +302,7 @@
             .instagram {
                 width: 20px;
                 height: 20px;
+
                 margin-bottom: 0;
             }
 
@@ -237,7 +321,13 @@
             }
         }
 
+
+        /* =================================
+           MOBILE
+           ================================= */
+
         @media (max-width: 700px) {
+
             body {
                 overflow-x: hidden;
                 overflow-y: auto;
@@ -250,27 +340,36 @@
 
             .site-name {
                 position: absolute;
+
                 top: calc(6% + 70px);
                 left: 6%;
+
                 z-index: 20;
+
                 font-size: 30px;
                 font-weight: 300;
+
                 letter-spacing: 3px;
             }
 
             .navigation {
                 top: auto;
                 left: auto;
+
                 right: 7%;
                 bottom: 9%;
+
                 transform: none;
+
                 gap: 22px;
+
                 transition: color 0.2s ease;
             }
 
             .navigation a:not(.instagram) {
                 font-size: 19px;
                 color: var(--light);
+
                 transition: color 0.2s ease;
             }
 
@@ -285,6 +384,7 @@
             .instagram {
                 width: 20px;
                 height: 20px;
+
                 transition: opacity 0.2s ease;
             }
 
@@ -303,25 +403,33 @@
 
             .work-text {
                 position: relative;
+
                 left: auto;
                 bottom: auto;
+
                 width: 100%;
                 max-width: none;
+
                 padding: 40px 6% 110px;
+
                 background: #fff;
                 color: var(--dark);
+
                 transform: none;
             }
 
             .work-text h2 {
                 margin: 0 0 16px;
+
                 font: 500 12px/1.45 var(--font);
                 color: var(--dark);
             }
 
             .work-text p {
                 max-width: 330px;
+
                 margin: 0 0 16px;
+
                 font: 300 14px/1.45 var(--font);
                 color: var(--dark);
             }
@@ -336,18 +444,29 @@
 
             .up-button {
                 position: absolute;
+
                 left: 50%;
                 bottom: 50px;
+
                 transform: translateX(-50%);
+
                 padding-bottom: 0;
+
                 font-size: 12px;
                 color: var(--dark);
             }
         }
 
+
+        /* =================================
+           SMALL MOBILE
+           ================================= */
+
         @media (max-width: 430px) {
+
             .site-name {
                 top: calc(6% + 60px);
+
                 font-size: 25px;
                 font-weight: 300;
             }
@@ -355,6 +474,7 @@
             .navigation {
                 right: 7%;
                 bottom: 7%;
+
                 gap: 18px;
             }
 
@@ -370,6 +490,7 @@
             .work-text {
                 width: 100%;
                 max-width: none;
+
                 padding: 40px 6% 110px;
             }
 
@@ -390,6 +511,7 @@
                 font-size: 12px;
             }
         }
+
     </style>
 </head>
 
@@ -413,17 +535,23 @@
         <a href="about.html">about</a>
 
         <a href="cv.html">cv</a>
+
         <a href="bio.html">bio</a>
+
         <a href="gallery.html">gallery</a>
+
         <a href="contact.html">contact</a>
 
     </nav>
+
 
     <a href="index.html" class="site-name">
         OLGA PROKHOROVA
     </a>
 
+
     <main class="works-page" id="top">
+
 
         <!-- =================================
              WORK 1 — JUOPPO JOOGAA
@@ -883,26 +1011,43 @@
 
 
     <script>
+
         const navigation = document.querySelector(".navigation");
         const whiteSections = document.querySelectorAll(".work-text");
 
+
         function updateNavigationColor() {
+
             if (!navigation) return;
 
+
             /* Desktop: menu always stays light */
+
             if (window.innerWidth > 700) {
+
                 navigation.classList.remove("on-white");
+
                 return;
             }
 
+
             const navRect = navigation.getBoundingClientRect();
-            const navCenterX = navRect.left + (navRect.width / 2);
-            const navCenterY = navRect.top + (navRect.height / 2);
+
+            const navCenterX =
+                navRect.left + (navRect.width / 2);
+
+            const navCenterY =
+                navRect.top + (navRect.height / 2);
+
 
             let overWhite = false;
 
+
             whiteSections.forEach((section) => {
-                const rect = section.getBoundingClientRect();
+
+                const rect =
+                    section.getBoundingClientRect();
+
 
                 const insideWhite =
                     navCenterX >= rect.left &&
@@ -910,13 +1055,20 @@
                     navCenterY >= rect.top &&
                     navCenterY <= rect.bottom;
 
+
                 if (insideWhite) {
                     overWhite = true;
                 }
+
             });
 
-            navigation.classList.toggle("on-white", overWhite);
+
+            navigation.classList.toggle(
+                "on-white",
+                overWhite
+            );
         }
+
 
         window.addEventListener(
             "scroll",
@@ -924,12 +1076,15 @@
             { passive: true }
         );
 
+
         window.addEventListener(
             "resize",
             updateNavigationColor
         );
 
+
         updateNavigationColor();
+
     </script>
 
 </body>
