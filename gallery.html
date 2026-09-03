@@ -59,11 +59,8 @@
 
     .gallery {
         display: grid;
-
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         gap: var(--gap);
-
         width: 100%;
     }
 
@@ -78,18 +75,25 @@
 
     .gallery-item img {
         display: block;
-
         width: 100%;
         height: auto;
-
         object-fit: contain;
-
         transition: opacity 0.25s ease;
     }
 
 
     .gallery-item:hover img {
         opacity: 0.8;
+    }
+
+
+    /* =================================
+       IMAGES 10 AND 20
+       ================================= */
+
+    .gallery-item-10 img,
+    .gallery-item-20 img {
+        width: 100%;
     }
 
 
@@ -163,6 +167,15 @@
         height: 100%;
 
         object-fit: contain;
+    }
+
+
+    /* =================================
+       MOBILE-ONLY IMAGE
+       ================================= */
+
+    .mobile-only {
+        display: none;
     }
 
 
@@ -267,14 +280,12 @@
 
         .gallery-page {
             width: 100vw;
-
             padding: 0;
         }
 
 
         .gallery {
             grid-template-columns: 1fr;
-
             gap: 0;
         }
 
@@ -290,7 +301,9 @@
         }
 
 
-        /* MOBILE NAVIGATION */
+        /* =================================
+           MOBILE NAVIGATION
+           ================================= */
 
         .navigation {
             top: auto;
@@ -318,19 +331,41 @@
         }
 
 
-        /* END BLOCK */
+        /* =================================
+           MOBILE-ONLY IMAGE
+           ================================= */
+
+        .mobile-only {
+            display: block;
+        }
+
+
+        /* =================================
+           MOBILE END BLOCK
+           ================================= */
 
         .end-block {
             height: 200px;
-
             margin-top: 0;
         }
 
 
-        .up-button {
-            bottom: 50px;
+        /*
+           UP BUTTON
 
-            font-size: 12px;
+           Original mobile:
+           12px / 50px from bottom
+
+           New:
+           24px / 150px from bottom
+
+           This makes it 100% larger
+           and 100px higher.
+        */
+
+        .up-button {
+            bottom: 150px;
+            font-size: 24px;
         }
 
     }
@@ -362,7 +397,8 @@
 
 
         .up-button {
-            font-size: 12px;
+            bottom: 150px;
+            font-size: 24px;
         }
 
     }
@@ -411,7 +447,10 @@
     <div class="gallery">
 
 
-        <!-- 1 -->
+        <!-- =================================
+             DESKTOP IMAGE 1
+             Mobile image 1
+             ================================= -->
 
         <picture class="gallery-item">
             <source
@@ -420,19 +459,21 @@
             >
 
             <img
-                src="galhor_1.jpg"
+                src="galhor_22.jpg"
                 alt=""
                 loading="lazy"
             >
         </picture>
 
 
-        <!-- 2 -->
+        <!-- =================================
+             IMAGE 2
+             ================================= -->
 
         <picture class="gallery-item">
             <source
                 media="(max-width: 700px)"
-                srcset="galver_2.jpg"
+                srcset="galvert_2.jpg"
             >
 
             <img
@@ -512,7 +553,7 @@
         <picture class="gallery-item">
             <source
                 media="(max-width: 700px)"
-                srcset="galver_7.jpg"
+                srcset="Calvert_7.jpg"
             >
 
             <img
@@ -557,7 +598,7 @@
 
         <!-- 10 -->
 
-        <picture class="gallery-item">
+        <picture class="gallery-item gallery-item-10">
             <source
                 media="(max-width: 700px)"
                 srcset="galver_10.jpg"
@@ -717,7 +758,7 @@
 
         <!-- 20 -->
 
-        <picture class="gallery-item">
+        <picture class="gallery-item gallery-item-20">
             <source
                 media="(max-width: 700px)"
                 srcset="galver_20.jpg"
@@ -747,7 +788,10 @@
         </picture>
 
 
-        <!-- 22 -->
+        <!-- =================================
+             DESKTOP FINAL IMAGE
+             Mobile image 22
+             ================================= -->
 
         <picture class="gallery-item">
             <source
@@ -756,26 +800,30 @@
             >
 
             <img
-                src="galhor_22.jpg"
+                src="galhor_24.jpg"
                 alt=""
                 loading="lazy"
             >
         </picture>
 
 
-        <!-- 23 — MOBILE ONLY -->
+        <!-- =================================
+             MOBILE IMAGE 23 ONLY
+             ================================= -->
 
         <picture class="gallery-item mobile-only">
+
             <source
                 media="(max-width: 700px)"
                 srcset="galver_23.jpg"
             >
 
             <img
-                src="galhor_22.jpg"
+                src="galhor_24.jpg"
                 alt=""
                 loading="lazy"
             >
+
         </picture>
 
 
@@ -802,4 +850,3 @@
 
 </body>
 </html>
-
