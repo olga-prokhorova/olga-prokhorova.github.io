@@ -120,7 +120,7 @@ body {
 
 
 /* =========================
-   MOBILE-ONLY IMAGE
+   MOBILE-ONLY ITEMS
    ========================= */
 
 .mobile-only {
@@ -252,6 +252,13 @@ body {
     }
 
 
+    /* Show mobile-only items */
+
+    .mobile-only {
+        display: block;
+    }
+
+
     /* Bottom section */
 
     .end-block {
@@ -302,6 +309,11 @@ body {
 <div class="gallery-page">
 
     <div class="gallery">
+
+
+        <!-- =========================
+             EXISTING IMAGES
+             ========================= -->
 
         <!-- 01 -->
         <picture class="gallery-item">
@@ -411,35 +423,97 @@ body {
             <img src="galhor_18.jpg" alt="">
         </picture>
 
-
-        <!-- =========================
-             DESKTOP LAST FOUR
-             ORDER: 3, 2, 1, 4
-             ========================= -->
-
-        <!-- Last 4 — 3 -->
+        <!-- 19 -->
         <picture class="gallery-item">
             <source media="(max-width: 700px)" srcset="galver_20.jpg">
-            <img src="galhor_19.jpg" alt="">
-        </picture>
-
-        <!-- Last 4 — 2 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_21.jpg">
-            <img src="galhor_20_1.jpg" alt="">
-        </picture>
-
-        <!-- Last 4 — 1 -->
-        <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_22.jpg">
             <img src="galhor_21.jpg" alt="">
         </picture>
 
-        <!-- Last 4 — 4 -->
+        <!-- 20 -->
         <picture class="gallery-item">
-            <source media="(max-width: 700px)" srcset="galver_23.jpg">
+            <source media="(max-width: 700px)" srcset="galver_21.jpg">
+            <img src="galhor_19.jpg" alt="">
+        </picture>
+
+        <!-- 21 -->
+        <picture class="gallery-item">
+            <source media="(max-width: 700px)" srcset="galver_22.jpg">
             <img src="galhor_24.jpg" alt="">
         </picture>
+
+
+        <!-- =========================
+             NEW DESKTOP IMAGES
+             hor_1.jpg - hor_6.jpg
+             ========================= -->
+
+        <!-- Desktop new 01 -->
+        <picture class="gallery-item">
+            <img src="hor_1.jpg" alt="">
+        </picture>
+
+        <!-- Desktop new 02 -->
+        <picture class="gallery-item">
+            <img src="hor_2.jpg" alt="">
+        </picture>
+
+        <!-- Desktop new 03 -->
+        <picture class="gallery-item">
+            <img src="hor_3.jpg" alt="">
+        </picture>
+
+        <!-- Desktop new 04 -->
+        <picture class="gallery-item">
+            <img src="hor_4.jpg" alt="">
+        </picture>
+
+        <!-- Desktop new 05 -->
+        <picture class="gallery-item">
+            <img src="hor_5.jpg" alt="">
+        </picture>
+
+        <!-- Desktop new 06 -->
+        <picture class="gallery-item">
+            <img src="hor_6.jpg" alt="">
+        </picture>
+
+
+        <!-- =========================
+             NEW MOBILE IMAGES
+             ver_1, ver_3, ver_4,
+             ver_5, ver_6, ver_7
+             ========================= -->
+
+        <!-- Mobile new 01 -->
+        <picture class="gallery-item mobile-only">
+            <img src="ver_1.jpg" alt="">
+        </picture>
+
+        <!-- Mobile new 03 -->
+        <picture class="gallery-item mobile-only">
+            <img src="ver_3.jpg" alt="">
+        </picture>
+
+        <!-- Mobile new 04 -->
+        <picture class="gallery-item mobile-only">
+            <img src="ver_4.jpg" alt="">
+        </picture>
+
+        <!-- Mobile new 05 -->
+        <picture class="gallery-item mobile-only">
+            <img src="ver_5.jpg" alt="">
+        </picture>
+
+        <!-- Mobile new 06 -->
+        <picture class="gallery-item mobile-only">
+            <img src="ver_6.jpg" alt="">
+        </picture>
+
+        <!-- Mobile new 07 -->
+        <picture class="gallery-item mobile-only">
+            <img src="ver_7.jpg" alt="">
+        </picture>
+
 
     </div>
 
