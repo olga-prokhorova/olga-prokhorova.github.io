@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Works — Olga Prokhorova</title>
+    <title>Olga Prokhorova — Works</title>
 
     <style>
 
@@ -20,11 +20,15 @@
             min-height: 100%;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background: #ffffff;
-            color: #515151;
+            background: #000;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-weight: 300;
+            overflow-x: hidden;
         }
 
 
@@ -35,25 +39,16 @@
         .works-page {
             width: 100%;
             min-height: 100vh;
+            background: #000;
         }
 
 
         /* =================================
-           FIRST IMAGE / NAME
+           TOP
            ================================= */
 
-        .work-first {
+        #top {
             position: relative;
-            width: 100%;
-            height: 100vh;
-        }
-
-        .work-first img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
         }
 
 
@@ -61,17 +56,18 @@
            ARTIST NAME
            ================================= */
 
-        .name {
+        .site-name {
             position: absolute;
 
             top: calc(11% + 30px);
             left: calc(5.5% + 30px);
 
+            z-index: 20;
+
             margin: 0;
 
-            z-index: 10;
-
             color: #efefef;
+            text-decoration: none;
 
             font-family:
                 "Helvetica Neue",
@@ -80,14 +76,82 @@
                 sans-serif;
 
             font-size: 55px;
-            font-weight: 300;
+            font-weight: 100;
 
             line-height: 1;
             letter-spacing: 5px;
 
             white-space: nowrap;
+        }
 
-            text-decoration: none;
+
+        /* =================================
+           WORK IMAGE
+           ================================= */
+
+        .work-image {
+            display: block;
+
+            width: 100%;
+            height: 100vh;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        /* =================================
+           WORK TEXT BLOCK
+           ================================= */
+
+        .work-text {
+            width: 100%;
+
+            background: #ffffff;
+
+            padding-top: 40px;
+            padding-bottom: 110px;
+
+            padding-left: 5.5%;
+            padding-right: 5.5%;
+
+            color: #515151;
+        }
+
+        .work-text h2 {
+            margin: 0 0 18px 0;
+
+            font-family:
+                "Helvetica Neue",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            line-height: 1.45;
+        }
+
+        .work-text p {
+            margin: 0 0 18px 0;
+
+            max-width: 650px;
+
+            font-family:
+                "Helvetica Neue",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            font-size: 14px;
+            font-weight: 300;
+
+            line-height: 1.45;
+        }
+
+        .work-text p:last-child {
+            margin-bottom: 0;
         }
 
 
@@ -98,7 +162,7 @@
         .navigation {
             position: fixed;
 
-            z-index: 100;
+            z-index: 30;
 
             top: calc(50% + 180px);
             left: 79%;
@@ -110,37 +174,8 @@
             align-items: flex-start;
 
             gap: 34px;
-        }
 
-
-        /* =================================
-           INSTAGRAM
-           ================================= */
-
-        .instagram {
-            display: block;
-
-            width: 22px;
-            height: 22px;
-
-            margin-bottom: 8px;
-
-            opacity: 0.95;
-
-            transition: opacity 0.25s ease;
-        }
-
-        .instagram img {
-            display: block;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-        }
-
-        .instagram:hover {
-            opacity: 0.55;
+            transition: color 0.35s ease;
         }
 
 
@@ -164,7 +199,9 @@
 
             line-height: 1;
 
-            transition: opacity 0.25s ease;
+            transition:
+                color 0.35s ease,
+                opacity 0.25s ease;
         }
 
         .navigation a:not(.instagram):hover {
@@ -173,58 +210,51 @@
 
 
         /* =================================
-           WORK IMAGE
+           INSTAGRAM
            ================================= */
 
-        .work-image {
+        .instagram {
+            display: block;
+
+            width: 22px;
+            height: 22px;
+
+            margin-bottom: 8px;
+
+            opacity: 0.95;
+
+            transition:
+                opacity 0.25s ease,
+                filter 0.35s ease;
+        }
+
+        .instagram img {
             display: block;
 
             width: 100%;
-            height: 100vh;
+            height: 100%;
 
-            object-fit: cover;
-            object-position: center;
+            object-fit: contain;
+
+            transition:
+                filter 0.35s ease;
+        }
+
+        .instagram:hover {
+            opacity: 0.55;
         }
 
 
         /* =================================
-           WORK TEXT
+           NAVIGATION OVER WHITE
            ================================= */
 
-        .work-text {
-            background: #ffffff;
-
-            padding-top: 40px;
-            padding-bottom: 110px;
-
-            padding-left: calc(5.5% + 30px);
-            padding-right: 30px;
-
+        .navigation.on-white a:not(.instagram) {
             color: #515151;
         }
 
-        .work-text h2 {
-            margin: 0 0 18px 0;
-
-            font-size: 14px;
-            font-weight: 500;
-
-            line-height: 1.45;
-        }
-
-        .work-text p {
-            margin: 0 0 18px 0;
-
-            max-width: 650px;
-
-            font-size: 14px;
-            font-weight: 300;
-
-            line-height: 1.45;
-        }
-
-        .work-text p:last-child {
-            margin-bottom: 0;
+        .navigation.on-white .instagram img {
+            filter: brightness(0) saturate(100%) invert(32%);
         }
 
 
@@ -242,7 +272,6 @@
             padding: 0 0 60px 0;
 
             color: #515151;
-
             text-decoration: none;
 
             font-family:
@@ -268,12 +297,12 @@
 
         @media (max-width: 1100px) {
 
-            .name {
+            .site-name {
                 top: calc(10% + 30px);
                 left: calc(5% + 30px);
 
                 font-size: 45px;
-                font-weight: 200;
+                font-weight: 100;
 
                 letter-spacing: 4px;
             }
@@ -299,9 +328,6 @@
             .work-text {
                 padding-top: 40px;
                 padding-bottom: 110px;
-
-                padding-left: calc(5% + 30px);
-                padding-right: 30px;
             }
         }
 
@@ -314,36 +340,26 @@
 
             body {
                 overflow-x: hidden;
+                overflow-y: auto;
             }
 
             .works-page {
-                width: 100%;
+                width: 100vw;
                 min-height: 100svh;
             }
 
-
-            /* FIRST IMAGE */
-
-            .work-first {
-                height: 100svh;
-                min-height: 600px;
-            }
-
-
-            /* NAME */
-
-            .name {
+            .site-name {
                 top: calc(6% + 70px);
                 left: 6%;
 
                 font-size: 30px;
-                font-weight: 200;
+                font-weight: 100;
 
                 letter-spacing: 3px;
             }
 
 
-            /* NAVIGATION */
+            /* MOBILE NAVIGATION */
 
             .navigation {
                 top: auto;
@@ -370,15 +386,18 @@
             }
 
 
-            /* WORK IMAGES */
+            /* MOBILE IMAGES */
 
             .work-image {
+                width: 100%;
                 height: 100svh;
-                min-height: 600px;
+
+                object-fit: cover;
+                object-position: center;
             }
 
 
-            /* WORK TEXT */
+            /* MOBILE TEXT */
 
             .work-text {
                 padding-top: 40px;
@@ -398,9 +417,9 @@
             }
 
             .work-text p {
-                margin-bottom: 16px;
-
                 max-width: calc(81vw - 57px);
+
+                margin-bottom: 16px;
 
                 font-size: 12px;
                 font-weight: 300;
@@ -409,7 +428,7 @@
             }
 
 
-            /* UP */
+            /* MOBILE UP */
 
             .up-button {
                 padding-bottom: 50px;
@@ -426,11 +445,11 @@
 
         @media (max-width: 430px) {
 
-            .name {
+            .site-name {
                 top: calc(6% + 60px);
 
                 font-size: 25px;
-                font-weight: 200;
+                font-weight: 100;
 
                 letter-spacing: 3px;
             }
@@ -451,29 +470,14 @@
                 height: 18px;
             }
 
-
-            /* WORK TEXT */
-
             .work-text {
                 padding-top: 40px;
                 padding-bottom: 110px;
-
-                padding-left: 6%;
-                padding-right: 6%;
-            }
-
-            .work-text h2 {
-                font-size: 12px;
-                font-weight: 500;
             }
 
             .work-text p {
-                font-size: 12px;
-                max-width: calc(81vw - 57px);
+                max-width: 275px;
             }
-
-
-            /* UP */
 
             .up-button {
                 padding-bottom: 40px;
@@ -487,42 +491,22 @@
 </head>
 
 
-<body id="top">
+<body>
 
-    <main class="works-page">
+<main class="works-page" id="top">
 
 
-        <!-- =================================
-             JUOPPO JOOGAA
-             ================================= -->
+    <!-- =================================
+         WORK 1 — JUOPPO JOOGAA
+         ================================= -->
 
-        <div class="work-first">
+    <section class="work">
 
-            <a href="index.html" class="name">
+        <div style="position: relative;">
+
+            <a href="index.html" class="site-name">
                 OLGA PROKHOROVA
             </a>
-
-            <nav class="navigation">
-
-                <a
-                    class="instagram"
-                    href="https://www.instagram.com/performateria/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                >
-                    <img
-                        src="instagram_icon.png"
-                        alt="Instagram"
-                    >
-                </a>
-
-                <a href="works.html">works</a>
-                <a href="about.html">about</a>
-                <a href="bio.html">bio</a>
-                <a href="contact.html">contact</a>
-
-            </nav>
 
             <img
                 class="work-image"
@@ -532,12 +516,15 @@
 
         </div>
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>JUOPPO JOOGAA</h2>
 
             <p>
-                A series of 30 independent performances across different areas of Oulu, including places commonly frequented by people with addictions. A pink figure performs yoga routines on the sidewalks, holding a bottle in different asanas.
+                A series of 30 independent performances across different areas
+                of Oulu, including places commonly frequented by people with
+                addictions. A pink figure performs yoga routines on the
+                sidewalks, holding a bottle in different asanas.
             </p>
 
             <p>
@@ -548,12 +535,16 @@
                 Each performance is a 20-minute session
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             AS ATTACHMENT
-             ================================= -->
+    <!-- =================================
+         WORK 2 — AS ATTACHMENT
+         ================================= -->
+
+    <section class="work">
 
         <img
             class="work-image"
@@ -561,12 +552,15 @@
             alt="AS ATTACHMENT"
         >
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>AS ATTACHMENT</h2>
 
             <p>
-                A durational performance of wearing a wedding dress while chained to a fence next to love locks. Eventually, the performer begins conversations with passersby about the nature of love, attachment, and the hardships of relationships.
+                A durational performance of wearing a wedding dress while
+                chained to a fence next to love locks. Eventually, the
+                performer begins conversations with passersby about the nature
+                of love, attachment, and the hardships of relationships.
             </p>
 
             <p>
@@ -577,12 +571,16 @@
                 Duration 4 hours.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             WEARING BURDEN
-             ================================= -->
+    <!-- =================================
+         WORK 3 — WEARING BURDEN
+         ================================= -->
+
+    <section class="work">
 
         <img
             class="work-image"
@@ -590,7 +588,7 @@
             alt="WEARING BURDEN"
         >
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>WEARING BURDEN</h2>
 
@@ -599,7 +597,10 @@
             </p>
 
             <p>
-                The performer wears 20 kilos of black dough around the city. Eventually, the burden is gradually released by pinching off small pieces, experiencing how the body adapts to freedom and how it feels to let go.
+                The performer wears 20 kilos of black dough around the city.
+                Eventually, the burden is gradually released by pinching off
+                small pieces, experiencing how the body adapts to freedom and
+                how it feels to let go.
             </p>
 
             <p>
@@ -610,12 +611,16 @@
                 Duration 2 hours.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             COUNTING DAYS
-             ================================= -->
+    <!-- =================================
+         WORK 4 — COUNTING DAYS
+         ================================= -->
+
+    <section class="work">
 
         <img
             class="work-image"
@@ -623,16 +628,20 @@
             alt="COUNTING DAYS"
         >
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>COUNTING DAYS</h2>
 
             <p>
-                An anti-war performance series presented in Mexico and Finland. The performer falls and rises as many times as the number of days the Russian war against Ukraine has lasted. Later, the action turns into cutting holes in the coat, reaching day 730.
+                An anti-war performance series presented in Mexico and Finland.
+                The performer falls and rises as many times as the number of
+                days the Russian war against Ukraine has lasted. Later, the
+                action turns into cutting holes in the coat, reaching day 730.
             </p>
 
             <p>
-                The project was paused after two years. Unfortunately, the war keeps going into its fifth year.
+                The project was paused after two years. Unfortunately, the war
+                keeps going into its fifth year.
             </p>
 
             <p>
@@ -643,12 +652,16 @@
                 Duration 2 years.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             BOTTOM OF BLOOD
-             ================================= -->
+    <!-- =================================
+         WORK 5 — BOTTOM OF BLOOD
+         ================================= -->
+
+    <section class="work">
 
         <img
             class="work-image"
@@ -656,7 +669,7 @@
             alt="BOTTOM OF BLOOD"
         >
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>BOTTOM OF BLOOD</h2>
 
@@ -676,12 +689,16 @@
                 Duration 30 minutes.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             OPPOSITE CATHERINE
-             ================================= -->
+    <!-- =================================
+         WORK 6 — OPPOSITE CATHERINE
+         ================================= -->
+
+    <section class="work">
 
         <img
             class="work-image"
@@ -689,20 +706,25 @@
             alt="OPPOSITE CATHERINE"
         >
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>OPPOSITE CATHERINE</h2>
 
             <p>
-                A long-durational exploration of bodily and behavioural creativity. The performer is positioned backwards, using the body's peripheral side as the frontal.
+                A long-durational exploration of bodily and behavioural
+                creativity. The performer is positioned backwards, using the
+                body's peripheral side as the frontal.
             </p>
 
             <p>
-                “We are crazy about food and food ideologies. About food rituals. About food information. We have plans for eating better. Or eating less...”
+                “We are crazy about food and food ideologies. About food
+                rituals. About food information. We have plans for eating
+                better. Or eating less...”
             </p>
 
             <p>
-                The performer brings only mud into the kitchen space. Plenty of mud.
+                The performer brings only mud into the kitchen space. Plenty
+                of mud.
             </p>
 
             <p>
@@ -713,12 +735,16 @@
                 Duration 5 hours.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             ABUNDANCE
-             ================================= -->
+    <!-- =================================
+         WORK 7 — ABUNDANCE
+         ================================= -->
+
+    <section class="work">
 
         <img
             class="work-image"
@@ -726,16 +752,21 @@
             alt="ABUNDANCE"
         >
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>ABUNDANCE</h2>
 
             <p>
-                The performer makes interventions in the city space and plants about 50 sausages on the lawn. Each of them is carved into “a penis shape”.
+                The performer makes interventions in the city space and plants
+                about 50 sausages on the lawn. Each of them is carved into
+                “a penis shape”.
             </p>
 
             <p>
-                The newly created sight is offered to citizens to observe the abundance of Nature. There one can think about beauty, forgiveness, joy, acceptance, polarities, or even death, aggression, occupation, and inequality.
+                The newly created sight is offered to citizens to observe the
+                abundance of Nature. There one can think about beauty,
+                forgiveness, joy, acceptance, polarities, or even death,
+                aggression, occupation, and inequality.
             </p>
 
             <p>
@@ -746,12 +777,16 @@
                 Duration 1 hour 20 minutes.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             IN LOVE WITH THE BUS STOP
-             ================================= -->
+    <!-- =================================
+         WORK 8 — IN LOVE WITH THE BUS STOP
+         ================================= -->
+
+    <section class="work">
 
         <img
             class="work-image"
@@ -759,16 +794,19 @@
             alt="IN LOVE WITH THE BUS STOP"
         >
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>IN LOVE WITH THE BUS STOP</h2>
 
             <p>
-                An action of covering a distant bus stop with a pattern of lipstick stamps. The performer remains there, watching passing cars and buses, while going nowhere.
+                An action of covering a distant bus stop with a pattern of
+                lipstick stamps. The performer remains there, watching passing
+                cars and buses, while going nowhere.
             </p>
 
             <p>
-                A simple gesture of affection turns an ordinary public place into a strange, intimate meeting point.
+                A simple gesture of affection turns an ordinary public place
+                into a strange, intimate meeting point.
             </p>
 
             <p>
@@ -779,12 +817,16 @@
                 Duration 1 hour.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             NEVER-LOST IN KUHASALO
-             ================================= -->
+    <!-- =================================
+         WORK 9 — NEVER-LOST IN KUHASALO
+         ================================= -->
+
+    <section class="work">
 
         <img
             class="work-image"
@@ -792,16 +834,21 @@
             alt="NEVER-LOST IN KUHASALO"
         >
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>NEVER-LOST IN KUHASALO</h2>
 
             <p>
-                The performer walks barefoot and blindfolded along a newly built road into the wild nature, over 2 km long.
+                The performer walks barefoot and blindfolded along a newly
+                built road into the wild nature, over 2 km long.
             </p>
 
             <p>
-                The performance questions the idea of making the forest easy and accessible. With vision dramatically reduced, the body becomes dependent on touch, sound, and smell. The new road makes it impossible to get lost — but perhaps a forest is not supposed to be so easy to navigate.
+                The performance questions the idea of making the forest easy
+                and accessible. With vision dramatically reduced, the body
+                becomes dependent on touch, sound, and smell. The new road
+                makes it impossible to get lost — but perhaps a forest is not
+                supposed to be so easy to navigate.
             </p>
 
             <p>
@@ -812,12 +859,16 @@
                 Duration 1 hour 30 minutes.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             STRESS OR MISTRESS
-             ================================= -->
+    <!-- =================================
+         WORK 10 — STRESS OR MISTRESS
+         ================================= -->
+
+    <section class="work">
 
         <img
             class="work-image"
@@ -825,7 +876,7 @@
             alt="STRESS OR MISTRESS"
         >
 
-        <section class="work-text">
+        <div class="work-text">
 
             <h2>STRESS OR MISTRESS</h2>
 
@@ -834,11 +885,16 @@
             </p>
 
             <p>
-                The Action is a response to the public bullying of Finland's prime minister Sanna Marin following criticism of her dancing and rumours about cocaine use. In Finnish slang, “jauho” means flour and “jauhojengi” means flour people.
+                The Action is a response to the public bullying of Finland's
+                prime minister Sanna Marin following criticism of her dancing
+                and rumours about cocaine use. In Finnish slang, “jauho” means
+                flour and “jauhojengi” means flour people.
             </p>
 
             <p>
-                The performer creates noise and opposes herself to the bullies. Covered in flour, she explores the dance movements that were publicly criticized.
+                The performer creates noise and opposes herself to the bullies.
+                Covered in flour, she explores the dance movements that were
+                publicly criticized.
             </p>
 
             <p>
@@ -849,19 +905,57 @@
                 Duration 20 minutes.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =================================
-             UP
-             ================================= -->
+    <!-- =================================
+         UP
+         ================================= -->
 
-        <a href="#top" class="up-button">
-            UP
-        </a>
+    <a href="#top" class="up-button">
+        UP
+    </a>
 
 
-    </main>
+</main>
+
+
+<script>
+
+    /* =================================
+       NAVIGATION COLOUR
+       ================================= */
+
+    const navigation = document.querySelector(".navigation");
+    const whiteSections = document.querySelectorAll(".work-text");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+                    navigation.classList.add("on-white");
+                } else {
+                    navigation.classList.remove("on-white");
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.05
+        }
+    );
+
+
+    whiteSections.forEach((section) => {
+        observer.observe(section);
+    });
+
+</script>
 
 </body>
 </html>
