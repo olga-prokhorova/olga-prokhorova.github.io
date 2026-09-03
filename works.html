@@ -50,6 +50,15 @@
 
 
         /* =================================
+           TOP
+           ================================= */
+
+        #top {
+            position: relative;
+        }
+
+
+        /* =================================
            ARTIST NAME
            ================================= */
 
@@ -63,7 +72,7 @@
 
             margin: 0;
 
-            color: #efefef;
+            color: var(--light);
             text-decoration: none;
 
             font-family:
@@ -73,7 +82,8 @@
                 sans-serif;
 
             font-size: 55px;
-            font-weight: 200;
+            font-weight: 300;
+
             line-height: 1;
 
             letter-spacing: 5px;
@@ -92,10 +102,10 @@
             width: 100%;
             height: 100vh;
 
-            border-bottom: 3px solid #efefef;
+            border-bottom: 3px solid var(--light);
         }
 
-        .work:last-child {
+        .work:last-of-type {
             border-bottom: 0;
         }
 
@@ -108,15 +118,23 @@
             display: block;
 
             width: 100%;
-            height: 100%;
+            height: 100vh;
 
             object-fit: cover;
             object-position: center;
         }
 
+        /*
+         * Keep the bottom edge of the final
+         * desktop image visible.
+         */
+        .work:last-of-type .work-image {
+            object-position: center bottom;
+        }
+
 
         /* =================================
-           WORK TEXT — DESKTOP
+           WORK TEXT
            ================================= */
 
         .work-text {
@@ -132,45 +150,47 @@
 
             background: transparent;
 
-            color: #efefef;
+            color: var(--light);
         }
 
         .work-text h2 {
-            margin: 0 0 18px 0;
+            margin: 0 0 18px;
 
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
+            font:
+                500 14px/1.45
+                var(--font);
 
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.45;
-
-            color: #efefef;
+            color: var(--light);
         }
 
         .work-text p {
-            margin: 0 0 18px 0;
-
             max-width: 456px;
 
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
+            margin: 0 0 18px;
 
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 1.45;
+            font:
+                300 14px/1.45
+                var(--font);
 
-            color: #efefef;
+            color: var(--light);
         }
 
         .work-text p:last-child {
             margin-bottom: 0;
+        }
+
+
+        /* =================================
+           END BLOCK
+           ================================= */
+
+        .end-block {
+            position: relative;
+
+            width: 100%;
+            height: 200px;
+
+            background: #efefef;
         }
 
 
@@ -196,22 +216,17 @@
         }
 
         .navigation a:not(.instagram) {
-            color: #efefef;
+            color: var(--light);
 
             text-decoration: none;
 
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            font-size: 23px;
-            font-weight: 300;
-            line-height: 1;
+            font:
+                300 23px/1
+                var(--font);
         }
 
-        .navigation a:not(.instagram):hover {
+        .navigation a:not(.instagram):hover,
+        .instagram:hover {
             opacity: 0.55;
         }
 
@@ -240,10 +255,6 @@
             object-fit: contain;
         }
 
-        .instagram:hover {
-            opacity: 0.55;
-        }
-
 
         /* =================================
            UP
@@ -257,19 +268,17 @@
 
             transform: translateX(-50%);
 
-            color: #efefef;
+            display: block;
+
+            width: fit-content;
+
+            color: var(--dark);
 
             text-decoration: none;
 
-            font-family:
-                "Helvetica Neue",
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1;
+            font:
+                500 14px/1
+                var(--font);
         }
 
         .up-button:hover {
@@ -288,13 +297,14 @@
                 left: calc(5% + 30px);
 
                 font-size: 45px;
-                font-weight: 200;
+                font-weight: 300;
 
                 letter-spacing: 4px;
             }
 
             .navigation {
                 top: calc(50% + 150px);
+
                 gap: 30px;
             }
 
@@ -314,6 +324,10 @@
                 bottom: calc(9% + 40px);
 
                 width: 456px;
+                max-width: 456px;
+            }
+
+            .work-text p {
                 max-width: 456px;
             }
         }
@@ -379,7 +393,8 @@
             /* MOBILE WORK */
 
             .work {
-                height: auto;
+                height: 100svh;
+
                 border-bottom: 0;
             }
 
@@ -394,34 +409,36 @@
                 object-position: center;
             }
 
+            .work:last-of-type .work-image {
+                object-position: center bottom;
+            }
+
 
             /* MOBILE TEXT */
 
             .work-text {
-                position: relative;
+                left: 6%;
+                bottom: calc(9% + 40px);
 
-                left: auto;
-                bottom: auto;
+                width: 330px;
+                max-width: 330px;
 
-                width: 100%;
-                max-width: none;
+                padding: 0;
 
-                padding: 40px 6% 110px;
+                background: transparent;
 
-                background: #fff;
-
-                color: #515151;
+                color: var(--light);
             }
 
             .work-text h2 {
                 margin-bottom: 16px;
 
-                font-size: 12px;
+                font-size: 14px;
                 font-weight: 500;
 
                 line-height: 1.45;
 
-                color: #515151;
+                color: var(--light);
             }
 
             .work-text p {
@@ -434,29 +451,21 @@
 
                 line-height: 1.45;
 
-                color: #515151;
+                color: var(--light);
+            }
+
+
+            /* MOBILE END BLOCK */
+
+            .end-block {
+                height: 200px;
             }
 
             .up-button {
-                position: relative;
-
-                left: auto;
-                bottom: auto;
-
-                display: block;
-
-                width: fit-content;
-
-                margin: 270px auto 0;
-
-                transform: none;
-
-                padding-bottom: 50px;
+                bottom: 50px;
 
                 font-size: 12px;
                 font-weight: 500;
-
-                color: #515151;
             }
         }
 
@@ -492,14 +501,26 @@
                 height: 18px;
             }
 
+
+            .work-text {
+                left: 6%;
+                bottom: calc(7% + 40px);
+
+                width: 275px;
+                max-width: 275px;
+            }
+
             .work-text p {
                 max-width: 275px;
             }
 
-            .up-button {
-                margin-top: 270px;
 
-                padding-bottom: 40px;
+            .end-block {
+                height: 200px;
+            }
+
+            .up-button {
+                bottom: 40px;
 
                 font-size: 12px;
             }
@@ -510,7 +531,6 @@
 
 
 <body>
-
 
 <nav class="navigation">
 
@@ -1043,17 +1063,25 @@
                 Duration 20 minutes.
             </p>
 
-            <a href="#top" class="up-button">
-                UP
-            </a>
-
         </div>
 
     </section>
 
 
-</main>
+    <!-- =================================
+         FINAL 200PX BLOCK
+         ================================= -->
 
+    <div class="end-block">
+
+        <a href="#top" class="up-button">
+            UP
+        </a>
+
+    </div>
+
+
+</main>
 
 </body>
 </html>
