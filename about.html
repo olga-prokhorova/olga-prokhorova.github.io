@@ -1,261 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>About — Olga Prokhorova</title>
-
-<link rel="stylesheet" href="style.css">
-
-<style>
-
-/* =========================
-   ABOUT PAGE
-========================= */
-
-body {
-    background: #efefef;
-    color: #444;
-    overflow-x: hidden;
-}
-
-.about-page {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-}
-
-
-/* =========================
-   BACKGROUND IMAGE
-========================= */
-
-.about-background {
-    display: block;
-
-    width: 100%;
-    height: 100vh;
-
-    object-fit: cover;
-    object-position: center;
-}
-
-
-/* =========================
-   ABOUT TEXT — DESKTOP
-========================= */
-
-.about-content {
-    position: absolute;
-
-    left: calc(5.5% + 30px);
-    bottom: calc(12% + 100px);
-
+.work-text {
     width: 400px;
     max-width: 400px;
 
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.45;
+    padding: 40px 0 110px;
 
-    color: #444;
+    color: var(--dark);
 }
 
-.about-content p {
-    margin: 0;
+.work-text h2 {
+    margin: 0 0 18px;
+
+    font:
+        500 14px/1.45
+        var(--font);
 }
 
+.work-text p {
+    max-width: 400px;
 
-/* =========================
-   ABOUT NAVIGATION
-========================= */
+    margin: 0 0 18px;
 
-.about-page .site-navigation {
-    position: fixed;
+    font:
+        300 16px/1.45
+        var(--font);
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+.work-text p:last-child {
+    margin-bottom: 0;
+}
 
 @media (max-width: 700px) {
 
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-    .about-page {
-        width: 100vw;
-        min-height: 100svh;
-    }
-
-
-    /* IMAGE */
-
-    .about-background {
-        width: 100%;
-        height: 100vh;
-
-        object-fit: cover;
-        object-position: center;
-    }
-
-
-    /* TEXT
-       LEFT EDGE ALIGNED WITH NAME
-       ABSOLUTE POSITION
-       LIFTED TOWARDS WORKS NAVIGATION */
-
-    .about-content {
-        position: absolute;
-
-        left: 6%;
-        bottom: calc(9% + 40px);
-
+    .work-text {
         width: 330px;
         max-width: 330px;
 
-        padding: 0;
+        padding: 40px 6% 110px;
+    }
 
-        transform: none;
+    .work-text h2 {
+        margin-bottom: 16px;
+        font-size: 12px;
+    }
+
+    .work-text p {
+        max-width: 330px;
+        margin-bottom: 16px;
 
         font-size: 14px;
         font-weight: 300;
         line-height: 1.45;
-
-        color: #444;
     }
-
-
-    /* NAVIGATION
-       FIXED ON RIGHT
-       SAME MASTER POSITION */
-
-    .about-page .site-navigation {
-        position: fixed;
-
-        top: auto;
-        left: auto;
-
-        right: 7%;
-        bottom: 9%;
-
-        transform: none;
-
-        gap: 22px;
-    }
-
 }
-
-
-/* =========================
-   SMALL PHONES
-========================= */
 
 @media (max-width: 430px) {
 
-    .about-content {
-        left: 6%;
-        bottom: calc(7% + 40px);
-
+    .work-text {
         width: 275px;
         max-width: 275px;
+    }
 
+    .work-text p {
+        max-width: 275px;
         font-size: 14px;
     }
-
-
-    .about-page .site-navigation {
-        right: 7%;
-        bottom: 7%;
-
-        gap: 18px;
-    }
-
 }
-
-</style>
-
-</head>
-
-
-<body>
-
-<main class="about-page">
-
-
-    <!-- BACKGROUND IMAGE -->
-
-    <picture>
-
-        <source
-            media="(max-width: 700px)"
-            srcset="about_banner_2.jpg">
-
-        <img
-            class="about-background"
-            src="banner_web_about.jpg"
-            alt="">
-
-    </picture>
-
-
-    <!-- CLICKABLE NAME -->
-
-    <a
-        href="index.html"
-        class="site-name">
-
-        OLGA PROKHOROVA
-
-    </a>
-
-
-    <!-- ABOUT TEXT -->
-
-    <section class="about-content">
-
-        <p>
-            I make poetic interventions in familiar situations through performance, rearranging behaviours and relationships. I explore how these encounters can transform our understanding of dignity and human experience.
-        </p>
-
-    </section>
-
-
-    <!-- NAVIGATION -->
-
-    <nav class="site-navigation">
-
-        <a
-            class="instagram"
-            href="https://www.instagram.com/performateria/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram">
-
-            <img
-                src="instagram_icon.png"
-                alt="Instagram">
-
-        </a>
-
-        <a href="works.html">works</a>
-
-        <a href="cv.html">cv</a>
-
-        <a href="bio.html">bio</a>
-
-        <a href="contact.html">contact</a>
-
-    </nav>
-
-
-</main>
-
-</body>
-</html>
