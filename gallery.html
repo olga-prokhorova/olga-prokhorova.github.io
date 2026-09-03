@@ -2,11 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gallery</title>
 
 <style>
+
 :root {
     --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
     --light: #efefef;
@@ -35,6 +38,30 @@ body {
     font-family: var(--font);
     font-weight: 300;
     overflow-x: hidden;
+}
+
+
+/* =========================
+   PHOTOGRAPHER CREDITS
+   ========================= */
+
+.photographer-credits {
+    width: 100%;
+    padding: 24px 5.5% 26px;
+    background: #000;
+    color: var(--light);
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.55;
+}
+
+.photographer-credits p {
+    margin: 0;
+}
+
+.photographer-names {
+    margin-top: 8px !important;
 }
 
 
@@ -194,6 +221,10 @@ body {
         padding: 12px;
     }
 
+    .photographer-credits {
+        padding: 22px 5.5% 24px;
+    }
+
     .navigation {
         top: calc(50% + 150px);
         left: 79%;
@@ -225,6 +256,16 @@ body {
     body {
         overflow-x: hidden;
         overflow-y: auto;
+    }
+
+    .photographer-credits {
+        padding: 22px 6% 24px;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .photographer-names {
+        margin-top: 9px !important;
     }
 
     .gallery-page {
@@ -307,6 +348,11 @@ body {
 
 @media (max-width: 430px) {
 
+    .photographer-credits {
+        padding: 20px 6% 22px;
+        font-size: 12px;
+    }
+
     .navigation {
         right: 7%;
         bottom: 7%;
@@ -328,11 +374,37 @@ body {
         font-size: 24px;
     }
 }
+
 </style>
+
 </head>
 
 
 <body>
+
+
+<!-- ==================================================
+     PHOTOGRAPHER CREDITS
+     ================================================== -->
+
+<div class="photographer-credits">
+
+    <p>
+        The following photographers have generously contributed to my artistic practice.
+        I share their images throughout this website and in the documentation of my work
+        with deep gratitude:
+    </p>
+
+    <p class="photographer-names">
+        Inkeri Jäntti · Nikolay Sizikov · Anna Alimpieva · Olga Prokhorova ·
+        Margarita Mercury · Marko Laukkanen · Nina Karaush · Sirpa Heikkinen ·
+        Antti Peltokangas · Sylvia Alonsoe · Dina Gataullina · Panu Johansson ·
+        Ninni Suni
+    </p>
+
+</div>
+
+
 
 <div class="gallery-page">
 
@@ -655,6 +727,7 @@ body {
 </div>
 
 
+
 <!-- ==================================================
      FIXED NAVIGATION
      ================================================== -->
@@ -674,16 +747,22 @@ body {
 </nav>
 
 
+
 <script>
+
 document.querySelector('.up-button').addEventListener('click', function(e) {
+
     e.preventDefault();
 
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
+
 });
+
 </script>
+
 
 </body>
 </html>
