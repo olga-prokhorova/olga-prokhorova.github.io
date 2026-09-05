@@ -94,11 +94,6 @@ body {
     width: 100%;
     height: auto;
     object-fit: contain;
-    transition: opacity 0.25s ease;
-}
-
-.gallery-item:hover img {
-    opacity: 0.8;
 }
 
 
@@ -133,11 +128,11 @@ body {
     align-items: flex-start;
     gap: 34px;
 
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .navigation a {
-    color: var(--light);
+    color: #efefef;
     text-decoration: none;
 
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -145,11 +140,11 @@ body {
     font-weight: 300;
     line-height: 1;
 
-    transition: opacity 0.25s ease;
+    transition: none;
 }
 
 .navigation a:hover {
-    opacity: 0.55;
+    opacity: 1;
 }
 
 .instagram {
@@ -164,6 +159,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
+
+    filter: brightness(0) saturate(100%) invert(100%) brightness(93.73%);
 }
 
 
@@ -198,11 +195,11 @@ body {
 
     font: 500 14px/1 var(--font);
 
-    transition: opacity 0.25s ease;
+    transition: none;
 }
 
 .up-button:hover {
-    opacity: 0.55;
+    opacity: 1;
 }
 
 
@@ -228,6 +225,7 @@ body {
         top: calc(50% + 150px);
         left: 79%;
         gap: 30px;
+        opacity: 0.75;
     }
 
     .navigation a {
@@ -253,14 +251,29 @@ body {
     }
 
     body {
+        background: #efefef;
         overflow-x: hidden;
         overflow-y: auto;
     }
 
     .photographer-credits {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 50;
+
+        width: 100%;
         padding: 22px 6% 24px;
+
+        background: transparent;
+        color: #515151;
+
         font-size: 12px;
+        font-style: italic;
+        font-weight: 200;
         line-height: 1.55;
+
+        pointer-events: none;
     }
 
     .photographer-names {
@@ -313,10 +326,11 @@ body {
         transform: none;
 
         gap: 22px;
-        opacity: 0.5;
+        opacity: 0.75;
     }
 
     .navigation a {
+        color: #efefef;
         font-size: 19px;
     }
 
@@ -348,18 +362,28 @@ body {
 @media (max-width: 430px) {
 
     .photographer-credits {
+        position: absolute;
+        top: 0;
+        left: 0;
+
         padding: 20px 6% 22px;
+
+        background: transparent;
+        color: #515151;
+
         font-size: 10px;
+        font-weight: 200;
     }
 
     .navigation {
         right: 7%;
         bottom: 7%;
         gap: 18px;
-        opacity: 0.5;
+        opacity: 0.75;
     }
 
     .navigation a {
+        color: #efefef;
         font-size: 17px;
     }
 
@@ -394,7 +418,7 @@ body {
     </p>
 
     <p class="photographer-names">
-        Inkeri Jäntti · Nikolay Sizikov · Anna Alimpieva · 
+        Inkeri Jäntti · Nikolay Sizikov · Anna Alimpieva ·
         Margarita Mercury · Marko Laukkanen · Nina Karaush · Sirpa Heikkinen ·
         Antti Peltokangas · Sylvia Alonsoe · Dina Gataullina · Panu Johansson ·
         Ninni Suni
@@ -425,7 +449,7 @@ body {
             <img src="galhor_22.jpg" alt="">
         </div>
 
-        <!-- 02 -->
+        <!-- 02 — EXISTING -->
         <div class="gallery-item desktop-only">
             <img src="galhor_2.jpg" alt="">
         </div>
@@ -577,231 +601,7 @@ body {
         </div>
 
 
-    </div>
-
-
-
-    <!-- ==================================================
-         MOBILE GALLERY
-         ONLY MOBILE IMAGES
-         ================================================== -->
-
-    <div class="gallery mobile-gallery">
-
-
-        <!-- 01 -->
-        <div class="gallery-item mobile-only">
-            <img src="look_v.jpg" alt="">
-        </div>
-
-        <!-- 02 — ADDED -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_23.jpg" alt="">
-        </div>
-
-        <!-- 02 -->
-        <div class="gallery-item mobile-only">
-            <img src="galvert_2.jpg" alt="">
-        </div>
-
-        <!-- 03 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_3.jpg" alt="">
-        </div>
-
-        <!-- 04 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_4.jpg" alt="">
-        </div>
-
-        <!-- 05 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_5.jpg" alt="">
-        </div>
-
-        <!-- 06 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_6.jpg" alt="">
-        </div>
-
-        <!-- 07 -->
-        <div class="gallery-item mobile-only">
-            <img src="galvert_7.jpg" alt="">
-        </div>
-
-        <!-- 08 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_8.jpg" alt="">
-        </div>
-
-        <!-- 09 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_9.jpg" alt="">
-        </div>
-
-        <!-- 10 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_10.jpg" alt="">
-        </div>
-
-        <!-- 11 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_12.jpg" alt="">
-        </div>
-
-        <!-- galver_13.jpg REMOVED -->
-
-        <!-- 12 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_14.jpg" alt="">
-        </div>
-
-        <!-- 13 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_15.jpg" alt="">
-        </div>
-
-        <!-- 14 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_16.jpg" alt="">
-        </div>
-
-        <!-- 15 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_17.jpg" alt="">
-        </div>
-
-        <!-- 16 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_18.jpg" alt="">
-        </div>
-
-        <!-- 17 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_19.jpg" alt="">
-        </div>
-
-        <!-- 18 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_20.jpg" alt="">
-        </div>
-
-        <!-- 19 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_21.jpg" alt="">
-        </div>
-
-        <!-- 20 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_22.jpg" alt="">
-        </div>
-
-        <!-- 21 -->
-        <div class="gallery-item mobile-only">
-            <img src="galver_23.jpg" alt="">
-        </div>
-
-
-        <!-- ==================================================
-             NEW MOBILE IMAGES
-             ================================================== -->
-
-        <!-- 22 -->
-        <div class="gallery-item mobile-only">
-            <img src="ver_1.jpg" alt="">
-        </div>
-
-        <!-- 23 -->
-        <div class="gallery-item mobile-only">
-            <img src="ver_3.jpg" alt="">
-        </div>
-
-        <!-- 24 -->
-        <div class="gallery-item mobile-only">
-            <img src="ver_4.jpg" alt="">
-        </div>
-
-        <!-- 25 -->
-        <div class="gallery-item mobile-only">
-            <img src="ver_5.jpg" alt="">
-        </div>
-
-        <!-- 26 -->
-        <div class="gallery-item mobile-only">
-            <img src="ver_6.jpg" alt="">
-        </div>
-
-        <!-- 27 -->
-        <div class="gallery-item mobile-only">
-            <img src="ver_7.jpg" alt="">
-        </div>
-
-
-        <!-- ==================================================
-             NEW UUS MOBILE IMAGES
-             ================================================== -->
-
-        <!-- 28 -->
-        <div class="gallery-item mobile-only">
-            <img src="uus_ver_1.jpg" alt="">
-        </div>
-
-        <!-- 29 -->
-        <div class="gallery-item mobile-only">
-            <img src="uus_ver_2.jpg" alt="">
-        </div>
-
-
     </div>    <!-- ==================================================
-         BOTTOM
-         ================================================== -->
-
-    <div class="end-block">
-        <a href="#" class="up-button">UP</a>
-    </div>
-
-</div>
-
-
-
-<!-- ==================================================
-     FIXED NAVIGATION
-     ================================================== -->
-
-<nav class="navigation">
-
-    <a href="https://www.instagram.com/"
-       class="instagram"
-       aria-label="Instagram">
-
-        <img src="instagram_icon.png" alt="Instagram">
-
-    </a>
-
-    <a href="index.html">home</a>
-
-</nav>
-
-
-
-<script>
-
-document.querySelector('.up-button').addEventListener('click', function(e) {
-
-    e.preventDefault();
-
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-
-});
-
-</script>
-
-
-</body>
-</html>    <!-- ==================================================
          MOBILE GALLERY
          ONLY MOBILE IMAGES
          ================================================== -->
@@ -816,7 +616,12 @@ document.querySelector('.up-button').addEventListener('click', function(e) {
 
         <!-- 02 — ADDED -->
         <div class="gallery-item mobile-only">
-            <img src="galver_23.jpg" alt="">
+            <img src="galver_1.jpg" alt="">
+        </div>
+
+        <!-- 01 — EXISTING -->
+        <div class="gallery-item mobile-only">
+            <img src="galver_1.jpg" alt="">
         </div>
 
         <!-- 02 — EXISTING -->
