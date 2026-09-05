@@ -4,168 +4,406 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CV — Olga Prokhorova</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Olga Prokhorova — Works</title>
 
     <style>
+        :root {
+            --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --light: #efefef;
+            --dark: #515151;
+        }
 
-        /* =========================
-           CV PAGE
-        ========================= */
+        * {
+            box-sizing: border-box;
+        }
 
-        body.cv-page {
+        html,
+        body {
             margin: 0;
-            background: #efefef;
-            color: #515151;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-            background-image: url("cv_desktop_backgroundjpg_2.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
         }
 
-
-        /* =========================
-           NAME
-        ========================= */
-
-        .cv-page .site-name {
-            color: #515151;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            background: #fff;
+            font-family: var(--font);
+            font-weight: 300;
+            overflow-x: hidden;
+        }
 
-        /* =========================
-           CV CONTENT
-        ========================= */
+        .works-page {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background: #000;
+        }
 
-        .cv-content {
+        #top {
+            position: relative;
+        }
+
+        /* =================================
+           PAGE-WIDE DESKTOP GRADIENT
+           ================================= */
+
+        @media (min-width: 701px) {
+
+            .works-page::before {
+                content: "";
+                position: absolute;
+
+                top: 0;
+                left: 0;
+                bottom: 200px;
+
+                width: 100%;
+                height: auto;
+
+                z-index: 5;
+                pointer-events: none;
+
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.38) 0%,
+                    rgba(0, 0, 0, 0.20) 30%,
+                    rgba(0, 0, 0, 0.06) 60%,
+                    rgba(0, 0, 0, 0) 100%
+                );
+            }
+        }
+
+        /* =================================
+           ARTIST NAME
+           ================================= */
+
+        .site-name {
             position: absolute;
-
-            top: calc(23% + 15px);
+            top: calc(11% + 30px);
             left: calc(5.5% + 30px);
 
-            width: 700px;
-            max-width: 700px;
+            z-index: 100;
 
-            padding-bottom: 160px;
+            margin: 0;
 
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 1.55;
+            color: var(--light);
+            text-decoration: none;
+
+            font: 200 55px/1 var(--font);
+
+            letter-spacing: 5px;
+            white-space: nowrap;
         }
 
-        .cv-content h1 {
-            margin: 0 0 28px 0;
+        /* =================================
+           WORK
+           ================================= */
 
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 1.55;
-            letter-spacing: 0;
+        .work {
+            position: relative;
+
+            width: 100%;
+            height: 100vh;
+
+            border-bottom: 3px solid var(--light);
         }
 
-        .cv-content h2 {
-            margin: 42px 0 18px 0;
-
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.55;
-            letter-spacing: 0;
+        .work:last-of-type {
+            border-bottom: 0;
         }
 
-        .cv-content .upcoming-heading {
-            margin-top: 28px;
-            margin-bottom: 18px;
+        .work-image {
+            display: block;
 
-            font-size: 14px;
-            font-weight: 500;
-            font-style: italic;
-            line-height: 1.55;
-            letter-spacing: 0;
+            width: 100%;
+            height: 100vh;
+
+            object-fit: cover;
+            object-position: center;
         }
 
-        .cv-content p {
-            margin: 0 0 18px 0;
+        .work:last-of-type .work-image {
+            object-position: center bottom;
         }
 
+        /* =================================
+           WORK TEXT
+           ================================= */
 
-        /* =========================
+        .work-text {
+            position: absolute;
+
+            left: calc(5.5% + 30px);
+            bottom: calc(12% + 50px);
+
+            z-index: 10;
+
+            width: 380px;
+            max-width: 380px;
+
+            padding: 0;
+
+            background: transparent;
+            color: var(--light);
+        }
+
+        .work-text h2 {
+            margin: 0 0 18px;
+
+            font: 500 16px/1.45 var(--font);
+            color: var(--light);
+        }
+
+        .work-text p {
+            max-width: 380px;
+
+            margin: 0 0 18px;
+
+            font: 300 16px/1.45 var(--font);
+            color: var(--light);
+        }
+
+        .work-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =================================
+           DESKTOP
+           Selected text blocks moved down 50px
+           ================================= */
+
+        @media (min-width: 701px) {
+
+            .work-juoppo .work-text,
+            .work-bottom-blood .work-text,
+            .work-abundance .work-text,
+            .work-never-lost .work-text {
+                transform: translateY(50px);
+            }
+
+            /* Desktop — menu always stays light */
+
+            .navigation {
+                color: var(--light);
+            }
+
+            .navigation a:not(.instagram) {
+                color: var(--light);
+            }
+
+            .navigation.on-white a:not(.instagram) {
+                color: var(--light);
+            }
+
+            .navigation.on-white .instagram img {
+                filter: none;
+            }
+        }
+
+        /* =================================
+           END BLOCK
+           ================================= */
+
+        .end-block {
+            position: relative;
+
+            width: 100%;
+            height: 200px;
+
+            background: #fff;
+        }
+
+        .end-block .up-button {
+            color: var(--dark);
+        }
+
+        /* =================================
            NAVIGATION
-        ========================= */
+           ================================= */
 
-        .cv-page .site-navigation {
+        .navigation {
             position: fixed;
+
+            z-index: 30;
+
+            top: calc(50% + 180px);
+            left: 79%;
+
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            gap: 34px;
         }
 
-        .cv-page .site-navigation a:not(.instagram) {
-            color: #515151;
+        .navigation a:not(.instagram) {
+            color: var(--light);
+
+            text-decoration: none;
+
+            font: 300 23px/1 var(--font);
         }
 
-        .cv-page .site-navigation .instagram {
+        .navigation a:not(.instagram):hover,
+        .instagram:hover,
+        .up-button:hover {
+            opacity: 0.55;
+        }
+
+        /* =================================
+           INSTAGRAM
+           ================================= */
+
+        .instagram {
+            display: block;
+
+            width: 22px;
+            height: 22px;
+
+            margin-bottom: 8px;
+
             opacity: 0.95;
         }
 
+        .instagram img {
+            display: block;
 
-        /* =========================
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+        }
+
+        /* =================================
+           UP BUTTON
+           ================================= */
+
+        .up-button {
+            position: absolute;
+
+            left: 50%;
+            bottom: 150px;
+
+            transform: translateX(-50%);
+
+            display: block;
+
+            width: fit-content;
+
+            color: var(--dark);
+            text-decoration: none;
+
+            font: 500 14px/1 var(--font);
+        }
+
+        /* =================================
+           TABLET
+           ================================= */
+
+        @media (max-width: 1100px) {
+
+            .site-name {
+                position: absolute;
+
+                top: calc(10% + 30px);
+                left: calc(5% + 30px);
+
+                font-size: 45px;
+                font-weight: 200;
+
+                letter-spacing: 4px;
+            }
+
+            .navigation {
+                top: calc(50% + 150px);
+                gap: 30px;
+            }
+
+            .navigation a:not(.instagram) {
+                font-size: 21px;
+            }
+
+            .instagram {
+                width: 20px;
+                height: 20px;
+
+                margin-bottom: 0;
+            }
+
+            .work-text {
+                width: 380px;
+                max-width: 380px;
+            }
+
+            .work-text h2 {
+                font-size: 16px;
+            }
+
+            .work-text p {
+                max-width: 380px;
+                font-size: 16px;
+            }
+        }
+
+        /* =================================
            MOBILE
-        ========================= */
+           ================================= */
 
         @media (max-width: 700px) {
 
-            body.cv-page {
-                background-image: url("cv_mobile_background_2.jpg");
-                background-size: cover;
-                background-position: center;
-                background-attachment: scroll;
+            body {
+                overflow-x: hidden;
+                overflow-y: auto;
             }
 
-            .cv-content {
+            .works-page {
+                width: 100vw;
+                min-height: 100svh;
+            }
+
+            /* Mobile — gradient over top 1/3 of first image */
+            .work:first-of-type::before {
+                content: "";
                 position: absolute;
 
-                top: 200px;
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 33.333%;
+
+                z-index: 5;
+                pointer-events: none;
+
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.55) 0%,
+                    rgba(0, 0, 0, 0.30) 45%,
+                    rgba(0, 0, 0, 0) 100%
+                );
+            }
+
+            .site-name {
+                position: absolute;
+
+                top: calc(6% + 70px);
                 left: 6%;
 
-                width: calc(81vw - 57px);
-                max-width: calc(81vw - 57px);
+                z-index: 20;
 
-                padding-bottom: 140px;
-
-                font-size: 12px;
+                font-size: 30px;
                 font-weight: 300;
-                line-height: 1.55;
+
+                letter-spacing: 3px;
             }
 
-            .cv-content h1 {
-                font-size: 12px;
-                font-weight: 300;
-                line-height: 1.55;
-            }
-
-            .cv-content h2 {
-                font-size: 12px;
-                font-weight: 500;
-                line-height: 1.55;
-
-                margin-top: 34px;
-                margin-bottom: 16px;
-            }
-
-            .cv-content .upcoming-heading {
-                margin-top: 24px;
-                margin-bottom: 16px;
-
-                font-size: 12px;
-                font-weight: 500;
-                font-style: italic;
-                line-height: 1.55;
-            }
-
-            .cv-content p {
-                margin-bottom: 16px;
-            }
-
-            .cv-page .site-navigation {
+            .navigation {
                 top: auto;
                 left: auto;
 
@@ -175,385 +413,777 @@
                 transform: none;
 
                 gap: 22px;
+
+                transition: color 0.2s ease;
             }
 
-            .cv-page .site-navigation a:not(.instagram) {
+            .navigation a:not(.instagram) {
                 font-size: 19px;
-                font-weight: 300;
+                color: var(--light);
+
+                transition: color 0.2s ease;
             }
 
-            .cv-page .site-navigation .instagram {
+            .navigation.on-white a:not(.instagram) {
+                color: var(--dark);
+            }
+
+            .navigation.on-white .instagram img {
+                filter: brightness(0)
+                        saturate(100%)
+                        invert(31%)
+                        sepia(0%)
+                        saturate(0%)
+                        hue-rotate(0deg)
+                        brightness(92%)
+                        contrast(88%);
+            }
+
+            .instagram {
                 width: 20px;
                 height: 20px;
+
+                transition: opacity 0.2s ease;
+            }
+
+            .instagram img {
+                transition: filter 0.2s ease;
+            }
+
+            .work {
+                height: auto;
+                border-bottom: 0;
+            }
+
+            .work-image {
+                height: 100svh;
+            }
+
+            .work-text {
+                position: relative;
+
+                left: auto;
+                bottom: auto;
+
+                width: 100%;
+                max-width: none;
+
+                padding: 40px 6% 110px;
+
+                background: #fff;
+                color: var(--dark);
+
+                transform: none;
+            }
+
+            .work-text h2 {
+                margin: 0 0 16px;
+
+                font: 500 12px/1.45 var(--font);
+                color: var(--dark);
+            }
+
+            .work-text p {
+                max-width: 330px;
+
+                margin: 0 0 16px;
+
+                font: 300 14px/1.45 var(--font);
+                color: var(--dark);
+            }
+
+            .work-text p:last-child {
                 margin-bottom: 0;
+            }
+
+            .end-block {
+                height: 200px;
+            }
+
+            .up-button {
+                position: absolute;
+
+                left: 50%;
+                bottom: 50px;
+
+                transform: translateX(-50%);
+
+                padding-bottom: 0;
+
+                font-size: 12px;
+                color: var(--dark);
             }
         }
 
-
-        /* =========================
-           SMALL PHONES
-        ========================= */
+        /* =================================
+           SMALL MOBILE
+           ================================= */
 
         @media (max-width: 430px) {
 
-            .cv-content {
-                top: 175px;
-                left: 6%;
+            .site-name {
+                top: calc(6% + 60px);
 
-                width: calc(81vw - 57px);
-                max-width: calc(81vw - 57px);
-
-                font-size: 12px;
-            }
-
-            .cv-content h1 {
-                font-size: 12px;
+                font-size: 25px;
                 font-weight: 300;
             }
 
-            .cv-content h2 {
-                font-size: 12px;
-                font-weight: 500;
-            }
-
-            .cv-content .upcoming-heading {
-                font-size: 12px;
-                font-weight: 500;
-                font-style: italic;
-            }
-
-            .cv-page .site-navigation {
+            .navigation {
                 right: 7%;
                 bottom: 7%;
 
                 gap: 18px;
             }
 
-            .cv-page .site-navigation a:not(.instagram) {
+            .navigation a:not(.instagram) {
                 font-size: 17px;
             }
 
-            .cv-page .site-navigation .instagram {
+            .instagram {
                 width: 18px;
                 height: 18px;
+            }
+
+            .work-text {
+                width: 100%;
+                max-width: none;
+
+                padding: 40px 6% 110px;
+            }
+
+            .work-text p {
+                max-width: 275px;
+            }
+
+            .final-work-text {
+                padding-bottom: 40px;
+            }
+
+            .final-work-text .up-button {
+                margin-top: 270px;
+            }
+
+            .up-button {
+                padding-bottom: 0;
+                font-size: 12px;
             }
         }
 
     </style>
 </head>
 
+<body>
 
-<body class="cv-page">
+    <nav class="navigation">
 
+        <a
+            class="instagram"
+            href="https://www.instagram.com/performateria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+        >
+            <img
+                src="instagram_icon.png"
+                alt="Instagram"
+            >
+        </a>
 
-    <!-- NAME -->
+        <a href="about.html">about</a>
+        <a href="cv.html">cv</a>
+        <a href="bio.html">bio</a>
+        <a href="gallery.html">gallery</a>
+        <a href="contact.html">contact</a>
+
+    </nav>
+
 
     <a href="index.html" class="site-name">
         OLGA PROKHOROVA
     </a>
 
 
-    <!-- CV CONTENT -->
-
-    <main class="cv-content">
-
-        <h1>CURRICULUM VITAE</h1>
-
-
-        <h2>EDUCATION</h2>
-
-        <p>
-            2021–2026 Oulu University of Applied Sciences, Visual Media, Oulu / Finland
-        </p>
-
-        <p>
-            2019 PAS#62 Performance Art Studies with Johannes BBB Deimling, Tallinn / Estonia
-        </p>
-
-        <p>
-            2018–2019 Dance and Somatics, Eastern Finland Sports Institute, Joensuu / Finland
-        </p>
-
-        <p>
-            2007–2009 Performance Art, Sverigefinska folkhögskola, Haparanda / Sweden
-        </p>
-
-        <p>
-            1999–2004 Journalism, State University of Udmurtia, Russian Federation
-        </p>
-
-
-        <h2>CURRENT ARTISTIC PRACTICE</h2>
-
-        <p>
-            2026<br>
-            Juoppo Joogaa — 1-year site-specific performance project, Oulu / Finland<br>
-            Cultural gift 2026 from the Finnish Cultural Foundation to the City of Oulu,<br>
-            with support of Oulu Art Museum
-        </p>
-
-
-        <h3 class="upcoming-heading">upcoming events 2026:</h3>
-
-        <p>
-            04.09 — Juoppo Joogaa street performance, Oulu / Finland<br>
-            19.09 — LiveART performance event, Oulu Art Museum, Oulu / Finland<br>
-            20.09 — Gondyr Lab workshop, Monikulttuurikalenteri project, Oulu Art Museum, Oulu / Finland<br>
-            09.10 — Juoppo Joogaa street performance, Oulu / Finland<br>
-            16.10 — Juoppo Joogaa street performance, Oulu / Finland<br>
-            10.12 — Performanssilupi performance, Mallassauna, Oulu / Finland
-        </p>
-
-
-        <h2>SELECTED SOLO PERFORMANCES</h2>
-
-        <p>
-            2024<br>
-            Piilotettu – Hidden — 2h solo performance, Rapumaja, Oulu / Finland
-        </p>
-
-        <p>
-            2023<br>
-            Multiple site-specific performances in Oulu<br>
-            My Identity Is Clear — street performance and intervention at Kiasma, Helsinki / Finland<br>
-            Anti-war performance action in solidarity with Ukraine
-        </p>
-
-        <p>
-            2022<br>
-            Stress or Mistress — live action on Rotuaari, Oulu / Finland<br>
-            Counting Days–155 — anti-war performance action in solidarity with Ukraine, Rauha Kone, Oulu / Finland<br>
-            Counting Days–75 — anti-war performance action in solidarity with Ukraine, Oulu / Finland<br>
-            Counting Days–51 — anti-war performance action in solidarity with Ukraine, Norogachi / Mexico
-        </p>
-
-        <p>
-            2021<br>
-            Site-specific performances:<br>
-            Visible, Joensuu / Finland<br>
-            Woman on Top, Joensuu / Finland<br>
-            When My Life Was a Burden, Joensuu / Finland<br>
-            Bottom of Blood, action painting performance, Joensuu / Finland<br>
-            Abundance, Art at Night, Joensuu / Finland<br>
-            Neverlost in Kuhasalo, Joensuu / Finland<br>
-            As Attachment, Joensuu / Finland<br>
-            Juoppo Joogaa, month-long performance experience, Joensuu / Finland
-        </p>
-
-        <p>
-            2019<br>
-            Gods on a Catwalk, Joensuu / Finland<br>
-            Suffocating Outside, Joensuu / Finland
-        </p>
-
-        <p>
-            2018<br>
-            Where Are the Blue Orange?, Izhevsk / Russia
-        </p>
-
-        <p>
-            2017<br>
-            Say Hello to Mirror, Oulu / Finland
-        </p>
-
-        <p>
-            2016<br>
-            Opposite Catherine (Multa Katriina), Oulu / Finland
-        </p>
-
-        <p>
-            2013<br>
-            Karamazo, Izhevsk / Russia
-        </p>
-
-        <p>
-            2011<br>
-            Audio Exhibition, Saint Petersburg / Russia<br>
-            Zakusologia, exhibition and performance, Izhevsk / Russia
-        </p>
-
-        <p>
-            2010<br>
-            Let’s Drink for Love!, Izhevsk / Russia
-        </p>
-
-
-        <h2>SELECTED GROUP PERFORMANCES, FESTIVALS &amp; EVENTS</h2>
-
-        <p>
-            2024–2026<br>
-            Performanssilupi, Oulu / Finland<br>
-            LiveART events at Oulu Art Museum, Oulu / Finland
-        </p>
-
-        <p>
-            2024<br>
-            The Other Side — Performance Festival, Vantaa / Finland
-        </p>
-
-        <p>
-            2023<br>
-            FADO Festival, Toronto / Canada<br>
-            Strömsfors Art Biennale, Strömsfors / Finland
-        </p>
-
-        <p>
-            2022<br>
-            O’Morir Festival, Norogachi / Mexico<br>
-            Video exhibition, Goa / India
-        </p>
-
-        <p>
-            2021<br>
-            BLACK KIT art archive, Cologne / Germany<br>
-            Mirrored, photo exhibition on performing for cameras, Helsinki / Finland<br>
-            Performance Art Oslo retrospective, Oslo / Norway
-        </p>
+    <main class="works-page" id="top">
 
-        <p>
-            2020<br>
-            THE HOUR — 24-hour performance with 24 artists, Bergen / Norway
-        </p>
 
-        <p>
-            2019<br>
-            Performance at EKA — Estonian Academy of Arts, Tallinn / Estonia
-        </p>
+        <!-- =================================
+             WORK 1 — JUOPPO JOOGAA
+             ================================= -->
 
-        <p>
-            2018<br>
-            Hostages, performance at Espoo City Theatre, Finland, as part of Diana Soria’s project<br>
-            How to Teach About Violence Without Repeating It
-        </p>
+        <section class="work work-juoppo">
 
-        <p>
-            2016<br>
-            PAO Festival — Performance Art Oslo, with theme: Artist as a Nomad, Oslo / Norway
-        </p>
+            <div>
 
-        <p>
-            2014<br>
-            Mother Tongue Performance Art Festival, Helsinki / Finland
-        </p>
+                <picture>
+                    <source
+                        media="(min-width: 701px)"
+                        srcset="ww_1.jpg"
+                    >
 
+                    <img
+                        class="work-image"
+                        src="w_2.jpg"
+                        alt="JUOPPO JOOGAA"
+                    >
+                </picture>
 
-        <h2>GRANTS &amp; AWARDS</h2>
+            </div>
 
-        <p>
-            2026 Cultural gift, Finnish Cultural Foundation
-        </p>
 
-        <p>
-            2021 6-month performance art grant in North Karelia, Taike
-        </p>
+            <div class="work-text">
 
-        <p>
-            2016 Kultur i Nord — travel support
-        </p>
+                <h2>JUOPPO JOOGAA</h2>
 
-        <p>
-            2010 Joknainen — travel and material budget
-        </p>
+                <p>
+                    A series of 30 independent performances across different areas
+                    of Oulu, including places commonly frequented by people with
+                    addictions. A pink figure performs yoga routines on the
+                    sidewalks, holding a bottle in different asanas.
+                </p>
 
-        <p>
-            2010 Riksteatern Sweden — travel and show budget
-        </p>
+                <p>
+                    Oulu, Finland 2026
+                </p>
 
-        <p>
-            2009 Hans Hedbergs art stipendium
-        </p>
+                <p>
+                    Each performance is a 20-minute session
+                </p>
 
-        <p>
-            2007–2009 Svenska Institutet — 2-year study grant
-        </p>
+            </div>
 
+        </section>
 
-        <h2>PUBLICATIONS</h2>
 
-        <p>
-            2025<br>
-            Märkä kivi (Wet Stone) — poetry and photographic self-portraits<br>
-            The book has Russian and Finnish versions<br>
-            The Finnish version was made in collaboration with 25 Finnish people
-        </p>
+        <!-- =================================
+             WORK 2 — AS ATTACHMENT
+             ================================= -->
 
+        <section class="work">
 
-        <h2>SELECTED PRESS AND MEDIA</h2>
+            <picture>
+                <source
+                    media="(min-width: 701px)"
+                    srcset="ww_2.jpg"
+                >
 
-        <p>
-            2022 Kaleva — “Keho ei osaa valehdella” (Body Can’t Lie), interview, 10.06.2022
-        </p>
+                <img
+                    class="work-image"
+                    src="w_3.jpg"
+                    alt="AS ATTACHMENT"
+                >
+            </picture>
 
-        <p>
-            2021 Performance Art Oslo — publication and book review
-        </p>
 
-        <p>
-            2018 Mother’s Tongue, edited by Willem Wilhelmus
-        </p>
+            <div class="work-text">
 
-        <p>
-            2016 Kaleva — “Multa Katriina askaroi kultaperuukissa”
-        </p>
+                <h2>AS ATTACHMENT</h2>
 
-        <p>
-            2013 X-Border Art Biennial publication
-        </p>
+                <p>
+                    A durational performance of wearing a wedding dress while
+                    chained to a fence next to love locks. Eventually, the
+                    performer begins conversations with passersby about the nature
+                    of love, attachment, and the hardships of relationships.
+                </p>
 
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
 
-        <h2>MEMBERSHIPS</h2>
+                <p>
+                    Duration 4 hours.
+                </p>
 
-        <p>
-            MUU ry
-        </p>
+            </div>
 
+        </section>
 
-        <h2>TEACHING</h2>
 
-        <p>
-            2026 workshop Gondyr Lab, developing a performative language, Oulu Art Museum, Oulu/Finland
-        </p>    
+        <!-- =================================
+             WORK 3 — WEARING BURDEN
+             ================================= -->
 
-         <p>
-            2023 workshop “Dance or Die” mexican raramuri-tribe traditions to performing concepts, Joensuu/Finland
-        </p> 
-            
-        <p>
-            2021 3-day performance art workshop, Joensuu / Finland
-        </p>
+        <section class="work">
 
-        <p>
-            2018–2020 Various free movement workshops for children and adults, Finland and Russia
-        </p>
+            <picture>
+                <source
+                    media="(min-width: 701px)"
+                    srcset="ww_3.jpg"
+                >
 
-        <p>
-            2014–2016 Video art and free movement workshops for children, Oulu / Finland
-        </p>
+                <img
+                    class="work-image"
+                    src="w_4.jpg"
+                    alt="WEARING BURDEN"
+                >
+            </picture>
+
+
+            <div class="work-text">
+
+                <h2>WEARING BURDEN</h2>
+
+                <p>
+                    How does it feel to lose your restrictions?
+                </p>
+
+                <p>
+                    The performer wears 20 kilos of black dough around the city.
+                    Eventually, the burden is gradually released by pinching off
+                    small pieces, experiencing how the body adapts to freedom and
+                    how it feels to let go.
+                </p>
+
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
+
+                <p>
+                    Duration 2 hours.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             WORK 4 — COUNTING DAYS
+             ================================= -->
+
+        <section class="work">
+
+            <picture>
+                <source
+                    media="(min-width: 701px)"
+                    srcset="ww_4.jpg"
+                >
+
+                <img
+                    class="work-image"
+                    src="w_1_1.jpg"
+                    alt="COUNTING DAYS"
+                >
+            </picture>
+
+
+            <div class="work-text">
+
+                <h2>COUNTING DAYS</h2>
+
+                <p>
+                    An anti-war performance series presented in Mexico and Finland.
+                    The performer falls and rises as many times as the number of
+                    days the Russian war against Ukraine has lasted. Later, the
+                    action turns into cutting holes in the coat, reaching day 730.
+                </p>
+
+                <p>
+                    The project was paused after two years. Unfortunately, the war
+                    keeps going into its fifth year.
+                </p>
+
+                <p>
+                    Mexico–Finland
+                </p>
+
+                <p>
+                    Duration 2022-2024.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             WORK 5 — BOTTOM OF BLOOD
+             ================================= -->
+
+        <section class="work work-bottom-blood">
+
+            <picture>
+                <source
+                    media="(min-width: 701px)"
+                    srcset="ww_5.jpg"
+                >
+
+                <img
+                    class="work-image"
+                    src="w_12.jpg"
+                    alt="BOTTOM OF BLOOD"
+                >
+            </picture>
+
+
+            <div class="work-text">
+
+                <h2>BOTTOM OF BLOOD</h2>
+
+                <p>
+                    Tasting berries and blood with the audience in a park.
+                    A poetic performance exploration.
+                </p>
+
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
+
+                <p>
+                    Duration 30 minutes.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             WORK 6 — OPPOSITE CATHERINE
+             ================================= -->
+
+        <section class="work">
+
+            <picture>
+                <source
+                    media="(min-width: 701px)"
+                    srcset="ww_6.jpg"
+                >
+
+                <img
+                    class="work-image"
+                    src="w_9.jpg"
+                    alt="OPPOSITE CATHERINE"
+                >
+            </picture>
+
+
+            <div class="work-text">
+
+                <h2>OPPOSITE CATHERINE</h2>
+
+                <p>
+                    A long-durational exploration of bodily and behavioural
+                    creativity. The performer is positioned backwards, using the
+                    body's peripheral side as the frontal.
+                </p>
+
+                <p>
+                    “We are crazy about food and food ideologies. About food
+                    rituals. About food information. We have plans for eating
+                    better. Or eating less...”
+                </p>
+
+                <p>
+                    The performer brings only mud into the kitchen space. Plenty
+                    of mud.
+                </p>
+
+                <p>
+                    Oulu, Finland 2016.
+                </p>
+
+                <p>
+                    Duration 5 hours.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             WORK 7 — ABUNDANCE
+             ================================= -->
+
+        <section class="work work-abundance">
+
+            <picture>
+                <source
+                    media="(min-width: 701px)"
+                    srcset="ww_7.jpg"
+                >
+
+                <img
+                    class="work-image"
+                    src="w_6.jpg"
+                    alt="ABUNDANCE"
+                >
+            </picture>
+
+
+            <div class="work-text">
+
+                <h2>ABUNDANCE</h2>
+
+                <p>
+                    The performer makes interventions in the city space and plants
+                    about 50 sausages on the lawn. Each of them is carved into
+                    “a penis shape”.
+                </p>
+
+                <p>
+                    The newly created sight is offered to citizens to observe the
+                    abundance of Nature. There one can think about beauty,
+                    forgiveness, joy, acceptance, polarities, or even death,
+                    aggression, occupation, and inequality.
+                </p>
+
+                <p>
+                    Joensuu, Finland 2021, Night of Arts.
+                </p>
+
+                <p>
+                    Duration 1 hour 20 minutes.
+                </p>
+
+            </div>
+
+        </section>        <!-- =================================
+             WORK 8 — IN LOVE WITH THE BUS STOP
+             ================================= -->
+
+        <section class="work">
+
+            <picture>
+                <source
+                    media="(min-width: 701px)"
+                    srcset="ww_8.jpg"
+                >
+
+                <img
+                    class="work-image"
+                    src="w_8_2.jpg"
+                    alt="IN LOVE WITH THE BUS STOP"
+                >
+            </picture>
+
+
+            <div class="work-text">
+
+                <h2>IN LOVE WITH THE BUS STOP</h2>
+
+                <p>
+                    An action of covering a distant bus stop with a pattern of
+                    lipstick stamps. The performer remains there, watching passing
+                    cars and buses, while going nowhere.
+                </p>
+
+                <p>
+                    A simple gesture of affection turns an ordinary public place
+                    into a strange, intimate meeting point.
+                </p>
+
+                <p>
+                    Joensuu, Finland 2023.
+                </p>
+
+                <p>
+                    Duration 1 hour.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             WORK 9 — NEVER-LOST IN KUHASALO
+             ================================= -->
+
+        <section class="work work-never-lost">
+
+            <picture>
+                <source
+                    media="(min-width: 701px)"
+                    srcset="ww_9.jpg"
+                >
+
+                <img
+                    class="work-image"
+                    src="w_5.jpg"
+                    alt="NEVER-LOST IN KUHASALO"
+                >
+            </picture>
+
+
+            <div class="work-text">
+
+                <h2>NEVER-LOST IN KUHASALO</h2>
+
+                <p>
+                    The performer walks barefoot and blindfolded along a newly
+                    built road into the wild nature, over 2 km long.
+                </p>
+
+                <p>
+                    The performance questions the idea of making the forest easy
+                    and accessible. With vision dramatically reduced, the body
+                    becomes dependent on touch, sound, and smell. The new road
+                    makes it impossible to get lost — but perhaps a forest is not
+                    supposed to be so easy to navigate.
+                </p>
+
+                <p>
+                    Joensuu, Finland 2021.
+                </p>
+
+                <p>
+                    Duration 1 hour 30 minutes.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             WORK 10 — STRESS OR MISTRESS
+             ================================= -->
+
+        <section class="work">
+
+            <picture>
+                <source
+                    media="(min-width: 701px)"
+                    srcset="ww_10.jpg"
+                >
+
+                <img
+                    class="work-image"
+                    src="w_10.jpg"
+                    alt="STRESS OR MISTRESS"
+                >
+            </picture>
+
+
+            <div class="work-text final-work-text">
+
+                <h2>STRESS OR MISTRESS</h2>
+
+                <p>
+                    The performer is drumming on a bag of flour in the city centre.
+                </p>
+
+                <p>
+                    The Action is a response to the public bullying of Finland's
+                    prime minister Sanna Marin following criticism of her dancing
+                    and rumours about cocaine use. In Finnish slang, “jauho” means
+                    flour and “jauhojengi” means flour people.
+                </p>
+
+                <p>
+                    The performer creates noise and opposes herself to the bullies.
+                    Covered in flour, she explores the dance movements that were
+                    publicly criticized.
+                </p>
+
+                <p>
+                    Oulu, Finland 2022.
+                </p>
+
+                <p>
+                    Duration 20 minutes.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <div class="end-block">
+
+            <a href="#top" class="up-button">
+                UP
+            </a>
+
+        </div>
+
 
     </main>
 
 
-    <!-- NAVIGATION -->
+    <script>
 
-   <nav class="site-navigation">
+        const navigation =
+            document.querySelector(".navigation");
 
-    <a
-        href="https://www.instagram.com/performateria/"
-        class="instagram"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <img src="instagram_icon_grey.png" alt="Instagram">
-    </a>
+        const whiteSections =
+            document.querySelectorAll(".work-text");
 
-    <a href="works.html">works</a>
-    <a href="about.html">about</a>
-    <a href="bio.html">bio</a>
-    <a href="gallery.html">gallery</a>
-    <a href="contact.html">contact</a>
 
-</nav>
+        function updateNavigationColor() {
 
+            if (!navigation) return;
+
+
+            /* Desktop: menu always stays light */
+
+            if (window.innerWidth > 700) {
+
+                navigation.classList.remove("on-white");
+
+                return;
+            }
+
+
+            const navRect =
+                navigation.getBoundingClientRect();
+
+
+            const navCenterX =
+                navRect.left + (navRect.width / 2);
+
+
+            const navCenterY =
+                navRect.top + (navRect.height / 2);
+
+
+            let overWhite = false;
+
+
+            whiteSections.forEach((section) => {
+
+                const rect =
+                    section.getBoundingClientRect();
+
+
+                const insideWhite =
+                    navCenterX >= rect.left &&
+                    navCenterX <= rect.right &&
+                    navCenterY >= rect.top &&
+                    navCenterY <= rect.bottom;
+
+
+                if (insideWhite) {
+                    overWhite = true;
+                }
+
+            });
+
+
+            navigation.classList.toggle(
+                "on-white",
+                overWhite
+            );
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateNavigationColor,
+            { passive: true }
+        );
+
+
+        window.addEventListener(
+            "resize",
+            updateNavigationColor
+        );
+
+
+        updateNavigationColor();
+
+    </script>
 
 </body>
 </html>
