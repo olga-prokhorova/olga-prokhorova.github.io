@@ -59,13 +59,17 @@
 
                 top: 0;
                 left: 0;
-                bottom: 200px;
 
                 width: 100%;
-                height: auto;
+                height: 100%;
 
                 z-index: 5;
                 pointer-events: none;
+
+                /* IMPORTANT:
+                   Keep gradient inside the image area.
+                   The final 200px white block is excluded. */
+                clip-path: inset(0 0 200px 0);
 
                 background: linear-gradient(
                     to right,
